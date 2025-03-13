@@ -1,0 +1,15 @@
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:{{colors.background.default.hex}} \
+--color=bg:{{colors.background.default.hex}} \
+--color=spinner:{{colors.on_background.default.hex}} \
+--color=hl:{{colors.primary.default.hex}} \
+--color=fg:{{colors.on_background.default.hex}} \
+--color=header:{{colors.primary.default.hex}} \
+--color=info:{{colors.secondary.default.hex}} \
+--color=pointer:{{colors.on_background.default.hex}} \
+--color=marker:{{colors.tertiary.default.hex}} \
+--color=fg+:{{colors.on_background.default.hex}} \
+--color=prompt:{{colors.secondary.default.hex}} \
+--color=hl+:{{colors.primary.default.hex}} \
+--color=selected-bg:{{colors.surface.default.hex}} \
+--multi"

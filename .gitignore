@@ -1,0 +1,27 @@
+# Tmux plugins (not the configs, the folder contains the cloned plugins)
+dots/.config/tmux/plugins/
+
+# QT
+dots/.config/qt5ct/qss
+dots/.config/qt6ct/qss
+
+# Hyprland
+dots/.config/hypr/source/colors.conf
+
+# GTK
+dots/.config/gtk-4.0/colors.css
+dots/.config/gtk-3.0/colors.css
+
+# Zen Browser (probably gonna ditch it)
+dots/.zen/*
+dots/.zen/Zen/*
+!dots/.zen/Zen/
+!dots/.zen/Zen/chrome/
+!dots/.zen/Zen/user.js
+!dots/.zen/Zen/zen-themes.json
+dots/.zen/Zen/chrome/zen-themes.css
+
+# Kitty
+dots/.config/kitty/colors.conf
+dots/.config/kitty/slurp.sh
+
