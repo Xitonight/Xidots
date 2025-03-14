@@ -77,20 +77,13 @@ install_tmux_plugins() {
   fi
 }
 
-change_shell() {
-  echo "Changing shell to zsh for $USER"
-  chsh -s /usr/bin/zsh
-}
-
 setup_kanata() {
-  sudo groupadd uinput
-
-  if [[ -z "$(getent group input)" ]]; then
-    sudo usermod -aG input $USER
-  fi
   if [[ -z "$(getent group uinput)" ]]; then
-    sudo usermod -aG uinput $USER
+    sudo groupadd uinput
   fi
+
+  sudo usermod -aG input $USER
+  sudo usermod -aG uinput $USER
 
   sudo touch /etc/udev/rules.d/99-input.rules
 
@@ -108,6 +101,10 @@ setup_silent_boot() {
   sudo stow --target=/etc/systemd/system/ --dir=$INSTALL_DIR system
 }
 
+enable_bluetooth() {
+  systemctl enable --now bluetooth.service
+}
+
 if [ "$(id -u)" -eq 0 ]; then
   echo "Please do not run this script as root."
   exit 1
@@ -122,4 +119,5 @@ install_tmux_plugins
 setup_kanata
 setup_silent_boot
 install_wallpapers
-curl -fsSL https://raw.githubusercontent.com/Axenide/Ax-Shell/main/install.sh | bash
+enable_bluetooth
+curl -fsSL https://raw.githubusercontent.com/Axenide/Ax-Shell/main/install.sh
