@@ -56,7 +56,7 @@ install_npm() {
 
 stow_dots() {
   echo "Stowing dotfiles in $HOME"
-  stow dots --target=$HOME
+  stow --target=$HOME --dir=$INSTALL_DIR dots
 }
 
 install_tmux_plugins() {
