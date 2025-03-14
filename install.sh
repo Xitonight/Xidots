@@ -4,7 +4,8 @@ set -e
 set -u
 set -o pipefail
 
-INSTALL_DIR="$HOME/neoconf"
+INSTALL_DIR="$HOME/Xidots"
+WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
 REPO_URL="https://github.com/Xitonight/Xidots"
 
 install_aur_helper() {
@@ -40,9 +41,19 @@ clone_repo() {
   fi
 }
 
+install_wallpapers() {
+  if [ -d "$WALLPAPERS_DIR" ]; then
+    echo "Updating wallpapers..."
+    git -C "$WALLPAPERS_DIR" pull
+  else
+    echo "Cloning wallpapers..."
+    git clone "https://github.com/Xitonight/papers.git" "$WALLPAPERS_DIR"
+  fi
+}
+
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | yay -Syy --noconfirm --needed -
+  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
 }
 
 install_npm() {
@@ -74,8 +85,12 @@ change_shell() {
 setup_kanata() {
   sudo groupadd uinput
 
-  sudo usermod -aG input $USER
-  sudo usermod -aG uinput $USER
+  if [[ -z "$(getent group input)" ]]; then
+    sudo usermod -aG input $USER
+  fi
+  if [[ -z "$(getent group uinput)" ]]; then
+    sudo usermod -aG uinput $USER
+  fi
 
   sudo touch /etc/udev/rules.d/99-input.rules
 
@@ -106,5 +121,5 @@ install_npm
 install_tmux_plugins
 setup_kanata
 setup_silent_boot
-git clone https://github.com/Xitonight/papers.git ~/Pictures/Wallpapers
+install_wallpapers
 curl -fsSL https://raw.githubusercontent.com/Axenide/Ax-Shell/main/install.sh | bash
