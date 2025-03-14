@@ -42,7 +42,7 @@ clone_repo() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | yay -Sy --noconfirm -
+  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | yay -Syy --noconfirm -
 }
 
 install_npm() {
@@ -71,11 +71,6 @@ change_shell() {
   chsh -s /usr/bin/zsh
 }
 
-symlink_nvim_config() {
-  sudo mkdir -p /root/.config/nvim
-  sudo ln -s ~/.config/nvim/ /root/.config/nvim
-}
-
 setup_kanata() {
   sudo groupadd uinput
 
@@ -95,7 +90,7 @@ setup_kanata() {
 }
 
 setup_silent_boot() {
-  sudo stow --target=/etc/systemd/system/ system
+  sudo stow --target=/etc/systemd/system/ --dir=$INSTALL_DIR system
 }
 
 if [ "$(id -u)" -eq 0 ]; then
