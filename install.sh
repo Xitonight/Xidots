@@ -42,7 +42,7 @@ clone_repo() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' ./requirements.lst | sed '/^#/d' | yay -Sy --noconfirm -
+  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | yay -Sy --noconfirm -
 }
 
 install_npm() {
