@@ -8,6 +8,9 @@ INSTALL_DIR="$HOME/neoconf"
 REPO_URL="https://github.com/Xitonight/neoconf"
 
 install_aur_helper() {
+  if command -v git &>/dev/null; then
+    pacman -Sy git
+  fi
   aur_helper=""
   if command -v yay &>/dev/null; then
     aur_helper="yay"
@@ -100,9 +103,9 @@ if [ "$(id -u)" -eq 0 ]; then
   exit 1
 fi
 
+clone_repo
 install_aur_helper
 install_packages
-clone_repo
 stow_dots
 install_npm
 install_tmux_plugins
