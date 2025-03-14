@@ -9,7 +9,7 @@ REPO_URL="https://github.com/Xitonight/neoconf"
 
 install_aur_helper() {
   if command -v git &>/dev/null; then
-    pacman -Sy git
+    sudo pacman -Sy git
   fi
   aur_helper=""
   if command -v yay &>/dev/null; then
