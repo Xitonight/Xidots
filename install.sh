@@ -8,7 +8,7 @@ INSTALL_DIR="$HOME/neoconf"
 REPO_URL="https://github.com/Xitonight/neoconf"
 
 install_aur_helper() {
-  if command -v git &>/dev/null; then
+  if ! command -v git &>/dev/null; then
     sudo pacman -Sy git
   fi
   aur_helper=""
