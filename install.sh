@@ -5,7 +5,7 @@ set -u
 set -o pipefail
 
 INSTALL_DIR="$HOME/neoconf"
-REPO_URL="https://github.com/Xitonight/neoconf"
+REPO_URL="https://github.com/Xitonight/Xidots"
 
 install_aur_helper() {
   if ! command -v git &>/dev/null; then
