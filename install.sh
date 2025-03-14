@@ -42,7 +42,7 @@ clone_repo() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | yay -Syy --noconfirm -
+  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | yay -Syy --noconfirm --needed -
 }
 
 install_npm() {
@@ -104,7 +104,6 @@ install_packages
 stow_dots
 install_npm
 install_tmux_plugins
-change_shell
 setup_kanata
 setup_silent_boot
 git clone https://github.com/Xitonight/papers.git ~/Pictures/Wallpapers
