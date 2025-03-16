@@ -1,9 +1,15 @@
 # Tmux plugins (not the configs, the folder contains the cloned plugins)
 dots/.config/tmux/plugins/
 
+# Terminal
+dots/.zsh/fzf_theme
+dots/.config/btop/btop.log
+
 # QT
 dots/.config/qt5ct/qss
+dots/.config/qt5ct/colors/matugen.conf
 dots/.config/qt6ct/qss
+dots/.config/qt6ct/colors/matugen.conf
 
 # Hyprland
 dots/.config/hypr/source/colors.conf
@@ -25,3 +31,5 @@ dots/.zen/Zen/chrome/zen-themes.css
 dots/.config/kitty/colors.conf
 dots/.config/kitty/slurp.sh
 
+# Backups
+*.bak
