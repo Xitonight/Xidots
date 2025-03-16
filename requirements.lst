@@ -56,6 +56,8 @@ ttf-zed-mono-nerd
 
 # ---------------------------------------------- THEMING
 nwg-look
+python-pywal
+python-pywalfox
 qt5ct
 qt6ct
 qt5-wayland
