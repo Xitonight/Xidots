@@ -73,19 +73,43 @@ stow_dots() {
     file_name=$(basename "$dir")
     target="$HOME/$file_name"
 
-    # Check if the folder already exists in ~/.config
-    if [ -e "$target" ]; then
-      if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$DOTS_DIR/$file_name" ]; then
-        echo "$file_name is already correctly stowed, skipping backup."
-      else
-        backup="$target.bkp"
+    # Special handling for .config
+    if [ "$file_name" == ".config" ] && [ -d "$target" ]; then
+      echo "Checking individual directories inside .config..."
 
-        # Ensure we don't overwrite an existing backup
-        if [ -e "$backup" ]; then
-          echo "Backup already exists for $file_name, skipping..."
+      for sub_dir in "$DOTS_DIR/.config/"*; do
+        sub_file_name=$(basename "$sub_dir")
+        sub_target="$target/$sub_file_name"
+
+        if [ -e "$sub_target" ]; then
+          if [ -L "$sub_target" ] && [ "$(readlink -f "$sub_target")" == "$sub_dir" ]; then
+            echo "$sub_file_name is already correctly stowed, skipping backup."
+          else
+            backup="$sub_target.bkp"
+
+            if [ -e "$backup" ]; then
+              echo "Backup already exists for $sub_file_name, skipping..."
+            else
+              echo "Moving existing $sub_file_name to $backup"
+              mv "$sub_target" "$backup"
+            fi
+          fi
+        fi
+      done
+    else
+      # Normal files and directories outside .config
+      if [ -e "$target" ]; then
+        if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$dir" ]; then
+          echo "$file_name is already correctly stowed, skipping backup."
         else
-          echo "Moving existing $file_name to $backup"
-          mv "$target" "$backup"
+          backup="$target.bkp"
+
+          if [ -e "$backup" ]; then
+            echo "Backup already exists for $file_name, skipping..."
+          else
+            echo "Moving existing $file_name to $backup"
+            mv "$target" "$backup"
+          fi
         fi
       fi
     fi
