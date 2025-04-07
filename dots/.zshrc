@@ -1,16 +1,25 @@
+DOTS_DIR=$(dirname "$(dirname "$(readlink -f "${(%):-%x}")")")
+
 if [ -z $SSH_CONNECTION ]; then
-    if ! tmux has-session -t "xitonight" 2> /dev/null; then
-        tmux new-session -d -s "xitonight" -n "conf" -c /home/xitonight/dotfiles 2> /dev/null
-        tmux neww -n "main" -t "xitonight:2" 2> /dev/null
-        tmux neww -n "yay" -t "xitonight:3" 2> /dev/null
-        tmux neww -d -n "ssh" -t "xitonight:0" 2> /dev/null
+    if ! tmux has-session -t "main" 2> /dev/null; then
+        tmux new-session -d -s "main" -n "conf" -c $DOTS_DIR 2> /dev/null
+        tmux neww -n "main" -t "main:2" 2> /dev/null
+        tmux neww -n "yay" -t "main:3" 2> /dev/null
+        tmux neww -d -n "ssh" -t "main:0" 2> /dev/null
+    fi
+    if ! tmux has-session -t "projects" 2> /dev/null; then
+        tmux new-session -d -s "projects" -n "main" -c ~/Documents/Projects 2> /dev/null
+        tmux neww -n "aux" -t "projects:2" 2> /dev/null
+        tmux neww -d -n "ssh" -t "projects:0" 2> /dev/null
     fi
     if [ -z $TMUX ]; then
-      if [ -z "$(tmux list-clients -t "xitonight")" ]; then
-        tmux attach -t xitonight 2> /dev/null
+      if [ -z "$(tmux list-clients -t "main")" ]; then
+        tmux attach -t main 2> /dev/null
       fi
     fi
 fi
+
+nitch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -67,10 +76,12 @@ setopt hist_find_no_dups
 
 # Completion tweaks
 setopt globdots
+setopt extendedglob
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A --color=always $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:timg:*' fzf-preview 'timg -pk $realpath'
 
@@ -88,8 +99,8 @@ alias un='yay -Rs'
 alias purge='yay -Rns'
 alias up='yay -Syu'
 
-alias stow='stow --target=/home/$USER'
-alias unstow='stow -D --target=/home/$USER'
+alias stow='stow'
+alias unstow='stow -D'
 alias zconf='nvim $HOME/.zshrc'
 alias nvims='sudoedit'
 alias mkdir='mkdir -p'
@@ -147,3 +158,6 @@ esac
 
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
+
+# TexLive
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
