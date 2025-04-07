@@ -6,7 +6,7 @@ set -o pipefail
 
 INSTALL_DIR="$HOME/Xidots"
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
-DOTS_DIR="$INSTALL_DIR/dots/.config"
+DOTS_DIR="$INSTALL_DIR/dots/"
 REPO_URL="https://github.com/Xitonight/Xidots"
 
 install_aur_helper() {
@@ -67,25 +67,25 @@ install_npm() {
 }
 
 stow_dots() {
+  shopt -s dotglob nullglob
+
   for dir in "$DOTS_DIR"/*; do
-    if [ -d "$dir" ]; then
-      folder_name=$(basename "$dir")
-      target="$HOME/.config/$folder_name"
+    file_name=$(basename "$dir")
+    target="$HOME/$file_name"
 
-      # Check if the folder already exists in ~/.config
-      if [ -d "$target" ]; then
-        if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$DOTFILES_DIR/$folder_name" ]; then
-          echo "$folder_name is already correctly stowed, skipping backup."
+    # Check if the folder already exists in ~/.config
+    if [ -e "$target" ]; then
+      if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$DOTS_DIR/$file_name" ]; then
+        echo "$file_name is already correctly stowed, skipping backup."
+      else
+        backup="$target.bkp"
+
+        # Ensure we don't overwrite an existing backup
+        if [ -e "$backup" ]; then
+          echo "Backup already exists for $file_name, skipping..."
         else
-          backup="$target.bkp"
-
-          # Ensure we don't overwrite an existing backup
-          if [ -d "$backup" ]; then
-            echo "Backup already exists for $folder_name, skipping..."
-          else
-            echo "Moving existing $folder_name to $backup"
-            mv "$target" "$backup"
-          fi
+          echo "Moving existing $file_name to $backup"
+          mv "$target" "$backup"
         fi
       fi
     fi

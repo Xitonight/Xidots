@@ -9,25 +9,24 @@ dots/.config/systemd/user/*
 dots/.zsh/fzf_theme
 dots/.config/btop/btop.log
 
-# QT
-dots/.config/qt5ct/qss
+# Matugen generated files
 dots/.config/qt5ct/colors/matugen.conf
-dots/.config/qt6ct/qss
 dots/.config/qt6ct/colors/matugen.conf
-
-# Hyprland
 dots/.config/hypr/source/colors.conf
-
-# GTK
 dots/.config/gtk-4.0/colors.css
 dots/.config/gtk-3.0/colors.css
-
-# Kitty
 dots/.config/kitty/colors.conf
 dots/.config/kitty/slurp.sh
+dots/.config/zathura/
+dots/.config/cava
 
-# Personal stuff (to be replaced by user)
-dots/.face.icon
+# QT
+dots/.config/qt5ct/qss
+dots/.config/qt6ct/qss
 
 # Backups
 *.bak
+
+# Logs and random useless stuff
+dots/.config/Bitwarden
+dots/.config/pulse
