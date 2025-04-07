@@ -6,6 +6,7 @@ set -o pipefail
 
 INSTALL_DIR="$HOME/Xidots"
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
+DOTS_DIR="$INSTALL_DIR/dots/.config"
 REPO_URL="https://github.com/Xitonight/Xidots"
 
 install_aur_helper() {
@@ -53,7 +54,7 @@ install_wallpapers() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' $INSTALL_DIR/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
+  grep -v '^$' "$INSTALL_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
 }
 
 install_npm() {
@@ -66,8 +67,32 @@ install_npm() {
 }
 
 stow_dots() {
+  for dir in "$DOTS_DIR"/*; do
+    if [ -d "$dir" ]; then
+      folder_name=$(basename "$dir")
+      target="$HOME/.config/$folder_name"
+
+      # Check if the folder already exists in ~/.config
+      if [ -d "$target" ]; then
+        if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$DOTFILES_DIR/$folder_name" ]; then
+          echo "$folder_name is already correctly stowed, skipping backup."
+        else
+          backup="$target.bkp"
+
+          # Ensure we don't overwrite an existing backup
+          if [ -d "$backup" ]; then
+            echo "Backup already exists for $folder_name, skipping..."
+          else
+            echo "Moving existing $folder_name to $backup"
+            mv "$target" "$backup"
+          fi
+        fi
+      fi
+    fi
+  done
+
   echo "Stowing dotfiles in $HOME"
-  stow --target=$HOME --dir=$INSTALL_DIR dots
+  stow --target="$HOME" --dir="$INSTALL_DIR" dots
 }
 
 install_tmux_plugins() {
@@ -82,12 +107,13 @@ setup_kanata() {
     sudo groupadd uinput
   fi
 
-  sudo usermod -aG input $USER
-  sudo usermod -aG uinput $USER
+  sudo usermod -aG input "$USER"
+  sudo usermod -aG uinput "$USER"
 
-  sudo touch /etc/udev/rules.d/99-input.rules
-
-  echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules
+  if [ ! -e /etc/udev/rules.d/99-input.rules ]; then
+    sudo touch /etc/udev/rules.d/99-input.rules
+    echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules
+  fi
 
   sudo udevadm control --reload-rules && sudo udevadm trigger
 
@@ -98,7 +124,10 @@ setup_kanata() {
 }
 
 setup_silent_boot() {
-  sudo stow --target=/etc/systemd/system/ --dir=$INSTALL_DIR system
+  if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
+    sudo mv /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
+  fi
+  sudo stow --target=/etc/systemd/system/ --dir="$INSTALL_DIR" system
 }
 
 enable_bluetooth() {
