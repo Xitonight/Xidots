@@ -67,6 +67,7 @@ walogram-git
 # ---------------------------------------------- PERSONAL APPS
 # android-studio
 bitwarden
+firefox
 gnome-calculator
 kanata-bin
 kitty
@@ -83,7 +84,6 @@ tesseract-data-eng
 tesseract-data-ita
 xournalpp
 yazi
-zen-browser-bin
 
 # ---------------------------------------------- TUI TOOLS
 bat
