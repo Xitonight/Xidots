@@ -77,7 +77,7 @@ stow_dots() {
     if [ "$file_name" == ".config" ] && [ -d "$target" ]; then
       echo "Checking individual directories inside .config..."
 
-      for sub_dir in "$DOTS_DIR/.config/"*; do
+      for sub_dir in "$DOTS_DIR/.config"/*; do
         sub_file_name=$(basename "$sub_dir")
         sub_target="$target/$sub_file_name"
 
