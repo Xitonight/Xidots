@@ -7,7 +7,19 @@ gtk_theme = true
 
 [config.wallpaper]
 command = "swww"
-arguments = [ "img", "-t", "outer", "--transition-duration", "1.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
+arguments = [
+  "img",
+  "-t",
+  "outer",
+  "--transition-duration",
+  "1.5",
+  "--transition-step",
+  "255",
+  "--transition-fps",
+  "60",
+  "-f",
+  "Nearest",
+]
 set = true
 
 [templates.hyprland]
@@ -34,7 +46,7 @@ output_path = "~/.config/gtk-3.0/colors.css"
 [templates.gtk4]
 input_path = "~/.config/matugen/templates/colors.css"
 output_path = "~/.config/gtk-4.0/colors.css"
-post_hook = "killall swayosd-server; swayosd-server &"
+post_hook = "~/.config/matugen/scripts/restart_gtk_apps.sh"
 
 [templates.qt5ct]
 input_path = "~/.config/matugen/templates/colors-qt.conf"
