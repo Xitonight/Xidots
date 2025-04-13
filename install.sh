@@ -61,6 +61,11 @@ install_packages() {
   grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
 }
 
+install_personal_packages() {
+  echo "Installing personal packages..."
+  grep -v '^$' "$XIDOTS_DIR"/personal.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
+}
+
 install_npm() {
   source /usr/share/nvm/init-nvm.sh
   if command -v npm &>/dev/null; then
@@ -171,6 +176,7 @@ fi
 clone_repo
 install_aur_helper
 install_packages
+install_personal_packages
 stow_dots
 install_npm
 install_tmux_plugins
