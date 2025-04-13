@@ -7,9 +7,6 @@ set -o pipefail
 XIDOTS_DIR=${1:-"$HOME/Xidots"}
 if ! grep -q "export XIDOTS_DIR" ~/.zshrc; then
   echo "export XIDOTS_DIR=\"$XIDOTS_DIR\"" >>~/.zshrc
-  echo "Added 'export XIDOTS_DIR' to ~/.zshrc"
-else
-  echo "'export XIDOTS_DIR' already exists in ~/.zshrc"
 fi
 
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
