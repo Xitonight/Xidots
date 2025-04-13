@@ -4,9 +4,9 @@ set -e
 set -u
 set -o pipefail
 
-INSTALL_DIR="$HOME/Xidots"
+export XIDOTS_DIR="$HOME/Xidots"
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
-DOTS_DIR="$INSTALL_DIR/dots/"
+DOTS_DIR="$XIDOTS_DIR/dots/"
 REPO_URL="https://github.com/Xitonight/Xidots"
 
 install_aur_helper() {
@@ -33,12 +33,12 @@ install_aur_helper() {
 }
 
 clone_repo() {
-  if [ -d "$INSTALL_DIR" ]; then
+  if [ -d "$XIDOTS_DIR" ]; then
     echo "Updating dotfiles..."
-    git -C "$INSTALL_DIR" pull
+    git -C "$XIDOTS_DIR" pull
   else
     echo "Cloning dotfiles..."
-    git clone "$REPO_URL" "$INSTALL_DIR"
+    git clone "$REPO_URL" "$XIDOTS_DIR"
   fi
 }
 
@@ -54,7 +54,7 @@ install_wallpapers() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' "$INSTALL_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
+  grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
 }
 
 install_npm() {
@@ -116,7 +116,7 @@ stow_dots() {
   done
 
   echo "Stowing dotfiles in $HOME"
-  stow --target="$HOME" --dir="$INSTALL_DIR" dots
+  stow --target="$HOME" --dir="$XIDOTS_DIR" dots
 }
 
 install_tmux_plugins() {
@@ -151,7 +151,7 @@ setup_silent_boot() {
   if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
     sudo mv /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
   fi
-  sudo stow --target=/etc/systemd/system/ --dir="$INSTALL_DIR" system
+  sudo stow --target=/etc/systemd/system/ --dir="$XIDOTS_DIR" system
 }
 
 enable_bluetooth() {

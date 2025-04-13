@@ -1,16 +1,10 @@
-DOTS_DIR=$(dirname "$(dirname "$(readlink -f "${(%):-%x}")")")
-
 if [ -z $SSH_CONNECTION ]; then
+    tmux start-server
     if ! tmux has-session -t "main" 2> /dev/null; then
-        tmux new-session -d -s "main" -n "conf" -c $DOTS_DIR 2> /dev/null
+        tmux new-session -d -s "main" -n "conf" -c $XIDOTS_DIR # 2> /dev/null
         tmux neww -n "main" -t "main:2" 2> /dev/null
         tmux neww -n "yay" -t "main:3" 2> /dev/null
         tmux neww -d -n "ssh" -t "main:0" 2> /dev/null
-    fi
-    if ! tmux has-session -t "projects" 2> /dev/null; then
-        tmux new-session -d -s "projects" -n "main" -c ~/Documents/Projects 2> /dev/null
-        tmux neww -n "aux" -t "projects:2" 2> /dev/null
-        tmux neww -d -n "ssh" -t "projects:0" 2> /dev/null
     fi
     if [ -z $TMUX ]; then
       if [ -z "$(tmux list-clients -t "main")" ]; then
@@ -161,3 +155,5 @@ source /usr/share/nvm/init-nvm.sh
 
 # TexLive
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
+
+PATH=~/.console-ninja/.bin:$PATH
