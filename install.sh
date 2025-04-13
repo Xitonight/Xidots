@@ -4,7 +4,14 @@ set -e
 set -u
 set -o pipefail
 
-export XIDOTS_DIR="$HOME/Xidots"
+XIDOTS_DIR=${1:-"$HOME/Xidots"}
+if ! grep -q "export XIDOTS_DIR" ~/.zshrc; then
+  echo "export XIDOTS_DIR=\"$XIDOTS_DIR\"" >>~/.zshrc
+  echo "Added 'export XIDOTS_DIR' to ~/.zshrc"
+else
+  echo "'export XIDOTS_DIR' already exists in ~/.zshrc"
+fi
+
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
 DOTS_DIR="$XIDOTS_DIR/dots/"
 REPO_URL="https://github.com/Xitonight/Xidots"
@@ -58,6 +65,7 @@ install_packages() {
 }
 
 install_npm() {
+  source /usr/share/nvm/init-nvm.sh
   if command -v npm &>/dev/null; then
     echo "Installing node / npm..."
     nvm install node
@@ -91,7 +99,7 @@ stow_dots() {
               echo "Backup already exists for $sub_file_name, skipping..."
             else
               echo "Moving existing $sub_file_name to $backup"
-              mv "$sub_target" "$backup"
+              cp -R "$sub_target" "$backup"
             fi
           fi
         fi
@@ -108,7 +116,7 @@ stow_dots() {
             echo "Backup already exists for $file_name, skipping..."
           else
             echo "Moving existing $file_name to $backup"
-            mv "$target" "$backup"
+            cp -R "$target" "$backup"
           fi
         fi
       fi
@@ -149,7 +157,7 @@ setup_kanata() {
 
 setup_silent_boot() {
   if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
-    sudo mv /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
+    sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
   fi
   sudo stow --target=/etc/systemd/system/ --dir="$XIDOTS_DIR" system
 }
