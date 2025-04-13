@@ -81,6 +81,7 @@ fd
 ffmpegthumbnailer
 fzf
 git
+git-delta
 github-cli
 nitch
 nvm
