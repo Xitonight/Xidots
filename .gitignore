@@ -20,6 +20,8 @@ dots/.config/kitty/slurp.sh
 dots/.config/zathura/
 dots/.config/cava
 
+dots/.config/matugen/templates/colors-pywal
+
 # QT
 dots/.config/qt5ct/qss
 dots/.config/qt6ct/qss
