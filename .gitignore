@@ -25,7 +25,8 @@ dots/.config/qt5ct/qss
 dots/.config/qt6ct/qss
 
 # Backups
-*.bak
+*/**/*.bak
+*/**/*.bkp
 
 # Logs and random useless stuff
 dots/.config/Bitwarden
