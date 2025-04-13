@@ -1,3 +1,5 @@
+export XIDOTS_DIR="/home/xitonight/Xidots"
+
 if [ -z $SSH_CONNECTION ]; then
     tmux start-server
     if ! tmux has-session -t "main" 2> /dev/null; then
@@ -78,6 +80,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:timg:*' fzf-preview 'timg -pk $realpath'
+zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
+	'git diff $word | delta'
 
 # Aliases
 alias l='eza -lh --icons=auto' # long list
@@ -89,7 +93,7 @@ alias lt='eza --icons=auto --tree' # list folder as tree
 
 alias exp='yay -D --asexplicit'
 alias in='yay -Sy --noconfirm'
-alias un='yay -Rs'
+alias un='yay -R'
 alias purge='yay -Rns'
 alias up='yay -Syu'
 
