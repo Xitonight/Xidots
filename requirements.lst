@@ -5,7 +5,6 @@ inotify-tools
 man-db
 man-pages
 mpv
-nano
 network-manager-applet
 networkmanager
 nm-connection-editor
@@ -62,36 +61,22 @@ qt5ct
 qt6ct
 qt5-wayland
 qt6-wayland
-walogram-git
 
-# ---------------------------------------------- PERSONAL APPS
-# android-studio
-bitwarden
+# ---------------------------------------------- APPS
 firefox
 gnome-calculator
-kanata-bin
 kitty
 nautilus
 neovim
-obs-studio
-obsidian
-scrcpy
-spotify
-tailscale
-telegram-desktop
 tesseract
 tesseract-data-eng
 tesseract-data-ita
-xournalpp
 yazi
 
 # ---------------------------------------------- TUI TOOLS
 bat
 btop
-cava
-cowsay
 eza
-fastfetch
 fd
 ffmpegthumbnailer
 fzf
@@ -99,15 +84,12 @@ git
 github-cli
 nitch
 nvm
-pipes.sh
 ripgrep
 thefuck
 tmux
 zoxide
 
 # ---------------------------------------------- UTILS
-android-file-transfer
-gpu-screen-recorder-gtk
 gvfs-goa
 gvfs-google
 gvfs-mtp

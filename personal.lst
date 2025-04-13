@@ -1,0 +1,22 @@
+# ---------------------------------------------- PERSONAL APPS
+android-studio
+bitwarden
+kanata-bin
+obs-studio
+obsidian
+scrcpy
+spotify
+tailscale
+telegram-desktop
+walogram-git
+xournalpp
+
+# ---------------------------------------------- TUI TOOLS
+cava
+cowsay
+fastfetch
+pipes.sh
+
+# ---------------------------------------------- UTILS
+android-file-transfer
+gpu-screen-recorder-gtk
