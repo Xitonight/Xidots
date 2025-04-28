@@ -1,5 +1,6 @@
 # ---------------------------------------------- PERSONAL APPS
 android-studio
+bat
 bitwarden
 kanata-bin
 obs-studio
@@ -10,6 +11,8 @@ tailscale
 telegram-desktop
 walogram-git
 xournalpp
+zathura
+zathura-pdf-mupdf
 
 # ---------------------------------------------- TUI TOOLS
 cava
