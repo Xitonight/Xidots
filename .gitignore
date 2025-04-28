@@ -1,10 +1,6 @@
 # Tmux plugins (not the configs, the folder contains the cloned plugins)
 dots/.config/tmux/plugins/
 
-# Systemd
-dots/.config/systemd/user/*
-!dots/.config/systemd/user/kanata.service
-
 # Terminal
 dots/.zsh/fzf_theme
 dots/.config/btop/btop.log
