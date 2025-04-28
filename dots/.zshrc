@@ -1,7 +1,6 @@
 export XIDOTS_DIR="/home/xitonight/Xidots"
 
 if [ -z $SSH_CONNECTION ]; then
-    tmux start-server
     if ! tmux has-session -t "main" 2> /dev/null; then
         tmux new-session -d -s "main" -n "conf" -c $XIDOTS_DIR # 2> /dev/null
         tmux neww -n "main" -t "main:2" 2> /dev/null
@@ -106,6 +105,8 @@ alias rf='rm -rf'
 alias lsk='lsblk'
 alias f='fuck'
 
+alias espidf="source $HOME/.esp/esp-idf/export.sh &> /dev/null"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
@@ -161,3 +162,4 @@ source /usr/share/nvm/init-nvm.sh
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 
 PATH=~/.console-ninja/.bin:$PATH
+export MATUVIM_DIR="/home/xitonight/.matuvim"
