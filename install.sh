@@ -5,8 +5,8 @@ set -u
 set -o pipefail
 
 XIDOTS_DIR=${1:-"$HOME/Xidots"}
-if ! grep -q "export XIDOTS_DIR" ~/.zshrc; then
-  echo "export XIDOTS_DIR=\"$XIDOTS_DIR\"" >>~/.zshrc
+if ! grep -q "export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc; then
+  sed -i "1i\export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc
 fi
 
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
@@ -136,27 +136,6 @@ install_tmux_plugins() {
   fi
 }
 
-setup_kanata() {
-  if [[ -z "$(getent group uinput)" ]]; then
-    sudo groupadd uinput
-  fi
-
-  sudo usermod -aG input "$USER"
-  sudo usermod -aG uinput "$USER"
-
-  if [ ! -e /etc/udev/rules.d/99-input.rules ]; then
-    sudo touch /etc/udev/rules.d/99-input.rules
-    echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules
-  fi
-
-  sudo udevadm control --reload-rules && sudo udevadm trigger
-
-  sudo modprobe uinput
-
-  systemctl --user daemon-reload
-  systemctl enable --now --user kanata.service
-}
-
 setup_silent_boot() {
   if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
     sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
@@ -180,8 +159,6 @@ install_personal_packages
 stow_dots
 install_npm
 install_tmux_plugins
-setup_kanata
 setup_silent_boot
 install_wallpapers
 enable_bluetooth
-curl -fsSL https://raw.githubusercontent.com/Axenide/Ax-Shell/main/install.sh
