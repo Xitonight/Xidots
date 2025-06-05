@@ -47,6 +47,13 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
 
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_VI_EDITOR=nvim
+
 # Enable Oh-My-zsh plugins
 zinit snippet OMZP::sudo
 
@@ -98,7 +105,12 @@ alias up='yay -Syu'
 
 alias stow='stow'
 alias unstow='stow -D'
+
+# Config files shortcuts
 alias zconf='nvim $HOME/.zshrc'
+alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
+alias nvimconf='nvim $MATUVIM_DIR'
+
 alias nvims='sudoedit'
 alias mkdir='mkdir -p'
 alias rf='rm -rf'
@@ -123,7 +135,6 @@ export MANROFFOPT="-c"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-eval $(thefuck --alias)
 
 # Change default editor to neovim
 export EDITOR=nvim
