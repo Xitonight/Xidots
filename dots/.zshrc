@@ -106,6 +106,13 @@ alias up='yay -Syu'
 alias stow='stow'
 alias unstow='stow -D'
 
+# Corrections for nvim lmfao
+alias vim='nvim'
+alias nivm='nvim'
+alias nimv='nvim'
+alias nvmim='nvim'
+alias nvmi='nvim'
+
 # Config files shortcuts
 alias zconf='nvim $HOME/.zshrc'
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
