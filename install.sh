@@ -154,7 +154,7 @@ setup_silent_boot() {
       mkdir "$BACKUP_DIR/system"
     fi
     sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf "$BACKUP_DIR/system/autologin.bkp"
-    sudo rm -rf /etc/systemd/system/getty@tty1.service.d/autologin.conf
+    sudo rm -rf /etc/systemd/system/getty@tty1.service.d
   fi
   sudo stow --target=/etc/systemd/system/ --dir="$XIDOTS_DIR" system
 }
