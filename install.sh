@@ -102,7 +102,7 @@ stow_dots() {
             if [ ! -e "$BACKUP_DIR" ]; then
               mkdir -p "$BACKUP_DIR/.config"
             fi
-            backup="$BACKUP_DIR/.config/$sub_target.bkp"
+            backup="$BACKUP_DIR/.config/$sub_file_name"
 
             if [ -e "$backup" ]; then
               echo "Backup already exists for $sub_file_name, skipping..."
@@ -111,6 +111,7 @@ stow_dots() {
               cp -R "$sub_target" "$backup"
             fi
           fi
+          rm -rf "$sub_target"
         fi
       done
     else
@@ -131,6 +132,7 @@ stow_dots() {
             cp -R "$target" "$backup"
           fi
         fi
+        rm -rf "$target"
       fi
     fi
   done
