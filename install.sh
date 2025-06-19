@@ -150,7 +150,10 @@ install_tmux_plugins() {
 
 setup_silent_boot() {
   if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
-    sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
+    if [ ! -e "$BACKUP_DIR/system" ]; then
+      mkdir "$BACKUP_DIR/system"
+    fi
+    sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf "$BACKUP_DIR/system/autologin.bkp"
     sudo rm -rf /etc/systemd/system/getty@tty1.service.d/autologin.conf
   fi
   sudo stow --target=/etc/systemd/system/ --dir="$XIDOTS_DIR" system
