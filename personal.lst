@@ -1,7 +1,7 @@
 # ---------------------------------------------- PERSONAL APPS
-android-studio
-arduino-ide
-arduino-language-server
+# android-studio
+# arduino-ide
+# arduino-language-server
 bat
 bitwarden
 kanata-bin
