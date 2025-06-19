@@ -4,11 +4,12 @@ set -e
 set -u
 set -o pipefail
 
-XIDOTS_DIR=${1:-"$HOME/Xidots"}
+XIDOTS_DIR=${1:-"$HOME/.xidots"}
 if ! grep -q "export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc; then
   sed -i "1i\export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc
 fi
 
+BACKUP_DIR="$HOME/.dotsbackup"
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
 DOTS_DIR="$XIDOTS_DIR/dots/"
 REPO_URL="https://github.com/Xitonight/Xidots"
@@ -80,6 +81,7 @@ stow_dots() {
   shopt -s dotglob nullglob
 
   for dir in "$DOTS_DIR"/*; do
+    # E.g. if dir is "$DOTS_DIR/.config", file_name will be ".config"
     file_name=$(basename "$dir")
     target="$HOME/$file_name"
 
@@ -87,7 +89,9 @@ stow_dots() {
     if [ "$file_name" == ".config" ] && [ -d "$target" ]; then
       echo "Checking individual directories inside .config..."
 
+      # Iterate through each subdirectory in .config
       for sub_dir in "$DOTS_DIR/.config"/*; do
+        # E.g. if sub_dir is "$DOTS_DIR/.config/someapp", sub_file_name will be "someapp"
         sub_file_name=$(basename "$sub_dir")
         sub_target="$target/$sub_file_name"
 
@@ -95,7 +99,10 @@ stow_dots() {
           if [ -L "$sub_target" ] && [ "$(readlink -f "$sub_target")" == "$sub_dir" ]; then
             echo "$sub_file_name is already correctly stowed, skipping backup."
           else
-            backup="$sub_target.bkp"
+            if [ ! -e "$BACKUP_DIR" ]; then
+              mkdir -p "$BACKUP_DIR/.config"
+            fi
+            backup="$BACKUP_DIR/.config/$sub_target.bkp"
 
             if [ -e "$backup" ]; then
               echo "Backup already exists for $sub_file_name, skipping..."
@@ -112,7 +119,10 @@ stow_dots() {
         if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$dir" ]; then
           echo "$file_name is already correctly stowed, skipping backup."
         else
-          backup="$target.bkp"
+          if [ ! -e "$BACKUP_DIR" ]; then
+            mkdir -p "$BACKUP_DIR"
+          fi
+          backup="$BACKUP_DIR/$file_name.bkp"
 
           if [ -e "$backup" ]; then
             echo "Backup already exists for $file_name, skipping..."
@@ -139,6 +149,7 @@ install_tmux_plugins() {
 setup_silent_boot() {
   if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
     sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf.bkp
+    sudo rm -rf /etc/systemd/system/getty@tty1.service.d/autologin.conf
   fi
   sudo stow --target=/etc/systemd/system/ --dir="$XIDOTS_DIR" system
 }

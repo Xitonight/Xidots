@@ -7,7 +7,7 @@ gtk_theme = true
 
 [config.wallpaper]
 command = "swww"
-arguments = [ "img", "-t", "outer", "--transition-duration", "1.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
+arguments = [ "img", "-t", "fade", "--transition-duration", "0.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
 set = true
 
 [templates.hyprland]
