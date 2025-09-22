@@ -2,10 +2,10 @@ export XIDOTS_DIR="/home/xitonight/Xidots"
 
 if [ -z $SSH_CONNECTION ]; then
     if ! tmux has-session -t "main" 2> /dev/null; then
-        tmux new-session -d -s "main" -n "conf" -c $XIDOTS_DIR # 2> /dev/null
+        tmux new-session -d -s "main" -n "main"
         tmux neww -n "main" -t "main:2" 2> /dev/null
         tmux neww -n "yay" -t "main:3" 2> /dev/null
-        tmux neww -d -n "ssh" -t "main:0" 2> /dev/null
+        tmux neww -d -n "ssh" -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
     fi
     if [ -z $TMUX ]; then
       if [ -z "$(tmux list-clients -t "main")" ]; then
@@ -85,9 +85,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A --color=always $realpath'
-zstyle ':fzf-tab:complete:timg:*' fzf-preview 'timg -pk $realpath'
-zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
-	'git diff $word | delta'
+zstyle ':fzf-tab:complete:git-(commit|add|diff|restore):*' fzf-preview \
+	'git diff $realpath | delta'
 
 # Aliases
 alias l='eza -lh --icons=auto' # long list
@@ -116,13 +115,14 @@ alias nvmi='nvim'
 # Config files shortcuts
 alias zconf='nvim $HOME/.zshrc'
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
-alias nvimconf='nvim $MATUVIM_DIR'
+alias nvimconf='z $MATUVIM_DIR; nvim'
 
 alias nvims='sudoedit'
 alias mkdir='mkdir -p'
 alias rf='rm -rf'
 alias lsk='lsblk'
 alias f='fuck'
+alias fy='fuck --yeah'
 
 alias espidf="source $HOME/.esp/esp-idf/export.sh &> /dev/null"
 
@@ -142,6 +142,7 @@ export MANROFFOPT="-c"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
 
 # Change default editor to neovim
 export EDITOR=nvim
@@ -181,3 +182,19 @@ export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 
 PATH=~/.console-ninja/.bin:$PATH
 export MATUVIM_DIR="/home/xitonight/.matuvim"
+
+export GOPATH=$HOME/.go
+export PATH="$GOPATH/bin:$PATH"
+
+greboot() {
+    if [ -z "$1" ]; then
+        echo "Usage: greboot <GRUB_ENTRY_INDEX>"
+        return 1
+    fi
+    GRUB_ENTRY="$1"
+    if [ "GRUB_ENTRY" = "win"]; then
+      GRUB_ENTRY="1"
+    fi
+    sudo grub-reboot "$GRUB_ENTRY"
+    sudo reboot
+}

@@ -5,7 +5,8 @@ set -u
 set -o pipefail
 
 XIDOTS_DIR=${1:-"$HOME/.xidots"}
-if ! grep -q "export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc; then
+if ! head -n 1 ~/.zshrc | grep -q "export XIDOTS_DIR=" ~/.zshrc; then
+  sed -i '1d' ~/.zshrc
   sed -i "1i\export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc
 fi
 
