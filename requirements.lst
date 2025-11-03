@@ -1,13 +1,10 @@
 # --------------------------------------------- SYSTEM
 brightnessctl
-imv
 inotify-tools
 man-db
 man-pages
 mpv
-network-manager-applet
 networkmanager
-nm-connection-editor
 openssh
 playerctl
 polkit-gnome
@@ -16,15 +13,17 @@ uwsm
 wget
 zsh
 
+# --------------------------------------------- Bluetooth
+blueman
+bluetui
+bluez
+bluez-utils
+
 # --------------------------------------------- AUDIO
 alsa-utils
-blueman
-bluez-utils
-gnome-bluetooth-3.0
-pamixer
-pavucontrol
 pipewire-alsa
 pipewire-pulse
+pulsemixer
 
 # ---------------------------------------------- WM
 hypridle
@@ -43,14 +42,11 @@ noto-fonts-emoji
 otf-font-awesome
 ttf-all-the-icons
 ttf-cascadia-code-nerd
-ttf-cascadia-mono-nerd
-ttf-firacode-nerd
 ttf-font-awesome
-ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
-ttf-zed-mono-nerd
+ttf-poppins
 
 # ---------------------------------------------- THEMING
 bibata-cursor-theme-bin
@@ -63,39 +59,54 @@ qt5-wayland
 qt6-wayland
 
 # ---------------------------------------------- APPS
-gnome-calculator
+android-studio
+bitwarden
+kanata-bin
 kitty
-nautilus
 neovim
+nm-connection-editor
+obsidian
+obs-studio
+scrcpy
+spotify
+tailscale
+telegram-desktop
 tesseract
 tesseract-data-eng
 tesseract-data-ita
+walogram-git
 yazi
+zathura
+zathura-pdf-mupdf
 zen-browser-bin
 
 # ---------------------------------------------- TUI TOOLS
+bat
 btop
+cava
+cowsay
 eza
+fastfetch
 fd
 ffmpegthumbnailer
+figlet
 fzf
 git
 git-delta
 github-cli
-nitch
+lolcat
 nvm
+pay-respects-bin
+pipes.sh
 ripgrep
-thefuck
 tmux
 zoxide
 
 # ---------------------------------------------- UTILS
-gvfs-goa
-gvfs-google
-gvfs-mtp
 inetutils
 jdk17-openjdk
 libinput-gestures
+resvg
 systemd-resolvconf
 udiskie
 usbutils
