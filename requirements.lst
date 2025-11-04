@@ -7,6 +7,7 @@ mpv
 networkmanager
 openssh
 playerctl
+plymouth
 polkit-gnome
 stow
 uwsm
@@ -14,7 +15,6 @@ wget
 zsh
 
 # --------------------------------------------- Bluetooth
-blueman
 bluetui
 bluez
 bluez-utils
@@ -50,6 +50,7 @@ ttf-poppins
 
 # ---------------------------------------------- THEMING
 bibata-cursor-theme-bin
+matugen-bin
 nwg-look
 python-pywal
 python-pywalfox
@@ -85,6 +86,7 @@ bat
 btop
 cava
 cowsay
+croc
 eza
 fastfetch
 fd
@@ -106,6 +108,7 @@ zoxide
 inetutils
 jdk17-openjdk
 libinput-gestures
+python-watchdog
 resvg
 systemd-resolvconf
 udiskie
