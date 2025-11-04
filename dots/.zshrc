@@ -1,11 +1,11 @@
-export XIDOTS_DIR="/home/xitonight/Xidots"
+export XIDOTS_DIR="/home/xitonight/.xidots"
 
 if [ -z $SSH_CONNECTION ]; then
     if ! tmux has-session -t "main" 2> /dev/null; then
         tmux new-session -d -s "main" -n "main"
-        tmux neww -n "main" -t "main:2" 2> /dev/null
-        tmux neww -n "yay" -t "main:3" 2> /dev/null
-        tmux neww -d -n "ssh" -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
+        tmux neww -n "yay" -t "main:2" 2> /dev/null
+        tmux neww -n "ssh" -t "main:3" 2> /dev/null
+        tmux neww -d  -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
     fi
     if [ -z $TMUX ]; then
       if [ -z "$(tmux list-clients -t "main")" ]; then
@@ -13,8 +13,6 @@ if [ -z $SSH_CONNECTION ]; then
       fi
     fi
 fi
-
-nitch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -86,7 +84,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A --color=always $realpath'
 zstyle ':fzf-tab:complete:git-(commit|add|diff|restore):*' fzf-preview \
-	'git diff $realpath | delta'
+	'git diff $realpath | delta --syntax-theme=base16'
 
 # Aliases
 alias l='eza -lh --icons=auto' # long list
@@ -96,13 +94,15 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long li
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
 
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+
 alias exp='yay -D --asexplicit'
 alias in='yay -Sy --noconfirm'
 alias un='yay -R'
 alias purge='yay -Rns'
 alias up='yay -Syu'
 
-alias stow='stow'
 alias unstow='stow -D'
 
 # Corrections for nvim lmfao
@@ -115,22 +115,23 @@ alias nvmi='nvim'
 # Config files shortcuts
 alias zconf='nvim $HOME/.zshrc'
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
-alias nvimconf='z $MATUVIM_DIR; nvim'
+alias nvimconf='z $MATUVIM_DIR; nvim; z'
 
 alias nvims='sudoedit'
 alias mkdir='mkdir -p'
 alias rf='rm -rf'
 alias lsk='lsblk'
-alias f='fuck'
-alias fy='fuck --yeah'
+
+alias slowwifi='sudo tc qdisc add dev wlp0s20f0u11 root netem delay 500ms'
+alias resetwifi='sudo tc qdisc del dev wlp0s20f0u11 root netem'
 
 alias espidf="source $HOME/.esp/esp-idf/export.sh &> /dev/null"
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
+alias ..='z ..'
+alias ...='z ../..'
+alias .3='z ../../..'
+alias .4='z ../../../..'
+alias .5='z ../../../../..'
 
 alias mount='sudo mount'
 alias umount='sudo umount'
@@ -138,15 +139,13 @@ alias umount='sudo umount'
 # Manpager with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
+export BAT_THEME=base16
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-eval "$(thefuck --alias)"
-
-# Change default editor to neovim
-export EDITOR=nvim
-export VISUAL=nvim 
+eval "$(pay-respects zsh --alias)"
+export _PR_AI_DISABLE
 
 export XDG_DESKTOP_DIR=$(xdg-user-dir DESKTOP)
 export XDG_DOWNLOAD_DIR=$(xdg-user-dir DOWNLOAD)
@@ -160,9 +159,8 @@ export XDG_VIDEOS_DIR=$(xdg-user-dir VIDEOS)
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
 
@@ -186,15 +184,3 @@ export MATUVIM_DIR="/home/xitonight/.matuvim"
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
 
-greboot() {
-    if [ -z "$1" ]; then
-        echo "Usage: greboot <GRUB_ENTRY_INDEX>"
-        return 1
-    fi
-    GRUB_ENTRY="$1"
-    if [ "GRUB_ENTRY" = "win"]; then
-      GRUB_ENTRY="1"
-    fi
-    sudo grub-reboot "$GRUB_ENTRY"
-    sudo reboot
-}
