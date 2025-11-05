@@ -18,7 +18,8 @@ M.mason = {
 
 M.ui = {
   tabufline = {
-    enabled = false,
+    enabled = true,
+    order = { "buffers", "treeOffset" },
   },
   cmp = {
     lspkind_text = true,
