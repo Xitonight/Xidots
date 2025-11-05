@@ -40,10 +40,10 @@
   # Prompt colors.
   local grey='242'
   local red='1'
-  local yellow='3'
-  local blue='3'
-  local magenta='5'
-  local cyan='6'
+  local yellow='2'
+  local blue='4'    # directory
+  local magenta='2' # arrow
+  local cyan='2'
   local white='7'
 
   # Left prompt segments.
@@ -65,7 +65,7 @@
     command_execution_time    # previous command duration
     virtualenv                # python virtual environment
     context                   # user@host
-    # time                    # current time
+    time                      # current time
     # =========================[ Line #2 ]=========================
     newline                   # \n
   )
