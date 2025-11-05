@@ -61,7 +61,7 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # History tweaks
-HISTSIZE=5000
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -142,7 +142,10 @@ export MANROFFOPT="-c"
 export BAT_THEME=base16
 
 # Shell integrations
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
+function zvm_after_init() {
+  zvm_bindkey viins "^R" fzf-history-widget
+}
 eval "$(zoxide init zsh)"
 eval "$(pay-respects zsh --alias)"
 export _PR_AI_DISABLE
@@ -183,4 +186,3 @@ export MATUVIM_DIR="/home/xitonight/.matuvim"
 
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
-
