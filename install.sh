@@ -187,9 +187,8 @@ setup_telegram_material_theme() {
 }
 
 setup_kanata() {
-  if ! getent group uinput >/dev/null 2>&1; then
-    sudo groupadd --system uinput
-  fi
+  sudo groupdel uinput
+  sudo groupadd --system uinput
 
   sudo usermod -aG input "$USER"
   sudo usermod -aG uinput "$USER"
