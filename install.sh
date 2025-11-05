@@ -5,13 +5,9 @@ set -u
 set -o pipefail
 
 XIDOTS_DIR=${1:-"$HOME/.xidots"}
-if ! head -n 1 ~/.zshrc | grep -q "export XIDOTS_DIR=" ~/.zshrc; then
-  sed -i '1d' ~/.zshrc
-  sed -i "1i\export XIDOTS_DIR=\"$XIDOTS_DIR\"" ~/.zshrc
-fi
-
 BACKUP_DIR="$HOME/.dotsbackup"
 WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
+WALLPAPERS_REPO_URL="https://github.com/Xitonight/Papers"
 DOTS_DIR="$XIDOTS_DIR/dots/"
 REPO_URL="https://github.com/Xitonight/Xidots"
 
@@ -38,7 +34,7 @@ install_aur_helper() {
   fi
 }
 
-clone_repo() {
+sync_repo() {
   if [ -d "$XIDOTS_DIR" ]; then
     echo "Updating dotfiles..."
     git -C "$XIDOTS_DIR" pull
@@ -48,24 +44,19 @@ clone_repo() {
   fi
 }
 
-install_wallpapers() {
+sync_wallpapers() {
   if [ -d "$WALLPAPERS_DIR" ]; then
     echo "Updating wallpapers..."
     git -C "$WALLPAPERS_DIR" pull
   else
     echo "Cloning wallpapers..."
-    git clone "https://github.com/Xitonight/papers.git" "$WALLPAPERS_DIR"
+    git clone "$WALLPAPERS_REPO_URL" "$WALLPAPERS_DIR"
   fi
 }
 
 install_packages() {
   echo "Installing required packages..."
   grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
-}
-
-install_personal_packages() {
-  echo "Installing personal packages..."
-  grep -v '^$' "$XIDOTS_DIR"/personal.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
 }
 
 install_npm() {
@@ -83,57 +74,51 @@ stow_dots() {
 
   for dir in "$DOTS_DIR"/*; do
     # E.g. if dir is "$DOTS_DIR/.config", file_name will be ".config"
-    file_name=$(basename "$dir")
-    target="$HOME/$file_name"
+    dir_name=$(basename "$dir")
+    dir_in_home="$HOME/$dir_name"
 
     # Special handling for .config
-    if [ "$file_name" == ".config" ] && [ -d "$target" ]; then
+    if [ "$dir_name" == ".config" ] && [ -d "$dir_in_home" ]; then
       echo "Checking individual directories inside .config..."
 
       # Iterate through each subdirectory in .config
       for sub_dir in "$DOTS_DIR/.config"/*; do
         # E.g. if sub_dir is "$DOTS_DIR/.config/someapp", sub_file_name will be "someapp"
-        sub_file_name=$(basename "$sub_dir")
-        sub_target="$target/$sub_file_name"
+        sub_dir_name=$(basename "$sub_dir")
+        sub_dir_in_home="$dir_in_home/$sub_dir_name"
 
-        if [ -e "$sub_target" ]; then
-          if [ -L "$sub_target" ] && [ "$(readlink -f "$sub_target")" == "$sub_dir" ]; then
-            echo "$sub_file_name is already correctly stowed, skipping backup."
+        if [ -e "$sub_dir_in_home" ]; then
+          if [ -L "$sub_dir_in_home" ] && [ "$(readlink -f "$sub_dir_in_home")" == "$sub_dir" ]; then
+            echo "$sub_dir_name is already correctly stowed, skipping backup."
           else
-            if [ ! -e "$BACKUP_DIR" ]; then
-              mkdir -p "$BACKUP_DIR/.config"
-            fi
-            backup="$BACKUP_DIR/.config/$sub_file_name"
-
+            backup="$BACKUP_DIR/.config/$sub_dir_name"
             if [ -e "$backup" ]; then
-              echo "Backup already exists for $sub_file_name, skipping..."
+              echo "Backup already exists for $sub_dir_name, skipping..."
             else
-              echo "Moving existing $sub_file_name to $backup"
-              cp -R "$sub_target" "$backup"
+              mkdir -p "$backup"
+              echo "Moving existing $sub_dir_name to $backup"
+              cp -R "$sub_dir_in_home" "$backup"
             fi
           fi
-          rm -rf "$sub_target"
+          rm -rf "$sub_dir_in_home"
         fi
       done
     else
       # Normal files and directories outside .config
-      if [ -e "$target" ]; then
-        if [ -L "$target" ] && [ "$(readlink -f "$target")" == "$dir" ]; then
-          echo "$file_name is already correctly stowed, skipping backup."
+      if [ -e "$dir_in_home" ]; then
+        if [ -L "$dir_in_home" ] && [ "$(readlink -f "$dir_in_home")" == "$dir" ]; then
+          echo "$dir_name is already correctly stowed, skipping backup."
         else
-          if [ ! -e "$BACKUP_DIR" ]; then
-            mkdir -p "$BACKUP_DIR"
-          fi
-          backup="$BACKUP_DIR/$file_name.bkp"
-
+          backup="$BACKUP_DIR/$dir_name"
           if [ -e "$backup" ]; then
-            echo "Backup already exists for $file_name, skipping..."
+            echo "Backup already exists for $dir_name, skipping..."
           else
-            echo "Moving existing $file_name to $backup"
-            cp -R "$target" "$backup"
+            mkdir -p "$BACKUP_DIR"
+            echo "Moving existing $dir_name to $backup"
+            cp -R "$dir_in_home" "$backup"
           fi
         fi
-        rm -rf "$target"
+        rm -rf "$dir_in_home"
       fi
     fi
   done
@@ -150,14 +135,76 @@ install_tmux_plugins() {
 }
 
 setup_silent_boot() {
-  if [ -e /etc/systemd/system/getty@tty1.service.d/autologin.conf ]; then
-    if [ ! -e "$BACKUP_DIR/system" ]; then
-      mkdir "$BACKUP_DIR/system"
-    fi
-    sudo cp /etc/systemd/system/getty@tty1.service.d/autologin.conf "$BACKUP_DIR/system/autologin.bkp"
-    sudo rm -rf /etc/systemd/system/getty@tty1.service.d
+  autologin_dir="/etc/systemd/system/getty@tty1.service.d"
+  autologin_file="$autologin_dir/autologin.conf"
+  autologin_dot="$XIDOTS_DIR/autologin/autologin.conf"
+
+  if [ ! -d autologin_dir ]; then
+    sudo mkdir -p "$autologin_dir"
   fi
-  sudo stow --target=/etc/systemd/system/ --dir="$XIDOTS_DIR" system
+  if [ -e "$autologin_file" ]; then
+    if [ -L "$autologin_file" ] && [ "$(readlink -f "$autologin_file")" == "$autologin_dot" ]; then
+      echo "autologin.conf is already correctly stowed, skipping backup."
+    else
+      backup="$BACKUP_DIR/autologin"
+      if [ -e "$backup" ]; then
+        echo "Backup already exists for autologin.conf, skipping..."
+      else
+        mkdir -p "$BACKUP_DIR"
+        echo "Moving existing autologin.conf to $backup"
+        sudo cp "$autologin_file" "$backup"
+      fi
+    fi
+    sudo rm -rf "$autologin_file"
+  fi
+  sudo stow --target="$autologin_dir" --dir="$XIDOTS_DIR" autologin
+}
+
+setup_telegram_material_theme() {
+  walogram_dir="/usr/share/walogram"
+  walogram_file="$walogram_dir/constants.tdesktop-theme"
+  walogram_dot="$XIDOTS_DIR/telegram/constants.tdesktop-theme"
+
+  if [ ! -d walogram_dir ]; then
+    sudo mkdir -p "$walogram_dir"
+  fi
+  if [ -e "$walogram_file" ]; then
+    if [ -L "$walogram_file" ] && [ "$(readlink -f "$walogram_file")" == "$walogram_dot" ]; then
+      echo "constants.tdesktop-theme is already correctly stowed, skipping backup."
+    else
+      backup="$BACKUP_DIR/telegram"
+      if [ -e "$backup" ]; then
+        echo "Backup already exists for constants.tdesktop-theme, skipping..."
+      else
+        mkdir -p "$BACKUP_DIR"
+        echo "Moving existing constants.tdesktop-theme to $backup"
+        sudo cp "$walogram_file" "$backup"
+      fi
+    fi
+    sudo rm -rf "$walogram_file"
+  fi
+  sudo stow --target="$walogram_dir" --dir="$XIDOTS_DIR" telegram
+}
+
+setup_kanata() {
+  if getent group uinput >/dev/null 2>&1; then
+    sudo groupadd --system uinput
+  fi
+
+  sudo usermod -aG input "$USER"
+  sudo usermod -aG uinput "$USER"
+
+  if [ ! -e /etc/udev/rules.d/99-input.rules ]; then
+    sudo touch /etc/udev/rules.d/99-input.rules
+    echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules
+  fi
+
+  sudo udevadm control --reload-rules && sudo udevadm trigger
+
+  sudo modprobe uinput
+
+  systemctl --user daemon-reload
+  systemctl --user enable --now kanata.service
 }
 
 enable_bluetooth() {
@@ -169,7 +216,7 @@ if [ "$(id -u)" -eq 0 ]; then
   exit 1
 fi
 
-clone_repo
+sync_repo
 install_aur_helper
 install_packages
 install_personal_packages
@@ -177,5 +224,5 @@ stow_dots
 install_npm
 install_tmux_plugins
 setup_silent_boot
-install_wallpapers
+sync_wallpapers
 enable_bluetooth
