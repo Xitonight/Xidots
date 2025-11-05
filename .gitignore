@@ -30,3 +30,11 @@ dots/.config/pulse
 dots/.config/yay
 
 dots/.config/nvim/pack
+
+# Zen
+dots/.zen/xitonight/**
+!dots/.zen/xitonight
+!dots/.zen/xitonight/zen-keyboard-shortcuts.json
+!dots/.zen/xitonight/user.js
+!dots/.zen/xitonight/chrome
+!dots/.zen/xitonight/search.json.mozlz4
