@@ -14,7 +14,7 @@ uwsm
 wget
 zsh
 
-# --------------------------------------------- Bluetooth
+# --------------------------------------------- BLUETOOTH
 bluetui
 bluez
 bluez-utils
@@ -25,7 +25,7 @@ pipewire-alsa
 pipewire-pulse
 pulsemixer
 
-# ---------------------------------------------- WM
+# --------------------------------------------- WM
 hypridle
 hyprland
 hyprlock
