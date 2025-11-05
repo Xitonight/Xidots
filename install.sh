@@ -219,10 +219,11 @@ fi
 sync_repo
 install_aur_helper
 install_packages
-install_personal_packages
 stow_dots
 install_npm
 install_tmux_plugins
 setup_silent_boot
+setup_telegram_material_theme
+setup_kanata
 sync_wallpapers
 enable_bluetooth
