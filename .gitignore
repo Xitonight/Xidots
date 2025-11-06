@@ -37,4 +37,5 @@ dots/.zen/**
 !dots/.zen/xitonight/zen-keyboard-shortcuts.json
 !dots/.zen/xitonight/user.js
 !dots/.zen/xitonight/chrome
+dots/.zen/xitonight/chrome/zen-themes.css
 !dots/.zen/xitonight/search.json.mozlz4
