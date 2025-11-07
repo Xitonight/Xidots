@@ -29,6 +29,7 @@ dots/.config/Bitwarden
 dots/.config/pulse
 dots/.config/yay
 
+# Nvim copilot files
 dots/.config/nvim/pack
 
 # Zen
@@ -39,3 +40,6 @@ dots/.zen/**
 !dots/.zen/xitonight/chrome
 dots/.zen/xitonight/chrome/zen-themes.css
 !dots/.zen/xitonight/search.json.mozlz4
+
+# ~/.local i have no clue how it got in the dots folder
+dots/.local
