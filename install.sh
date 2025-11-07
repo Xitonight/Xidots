@@ -70,6 +70,8 @@ install_npm() {
 }
 
 stow_dots() {
+  # kill zen to prevent overwriting of files
+  killall zen-bin
   shopt -s dotglob nullglob
 
   for dir in "$DOTS_DIR"/*; do
