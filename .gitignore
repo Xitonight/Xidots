@@ -34,6 +34,7 @@ dots/.config/nvim/pack
 
 # Zen
 dots/.zen/**
+!dots/.zen/profiles.ini
 !dots/.zen/xitonight
 !dots/.zen/xitonight/zen-keyboard-shortcuts.json
 !dots/.zen/xitonight/user.js
