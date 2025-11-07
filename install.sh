@@ -56,7 +56,7 @@ sync_wallpapers() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed -
+  grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed --norebuild -
 }
 
 install_npm() {
