@@ -59,7 +59,7 @@ M.type = "dark"
 M.polish_hl = {
 	defaults = {
 		Comment = {
-			italic = true,
+			italic = false,
 			fg = M.base_16.base03,
 		},
 	},
