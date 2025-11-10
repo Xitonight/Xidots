@@ -12,7 +12,7 @@ windowBoldFg: colorLighter7_20;
 windowBoldFgOver: colorLighter7_40;                          
 windowBgActive: color2;                                      
 windowFgActive: color1;                            
-windowActiveTextFg: color10;                                  
+windowActiveTextFg: color3; // lolll
 windowShadowFg: color0;                                      
 windowShadowFgFallback: windowBg;                            
 
