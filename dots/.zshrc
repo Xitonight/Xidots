@@ -87,6 +87,8 @@ zstyle ':fzf-tab:complete:git-(commit|add|diff|restore):*' fzf-preview \
 	'git diff $realpath | delta --syntax-theme=base16'
 
 # Aliases
+alias aurora='for code in {000..18}; do print -P -- "$code: %F{$code}Color%f"; done'
+
 alias l='eza -lh --icons=auto' # long list
 alias ls='eza --icons=auto' # short list
 alias la='eza -A --icons=auto' # short list
