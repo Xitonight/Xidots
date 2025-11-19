@@ -117,11 +117,33 @@ return {
   },
 
   {
-    "windwp/nvim-ts-autotag",
-    lazy = false,
-    event = { "BufWritePre", "BufNewFile" },
-    opts = {},
-  },
+    "epwalsh/obsidian.nvim",
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    -- event = {
+    --   "BufReadPre " .. vim.fn.expand "~" .. "Documents/Notes/Uni/*.md",
+    --   "BufNewFile " .. vim.fn.expand "~" .. "Documents/Notes/Uni/*.md",
+    -- },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "Uni",
+          path = "~/Documents/Notes/Uni",
+        },
+      },
+    },
 
-  { "mistricky/codesnap.nvim", build = "make build_generator", lazy = false },
+    {
+      "windwp/nvim-ts-autotag",
+      lazy = false,
+      event = { "BufWritePre", "BufNewFile" },
+      opts = {},
+    },
+
+    { "mistricky/codesnap.nvim", build = "make build_generator", lazy = false },
+  },
 }
