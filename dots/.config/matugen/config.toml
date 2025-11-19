@@ -6,7 +6,7 @@ kitty = true
 gtk_theme = true
 
 [config.wallpaper]
-command = "swww"
+command = "awww"
 arguments = [
   "img",
   "-t",
