@@ -84,6 +84,9 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     ft = { "markdown", "quarto" },
+    opts = {
+      sign = { enabled = false },
+    },
   },
 
   {
@@ -120,11 +123,10 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
-    ft = "markdown",
-    -- event = {
-    --   "BufReadPre " .. vim.fn.expand "~" .. "Documents/Notes/Uni/*.md",
-    --   "BufNewFile " .. vim.fn.expand "~" .. "Documents/Notes/Uni/*.md",
-    -- },
+    event = {
+      "BufReadPre " .. vim.fn.expand "~" .. "Documents/Notes/Uni/*.md",
+      "BufNewFile " .. vim.fn.expand "~" .. "Documents/Notes/Uni/*.md",
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -136,14 +138,13 @@ return {
         },
       },
     },
-
-    {
-      "windwp/nvim-ts-autotag",
-      lazy = false,
-      event = { "BufWritePre", "BufNewFile" },
-      opts = {},
-    },
-
-    { "mistricky/codesnap.nvim", build = "make build_generator", lazy = false },
   },
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    event = { "BufWritePre", "BufNewFile" },
+    opts = {},
+  },
+
+  { "mistricky/codesnap.nvim", build = "make build_generator", lazy = false },
 }
