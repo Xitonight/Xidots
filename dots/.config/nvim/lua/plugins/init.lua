@@ -147,4 +147,18 @@ return {
   },
 
   { "mistricky/codesnap.nvim", build = "make build_generator", lazy = false },
+
+  {
+    "folke/zen-mode.nvim",
+    lazy = false,
+    opts = {
+      plugins = {
+        tmux = { enabled = true },
+        kitty = {
+          enabled = true,
+          font = "+4", -- font size increment
+        },
+      },
+    },
+  },
 }
