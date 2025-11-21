@@ -1,7 +1,7 @@
 ---
 description: Harshly analyzes codebases for improvements and best practices
 mode: subagent
-model: anthropic/claude-haiku-4-5
+model: google/gemini-2.5-pro
 temperature: 0.1
 tools:
   read: true
