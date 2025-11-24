@@ -23,7 +23,7 @@ You will be provided with the output of `git diff --cached --name-status` to see
 1.  **Identify the Type:** Based on the changes, determine the primary type of the commit. The most common types are:
     - `feat`: A new feature for the user.
     - `fix`: A bug fix for the user.
-    - `chore`: Routine tasks, maintenance, or changes to the build process, dependencies, or tooling. No production code changes.
+    - `chore`: Routine tasks, maintenance, or changes to the build process, _dependencies_, or tooling. No production code changes.
     - `docs`: Changes to documentation only.
     - `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
     - `refactor`: A code change that neither fixes a bug nor adds a feature.
