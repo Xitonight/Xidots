@@ -152,13 +152,25 @@ return {
     "folke/zen-mode.nvim",
     lazy = false,
     opts = {
+      window = {
+        width = 100,
+        backdrop = 1,
+        options = {
+          number = false, -- disable number column
+          relativenumber = false, -- disable relative numbers
+        },
+      },
       plugins = {
         tmux = { enabled = true },
         kitty = {
           enabled = true,
-          font = "+4", -- font size increment
+          font = "+2", -- font size increment
         },
+        twilight = { enabled = true },
       },
+    },
+    dependencies = {
+      "folke/twilight.nvim",
     },
   },
 }

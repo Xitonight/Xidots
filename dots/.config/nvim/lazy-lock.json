@@ -32,6 +32,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "6e0e8902dac70fecbdd8ce557d142062a621ec38" },
   "screenkey.nvim": { "branch": "main", "commit": "16390931d847b1d5d77098daccac4e55654ac9e2" },
   "telescope.nvim": { "branch": "master", "commit": "83a3a713d6b2d2a408491a1b959e55a7fa8678e8" },
+  "twilight.nvim": { "branch": "main", "commit": "664e752f4a219801265cc3fc18782b457b58c1e1" },
   "ui": { "branch": "v3.0", "commit": "bea2af0a76c1098fac0988ad296aa028cad2a333" },
   "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" },
   "vimtex": { "branch": "master", "commit": "32bcb3922c20588e00de68f73c86312eda2141ad" },

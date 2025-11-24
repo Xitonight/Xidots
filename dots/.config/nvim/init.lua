@@ -48,6 +48,30 @@ os.execute "python ~/.config/nvim/pywal/chadwal.py &> /dev/null &"
 
 local autocmd = vim.api.nvim_create_autocmd
 
+-- Reset kitty font size on leave
+-- Useful when quitting in zen-mode
+autocmd("VimLeave", {
+  pattern = "*",
+  callback = function()
+    local listen_on = os.getenv "KITTY_LISTEN_ON"
+    if listen_on then
+      vim.fn.jobstart({
+        "kitty",
+        "@",
+        "--to",
+        listen_on,
+        "set-font-size",
+        "0",
+      }, { detach = true })
+    end
+  end,
+})
+
+autocmd("VimLeave", {
+  pattern = "*",
+  command = "silent !tmux set status on",
+})
+
 autocmd("Signal", {
   pattern = "SIGUSR1",
   callback = function()
