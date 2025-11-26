@@ -27,10 +27,10 @@ install_aur_helper() {
   AUR_HELPER=""
   if command -v yay &>/dev/null; then
     AUR_HELPER="yay"
-    echo $AUR_HELPER
+    echo "$AUR_HELPER"
   elif command -v paru &>/dev/null; then
     AUR_HELPER="paru"
-    echo $AUR_HELPER
+    echo "$AUR_HELPER"
   else
     echo "Installing yay-bin..."
     TMPDIR=$(mktemp -d)
@@ -70,7 +70,10 @@ sync_wallpapers() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $AUR_HELPER -Syy --noconfirm --needed --norebuild -
+  if ! grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | "$AUR_HELPER" -Syy --noconfirm --needed --norebuild -; then
+    echo "Failed to install packages." >&2
+    exit 1
+  fi
 }
 
 install_npm() {
@@ -128,7 +131,10 @@ stow_dots() {
   done
 
   echo "Stowing dotfiles in $HOME"
-  stow --target="$HOME" --dir="$XIDOTS_DIR" dots
+  if ! stow --target="$HOME" --dir="$XIDOTS_DIR" dots; then
+    echo "Failed to stow dotfiles." >&2
+    exit 1
+  fi
 }
 
 install_tmux_plugins() {
@@ -139,10 +145,10 @@ install_tmux_plugins() {
 }
 
 create_backup() {
-  local target=$1
-  local backup=$2
-  local name=$3
-  local use_sudo=${4:-}
+  local target="$1"
+  local backup="$2"
+  local name="$3"
+  local use_sudo="${4:-}"
 
   # Check if a backup already exists
   if [ -e "$backup" ]; then
@@ -179,7 +185,10 @@ setup_silent_boot() {
     fi
     sudo rm -rf "$autologin_file"
   fi
-  sudo stow --target="$autologin_dir" --dir="$XIDOTS_DIR" autologin
+  if ! sudo stow --target="$autologin_dir" --dir="$XIDOTS_DIR" autologin; then
+    echo "Failed to stow autologin files." >&2
+    exit 1
+  fi
 }
 
 setup_telegram_material_theme() {
@@ -199,7 +208,10 @@ setup_telegram_material_theme() {
     fi
     sudo rm -rf "$walogram_file"
   fi
-  sudo stow --target="$walogram_dir" --dir="$XIDOTS_DIR" telegram
+  if ! sudo stow --target="$walogram_dir" --dir="$XIDOTS_DIR" telegram; then
+    echo "Failed to stow telegram theme files." >&2
+    exit 1
+  fi
 }
 
 setup_kanata() {
