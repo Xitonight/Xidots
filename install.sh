@@ -10,31 +10,45 @@ WALLPAPERS_DIR="$HOME/Pictures/Wallpapers/"
 WALLPAPERS_REPO_URL="https://github.com/Xitonight/Papers"
 DOTS_DIR="$XIDOTS_DIR/dots/"
 REPO_URL="https://github.com/Xitonight/Xidots"
+LOCAL_INSTALL=false
+
+# Parse command-line arguments
+for arg in "$@"; do
+  if [ "$arg" == "--local" ]; then
+    LOCAL_INSTALL=true
+    break
+  fi
+done
 
 install_aur_helper() {
   if ! command -v git &>/dev/null; then
     sudo pacman -Sy git
   fi
-  aur_helper=""
+  AUR_HELPER=""
   if command -v yay &>/dev/null; then
-    aur_helper="yay"
-    echo $aur_helper
+    AUR_HELPER="yay"
+    echo $AUR_HELPER
   elif command -v paru &>/dev/null; then
-    aur_helper="paru"
-    echo $aur_helper
+    AUR_HELPER="paru"
+    echo $AUR_HELPER
   else
     echo "Installing yay-bin..."
-    tmpdir=$(mktemp -d)
-    git clone https://aur.archlinux.org/yay-bin.git "$tmpdir/yay-bin"
-    cd "$tmpdir/yay-bin"
+    TMPDIR=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay-bin.git "$TMPDIR/yay-bin"
+    cd "$TMPDIR/yay-bin"
     makepkg -si --noconfirm
     cd - >/dev/null
-    rm -rf "$tmpdir"
-    aur_helper="yay"
+    rm -rf "$TMPDIR"
+    AUR_HELPER="yay"
   fi
 }
 
 sync_repo() {
+  if [ "$LOCAL_INSTALL" = true ]; then
+    echo "Skipping repository synchronization for local installation."
+    return
+  fi
+
   if [ -d "$XIDOTS_DIR" ]; then
     echo "Updating dotfiles..."
     git -C "$XIDOTS_DIR" pull
@@ -56,7 +70,7 @@ sync_wallpapers() {
 
 install_packages() {
   echo "Installing required packages..."
-  grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $aur_helper -Syy --noconfirm --needed --norebuild -
+  grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | $AUR_HELPER -Syy --noconfirm --needed --norebuild -
 }
 
 install_npm() {
@@ -77,7 +91,6 @@ stow_dots() {
   shopt -s dotglob nullglob
 
   for dir in "$DOTS_DIR"/*; do
-    # E.g. if dir is "$DOTS_DIR/.config", file_name will be ".config"
     dir_name=$(basename "$dir")
     dir_in_home="$HOME/$dir_name"
 
@@ -87,7 +100,6 @@ stow_dots() {
 
       # Iterate through each subdirectory in .config
       for sub_dir in "$DOTS_DIR/.config"/*; do
-        # E.g. if sub_dir is "$DOTS_DIR/.config/someapp", sub_file_name will be "someapp"
         sub_dir_name=$(basename "$sub_dir")
         sub_dir_in_home="$dir_in_home/$sub_dir_name"
 
@@ -96,13 +108,7 @@ stow_dots() {
             echo "$sub_dir_name is already correctly stowed, skipping backup."
           else
             backup="$BACKUP_DIR/.config/$sub_dir_name"
-            if [ -e "$backup" ]; then
-              echo "Backup already exists for $sub_dir_name, skipping..."
-            else
-              mkdir -p "$backup"
-              echo "Moving existing $sub_dir_name to $backup"
-              cp -R "$sub_dir_in_home" "$backup"
-            fi
+            create_backup "$sub_dir_in_home" "$backup" "$sub_dir_name"
           fi
           rm -rf "$sub_dir_in_home"
         fi
@@ -114,13 +120,7 @@ stow_dots() {
           echo "$dir_name is already correctly stowed, skipping backup."
         else
           backup="$BACKUP_DIR/$dir_name"
-          if [ -e "$backup" ]; then
-            echo "Backup already exists for $dir_name, skipping..."
-          else
-            mkdir -p "$BACKUP_DIR"
-            echo "Moving existing $dir_name to $backup"
-            cp -R "$dir_in_home" "$backup"
-          fi
+          create_backup "$dir_in_home" "$backup" "$dir_name"
         fi
         rm -rf "$dir_in_home"
       fi
@@ -138,12 +138,36 @@ install_tmux_plugins() {
   fi
 }
 
+create_backup() {
+  local target=$1
+  local backup=$2
+  local name=$3
+  local use_sudo=${4:-}
+
+  # Check if a backup already exists
+  if [ -e "$backup" ]; then
+    echo "Backup already exists for $name, skipping..."
+    return
+  fi
+
+  # Create the backup directory and copy the files
+  if [ "$use_sudo" == "sudo" ]; then
+    sudo mkdir -p "$(dirname "$backup")"
+    echo "Backing up existing $name to $backup..."
+    sudo cp -R "$target" "$backup"
+  else
+    mkdir -p "$(dirname "$backup")"
+    echo "Backing up existing $name to $backup..."
+    cp -R "$target" "$backup"
+  fi
+}
+
 setup_silent_boot() {
   autologin_dir="/etc/systemd/system/getty@tty1.service.d"
   autologin_file="$autologin_dir/autologin.conf"
   autologin_dot="$XIDOTS_DIR/autologin/autologin.conf"
 
-  if [ ! -d autologin_dir ]; then
+  if [ ! -d "$autologin_dir" ]; then
     sudo mkdir -p "$autologin_dir"
   fi
   if [ -e "$autologin_file" ]; then
@@ -151,13 +175,7 @@ setup_silent_boot() {
       echo "autologin.conf is already correctly stowed, skipping backup."
     else
       backup="$BACKUP_DIR/autologin"
-      if [ -e "$backup" ]; then
-        echo "Backup already exists for autologin.conf, skipping..."
-      else
-        mkdir -p "$BACKUP_DIR"
-        echo "Moving existing autologin.conf to $backup"
-        sudo cp "$autologin_file" "$backup"
-      fi
+      create_backup "$autologin_file" "$backup" "autologin.conf" "sudo"
     fi
     sudo rm -rf "$autologin_file"
   fi
@@ -169,7 +187,7 @@ setup_telegram_material_theme() {
   walogram_file="$walogram_dir/constants.tdesktop-theme"
   walogram_dot="$XIDOTS_DIR/telegram/constants.tdesktop-theme"
 
-  if [ ! -d walogram_dir ]; then
+  if [ ! -d "$walogram_dir" ]; then
     sudo mkdir -p "$walogram_dir"
   fi
   if [ -e "$walogram_file" ]; then
@@ -177,13 +195,7 @@ setup_telegram_material_theme() {
       echo "constants.tdesktop-theme is already correctly stowed, skipping backup."
     else
       backup="$BACKUP_DIR/telegram"
-      if [ -e "$backup" ]; then
-        echo "Backup already exists for constants.tdesktop-theme, skipping..."
-      else
-        mkdir -p "$BACKUP_DIR"
-        echo "Moving existing constants.tdesktop-theme to $backup"
-        sudo cp "$walogram_file" "$backup"
-      fi
+      create_backup "$walogram_file" "$backup" "constants.tdesktop-theme" "sudo"
     fi
     sudo rm -rf "$walogram_file"
   fi
@@ -191,8 +203,20 @@ setup_telegram_material_theme() {
 }
 
 setup_kanata() {
-  sudo groupdel uinput
-  sudo groupadd --system uinput
+  # Ensure the uinput group exists and is a system group (GID < 1000)
+  if getent group uinput >/dev/null; then
+    UINPUT_GID=$(getent group uinput | cut -d: -f3)
+    if [ "$UINPUT_GID" -ge 1000 ]; then
+      echo "uinput group exists but is not a system group. Recreating..."
+      sudo groupdel uinput
+      sudo groupadd --system uinput
+    else
+      echo "uinput system group already exists."
+    fi
+  else
+    echo "Creating uinput system group..."
+    sudo groupadd --system uinput
+  fi
 
   sudo usermod -aG input "$USER"
   sudo usermod -aG uinput "$USER"
