@@ -29,10 +29,11 @@ print_header() {
 
 install_aur_helper() {
   print_header "
-  _   _   _
- / \\ / \\ / \\
-( A | U | R )
- \\_/ \\_/ \\_/
+   _    _   _____
+  / \\  | | |  _  \\
+ / _ \\ | | | | | |
+/ ___ \\| | | | | |
+/_/   \\_\\_| |_| |_|
 " "Setting up AUR helper..."
   if ! command -v git &>/dev/null; then
     sudo pacman -Sy git
@@ -58,10 +59,12 @@ install_aur_helper() {
 
 sync_repo() {
   print_header "
-  _   _   _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\ / \\ / \\
-( S | y | n | c | i | n | g )
- \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/
+ _____                 _   _
+/  ___|               (_) | |
+\\ `--. _   _ _ __   ___ _  | |
+ `--. \\ | | | '_ \\ / __| | | |
+/\\__/ / |_| | | | | (__| | |_|
+\\____/ \\__,_|_| |_|\\___|_| (_)
 " "Syncing Xidots repository..."
   if [ "$LOCAL_INSTALL" = true ]; then
     echo "Skipping repository synchronization for local installation."
@@ -79,10 +82,12 @@ sync_repo() {
 
 sync_wallpapers() {
   print_header "
-  _   _   _   _   _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\
-( W | a | l | l | p | a | p | e | r )
- \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/
+ _    _                 _
+| |  | |               | |
+| |  | | __ _ _ __   __| |
+| |/\\| |/ _\` | '_ \\ / _\` |
+\\  /\\  / (_| | | | | (_| |
+ \\/  \\/ \\__,_|_| |_|\\__,_|
 " "Syncing wallpapers..."
   if [ -d "$WALLPAPERS_DIR" ]; then
     echo "Updating wallpapers..."
@@ -95,10 +100,12 @@ sync_wallpapers() {
 
 install_packages() {
   print_header "
-  _   _   _   _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\
-( P | a | c | k | a | g | e | s )
- \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/
+______               _
+| ___ \\             | |
+| |_/ / __ _ ___  __| |
+|  __/ / _\` / __|/ _\` |
+| |   | (_| \\__ \\ (_| |
+\\_|    \\__,_|___/\\__,_|
 " "Installing packages..."
   if ! grep -v '^$' "$XIDOTS_DIR"/requirements.lst | sed '/^#/d' | "$AUR_HELPER" -Syy --noconfirm --needed --norebuild -; then
     echo "Failed to install packages." >&2
@@ -108,10 +115,12 @@ install_packages() {
 
 install_npm() {
   print_header "
-  _   _   _
- / \\ / \\ / \\
-( N | P | M )
- \\_/ \\_/ \\_/
+ _   _ __  __
+| \\ | |  \\/  |
+|  \\| | \\  / |
+| . \` | |\\/| |
+| |\\  | |  | |
+|_| \\_|_|  |_|
 " "Setting up Node.js environment..."
   source /usr/share/nvm/init-nvm.sh
   if command -v npm &>/dev/null; then
@@ -124,10 +133,12 @@ install_npm() {
 
 stow_dots() {
   print_header "
-  _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\
-( D | o | t | f | s )
- \\_/ \\_/ \\_/ \\_/ \\_/
+ ____        _       _
+|  _ \\      | |     | |
+| | | | ___ | |_ ___| |
+| | | |/ _ \\| __/ _ \\ |
+| |/ /| (_) | ||  __/_|
+|___/  \\___/ \\__\\___(_)
 " "Stowing dotfiles..."
   # kill zen to prevent overwriting of files
   if pgrep -x "zen-bin" >/dev/null; then
@@ -181,10 +192,12 @@ stow_dots() {
 
 install_tmux_plugins() {
   print_header "
-  _   _   _   _
- / \\ / \\ / \\ / \\
-( T | M | U | X )
- \\_/ \\_/ \\_/ \\_/
+_______ __  __  _____
+|__   __|  \\/  |/ ____|
+   | |  | \\  / | (___
+   | |  | |\\/| |\\___ \\
+   | |  | |  | |____) |
+   |_|  |_|  |_|_____/
 " "Installing tmux plugins..."
   if [[ ! -d ~/.tmux/plugins/tpm ]]; then
     echo "TPM is not installed. Installing right now..."
@@ -218,10 +231,12 @@ create_backup() {
 
 setup_silent_boot() {
   print_header "
-  _   _   _   _
- / \\ / \\ / \\ / \\
-( B | o | o | t )
- \\_/ \\_/ \\_/ \\_/
+ ____              _
+|  _ \\            | |
+| |_) | ___   ___ | |_
+|  _ < / _ \\ / _ \\| __|
+| |_) | (_) | (_) | |_
+|____/ \\___/ \\___/ \\__|
 " "Configuring silent boot..."
   autologin_dir="/etc/systemd/system/getty@tty1.service.d"
   autologin_file="$autologin_dir/autologin.conf"
@@ -247,10 +262,12 @@ setup_silent_boot() {
 
 setup_telegram_material_theme() {
   print_header "
-  _   _   _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\ / \\ / \\
-( T | h | e | m | e | i | n )
- \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/
+_______ _               _
+|__   __| |             (_)
+   | |  | |__   ___ _ __ _
+   | |  | '_ \\ / _ \\ '__| |
+   | |  | | | |  __/ |  | |
+   |_|  |_| |_|\\___|_|  |_|
 " "Setting up Telegram theme..."
   walogram_dir="/usr/share/walogram"
   walogram_file="$walogram_dir/constants.tdesktop-theme"
@@ -276,10 +293,12 @@ setup_telegram_material_theme() {
 
 setup_kanata() {
   print_header "
-  _   _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\ / \\
-( K | a | n | a | t | a )
- \\_/ \\_/ \\_/ \\_/ \\_/ \\_/
+ _  __      _
+| |/ /     | |
+| ' / __ _| |_ __ _
+|  < / _\` | | '__| |
+| . \\ (_| | | |  | |
+|_|\\_\\__,_|_|_|  |_|
 " "Configuring Kanata..."
   # Ensure the uinput group exists and is a system group (GID < 1000)
   if getent group uinput >/dev/null; then
@@ -314,10 +333,12 @@ setup_kanata() {
 
 enable_bluetooth() {
   print_header "
-  _   _   _   _   _   _   _   _   _
- / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\
-( B | l | u | e | t | o | o | t | h )
- \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/
+ ____  _                 _   _
+|  _ \\| |               | | | |
+| |_) | | ___  _   _  __| | | |
+|  _ <| |/ _ \\| | | |/ _\` | | |
+| |_) | | (_) | |_| | (_| | |_|
+|____/|_|\\___/ \\__,_|\\__,_| (_)
 " "Enabling Bluetooth..."
   systemctl enable --now bluetooth.service
 }
