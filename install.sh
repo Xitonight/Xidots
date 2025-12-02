@@ -124,9 +124,8 @@ install_npm() {
   source /usr/share/nvm/init-nvm.sh
   if command -v npm &>/dev/null; then
     echo "Installing node / npm..."
-    nvm install node
-    nvm install --lts
-    nvm use node
+    nvm install lts/jod
+    nvm use lts/jod
   fi
 }
 
