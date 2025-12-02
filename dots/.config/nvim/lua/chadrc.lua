@@ -18,7 +18,7 @@ M.mason = {
 
 M.ui = {
   tabufline = {
-    enabled = true,
+    enabled = false,
     order = { "buffers", "treeOffset" },
   },
   cmp = {
@@ -27,7 +27,7 @@ M.ui = {
   },
   telescope = { style = "bordered" },
   statusline = {
-    theme = "default",
+    theme = "minimal",
     separator_style = "round",
     order = { "mode", "file", "diagnostics", "%=", "lsp_msg", "%=", "cwd" },
   },
