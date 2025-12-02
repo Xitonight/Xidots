@@ -9,6 +9,7 @@ openssh
 playerctl
 plymouth
 polkit-gnome
+reflector
 rsync
 stow
 uwsm
