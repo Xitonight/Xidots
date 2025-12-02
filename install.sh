@@ -127,6 +127,8 @@ install_npm() {
     nvm install lts/jod
     nvm use lts/jod
   fi
+  # Install pnpm globally
+  npm install -g pnpm@latest
 }
 
 stow_dots() {
