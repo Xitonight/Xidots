@@ -29,8 +29,9 @@ dots/.config/Bitwarden
 dots/.config/pulse
 dots/.config/yay
 
-# Nvim copilot files
+# Nvim stuff
 dots/.config/nvim/pack
+dots/.config/nvim/lazy-lock.json
 
 # Zen
 dots/.zen/**
