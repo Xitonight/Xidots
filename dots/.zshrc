@@ -88,6 +88,7 @@ zstyle ':fzf-tab:complete:git-(commit|add|diff|restore):*' fzf-preview \
 
 # Aliases
 alias aurora='for code in {000..18}; do print -P -- "$code: %F{$code}Color%f"; done'
+alias upmirrors='sudo reflector --country IT --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
 
 alias l='eza -lh --icons=auto' # long list
 alias ls='eza --icons=auto' # short list

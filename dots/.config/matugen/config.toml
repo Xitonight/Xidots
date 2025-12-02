@@ -7,7 +7,19 @@ gtk_theme = true
 
 [config.wallpaper]
 command = "awww"
-arguments = [ "img", "-t", "fade", "--transition-duration", "0.5", "--transition-step", "255", "--transition-fps", "60", "-f", "Nearest",]
+arguments = [
+  "img",
+  "-t",
+  "fade",
+  "--transition-duration",
+  "0.5",
+  "--transition-step",
+  "255",
+  "--transition-fps",
+  "60",
+  "-f",
+  "Nearest",
+]
 set = true
 
 [templates.hyprland]
@@ -26,7 +38,7 @@ output_path = "~/.config/kitty/slurp.sh"
 [templates.gtk3]
 input_path = "~/.config/matugen/templates/colors.css"
 output_path = "~/.config/gtk-3.0/colors.css"
-post_hook = "killall swayosd-server; swayosd-server > /dev/null 2>&1 &"
+post_hook = "killall swayosd-server; uwsm-app $(swayosd-server > /dev/null 2>&1 &)"
 
 [templates.gtk4]
 input_path = "~/.config/matugen/templates/colors.css"
