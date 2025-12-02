@@ -88,3 +88,5 @@ map(
 map("n", "zR", require("ufo").openAllFolds)
 map("n", "zM", require("ufo").closeAllFolds)
 map("n", "<leader>zm", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
+
+map("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
