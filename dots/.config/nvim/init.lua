@@ -72,6 +72,11 @@ autocmd("VimLeave", {
   command = "silent !tmux set status on",
 })
 
+autocmd("VimLeave", {
+  pattern = "*",
+  command = "silent !tmux set status 2",
+})
+
 autocmd("Signal", {
   pattern = "SIGUSR1",
   callback = function()
