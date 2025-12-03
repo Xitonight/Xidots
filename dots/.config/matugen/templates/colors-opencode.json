@@ -1,0 +1,223 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "color0": "{{colors.background.default.hex}}",
+    "color1": "{{colors.error.default.hex}}",
+    "color2": "{{colors.primary.default.hex}}",
+    "color3": "{{colors.secondary.default.hex}}",
+    "color4": "{{colors.tertiary.default.hex}}",
+    "color5": "{{colors.magenta.default.hex}}",
+    "color6": "{{colors.cyan.default.hex}}",
+    "color7": "{{colors.on_surface.default.hex}}",
+    "color8": "{{colors.inverse_on_surface.default.hex}}",
+    "color9": "{{colors.error.default.hex}}",
+    "color10": "{{colors.primary.default.hex}}",
+    "color11": "{{colors.secondary.default.hex}}",
+    "color12": "{{colors.tertiary.default.hex}}",
+    "color13": "{{colors.magenta.default.hex}}",
+    "color14": "{{colors.surface_variant.default.hex | set_lightness: 50}}",
+    "color15": "{{colors.on_surface_variant.default.hex}}"
+  },
+  "theme": {
+    "primary": {
+      "dark": "color2",
+      "light": "color2"
+    },
+    "secondary": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "accent": {
+      "dark": "color6",
+      "light": "color6"
+    },
+    "error": {
+      "dark": "color1",
+      "light": "color1"
+    },
+    "warning": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "success": {
+      "dark": "color2",
+      "light": "color2"
+    },
+    "info": {
+      "dark": "color4",
+      "light": "color4"
+    },
+    "text": {
+      "dark": "color7",
+      "light": "color7"
+    },
+    "textMuted": {
+      "dark": "color14",
+      "light": "color14"
+    },
+    "background": {
+      "dark": "color0",
+      "light": "color0"
+    },
+    "backgroundPanel": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "backgroundElement": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "border": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "borderActive": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "borderSubtle": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "diffAdded": {
+      "dark": "color2",
+      "light": "color2"
+    },
+    "diffRemoved": {
+      "dark": "color1",
+      "light": "color1"
+    },
+    "diffContext": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "diffHunkHeader": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "diffHighlightAdded": {
+      "dark": "color2",
+      "light": "color2"
+    },
+    "diffHighlightRemoved": {
+      "dark": "color1",
+      "light": "color1"
+    },
+    "diffAddedBg": {
+      "dark": "#1b3534",
+      "light": "#1b3534"
+    },
+    "diffRemovedBg": {
+      "dark": "#1b3534",
+      "light": "#1b3534"
+    },
+    "diffContextBg": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "diffLineNumber": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "#1b3534",
+      "light": "#1b3534"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "#1b3534",
+      "light": "#1b3534"
+    },
+    "markdownText": {
+      "dark": "color7",
+      "light": "color7"
+    },
+    "markdownHeading": {
+      "dark": "color4",
+      "light": "color4"
+    },
+    "markdownLink": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "markdownLinkText": {
+      "dark": "color6",
+      "light": "color6"
+    },
+    "markdownCode": {
+      "dark": "color2",
+      "light": "color2"
+    },
+    "markdownBlockQuote": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "markdownEmph": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "markdownStrong": {
+      "dark": "color7",
+      "light": "color7"
+    },
+    "markdownHorizontalRule": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "markdownListItem": {
+      "dark": "color4",
+      "light": "color4"
+    },
+    "markdownListEnumeration": {
+      "dark": "color6",
+      "light": "color6"
+    },
+    "markdownImage": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "markdownImageText": {
+      "dark": "color6",
+      "light": "color6"
+    },
+    "markdownCodeBlock": {
+      "dark": "color7",
+      "light": "color7"
+    },
+    "syntaxComment": {
+      "dark": "color8",
+      "light": "color8"
+    },
+    "syntaxKeyword": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "syntaxFunction": {
+      "dark": "color4",
+      "light": "color4"
+    },
+    "syntaxVariable": {
+      "dark": "color6",
+      "light": "color6"
+    },
+    "syntaxString": {
+      "dark": "color2",
+      "light": "color2"
+    },
+    "syntaxNumber": {
+      "dark": "color15",
+      "light": "color15"
+    },
+    "syntaxType": {
+      "dark": "color6",
+      "light": "color6"
+    },
+    "syntaxOperator": {
+      "dark": "color3",
+      "light": "color3"
+    },
+    "syntaxPunctuation": {
+      "dark": "color7",
+      "light": "color7"
+    }
+  }
+}
