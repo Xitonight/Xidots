@@ -6,15 +6,16 @@ dots/.zsh/fzf_theme
 dots/.config/btop/btop.log
 
 # Matugen generated files
-dots/.config/qt5ct/colors/matugen.conf
-dots/.config/qt6ct/colors/matugen.conf
-dots/.config/hypr/source/colors.conf
+dots/.config/cava
+dots/.config/opencode/themes/matucode.json
 dots/.config/gtk-4.0/colors.css
 dots/.config/gtk-3.0/colors.css
+dots/.config/hypr/source/colors.conf
 dots/.config/kitty/colors.conf
 dots/.config/kitty/slurp.sh
+dots/.config/qt5ct/colors/matugen.conf
+dots/.config/qt6ct/colors/matugen.conf
 dots/.config/zathura/
-dots/.config/cava
 
 # QT
 dots/.config/qt5ct/qss
