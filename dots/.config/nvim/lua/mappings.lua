@@ -2,7 +2,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+map({ "n", "v" }, ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<C-h>", function()
   vim.cmd "TmuxNavigateLeft"
@@ -85,8 +85,6 @@ map(
   '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/luasnippets"})<CR>'
 )
 
-map("n", "zR", require("ufo").openAllFolds)
-map("n", "zM", require("ufo").closeAllFolds)
 map("n", "<leader>zm", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 map("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
