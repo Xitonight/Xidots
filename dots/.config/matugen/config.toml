@@ -38,6 +38,7 @@ output_path = "~/.config/kitty/slurp.sh"
 [templates.opencode]
 input_path = "~/.config/matugen/templates/colors-opencode.json"
 output_path = "~/.config/opencode/themes/matucode.json"
+pre_hook = "if [ ! -d ~/.config/opencode/themes ]; then mkdir ~/.config/opencode/themes fi"
 
 [templates.gtk3]
 input_path = "~/.config/matugen/templates/colors.css"
