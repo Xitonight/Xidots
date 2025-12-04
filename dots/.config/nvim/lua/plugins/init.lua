@@ -40,14 +40,6 @@ return {
   },
 
   {
-    "kevinhwang91/nvim-ufo",
-    dependencies = { "kevinhwang91/promise-async" },
-    config = function()
-      require("ufo").setup()
-    end,
-  },
-
-  {
     "karb94/neoscroll.nvim",
     lazy = false,
     opts = {},
@@ -139,6 +131,8 @@ return {
       },
     },
   },
+
+  -- Autoclose HTML tags
   {
     "windwp/nvim-ts-autotag",
     lazy = false,
@@ -146,8 +140,10 @@ return {
     opts = {},
   },
 
-  { "mistricky/codesnap.nvim", build = "make build_generator", lazy = false },
+  -- Fast code snippets
+  { "mistricky/codesnap.nvim", tag = "v2.0.0-beta.17" },
 
+  -- Zen mode (remove number column, disable tmux statusline, increase font)
   {
     "folke/zen-mode.nvim",
     lazy = false,
@@ -174,13 +170,7 @@ return {
     },
   },
 
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   config = function()
-  --     vim.notify = require "notify"
-  --   end,
-  -- },
-
+  -- File manager
   {
     "stevearc/oil.nvim",
     ---@module 'oil'
@@ -203,7 +193,7 @@ return {
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
       },
       -- Set to false to disable all of the above keymaps
-      use_default_keymaps = yes,
+      use_default_keymaps = false,
     },
     -- Optional dependencies
     dependencies = {
@@ -214,7 +204,7 @@ return {
     lazy = false,
   },
 
-  -- lazy.nvim
+  -- UI enhancer (floating cmdline, notifications)
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -233,7 +223,7 @@ return {
         command_palette = false, -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = true, -- add a border to hover docs and signature help
+        lsp_doc_border = false, -- add a border to hover docs and signature help
       },
     },
     dependencies = {
@@ -242,7 +232,7 @@ return {
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
     },
   },
 }
