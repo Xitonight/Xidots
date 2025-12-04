@@ -41,12 +41,12 @@ install_aur_helper() {
   AUR_HELPER=""
   if command -v yay &>/dev/null; then
     AUR_HELPER="yay"
-    echo "$AUR_HELPER"
+    echo "Detected AUR helper: $AUR_HELPER"
   elif command -v paru &>/dev/null; then
     AUR_HELPER="paru"
-    echo "$AUR_HELPER"
+    echo "Detected AUR helper: $AUR_HELPER"
   else
-    echo "Installing yay-bin..."
+    echo "No AUR helper detected. Installing yay-bin..."
     TMPDIR=$(mktemp -d)
     git clone https://aur.archlinux.org/yay-bin.git "$TMPDIR/yay-bin"
     cd "$TMPDIR/yay-bin"
