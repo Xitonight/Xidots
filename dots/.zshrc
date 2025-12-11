@@ -3,8 +3,8 @@ export XIDOTS_DIR="/home/xitonight/.xidots"
 if [ -z $SSH_CONNECTION ]; then
     if ! tmux has-session -t "main" 2> /dev/null; then
         tmux new-session -d -s "main" -n "main"
-        tmux neww -n "yay" -t "main:2" 2> /dev/null
-        tmux neww -n "ssh" -t "main:3" 2> /dev/null
+        tmux neww -n "ssh" -t "main:2" 2> /dev/null
+        tmux split-window -t main:2 -h
         tmux neww -d  -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
     fi
     if [ -z $TMUX ]; then
