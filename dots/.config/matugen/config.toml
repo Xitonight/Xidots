@@ -23,8 +23,8 @@ arguments = [
 set = true
 
 [templates.hyprland]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
-output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
+input_path = "~/.config/matugen/templates/colors-hyprland.conf"
+output_path = "~/.config/hypr/source/colors.conf"
 
 [templates.kitty]
 input_path = "~/.config/matugen/templates/colors-kitty.conf"

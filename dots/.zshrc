@@ -189,3 +189,6 @@ export MATUVIM_DIR="/home/xitonight/.matuvim"
 
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
+
+# Created by `pipx` on 2026-02-02 13:49:49
+export PATH="$PATH:/home/xitonight/.local/bin"
