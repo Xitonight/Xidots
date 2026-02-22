@@ -7,12 +7,10 @@ mpv
 networkmanager
 openssh
 playerctl
-plymouth
 polkit-gnome
 reflector
 rsync
 stow
-uwsm
 wget
 zsh
 
@@ -28,13 +26,9 @@ pipewire-pulse
 pulsemixer
 
 # --------------------------------------------- WM
-hypridle
 hyprland
-hyprlock
 hyprpicker
-hyprshot
-swayosd-git
-swww
+awww-git
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 
@@ -74,9 +68,6 @@ opencode-bin
 scrcpy
 tailscale
 telegram-desktop
-tesseract
-tesseract-data-eng
-tesseract-data-ita
 walogram-git
 yazi
 zathura
