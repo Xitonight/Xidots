@@ -9,6 +9,8 @@ dots/.config/btop/btop.log
 dots/.config/cava
 dots/.config/opencode/themes/matucode.json
 dots/.config/gtk-4.0/colors.css
+dots/.config/gtk-3.0/gtk.css
+dots/.themes/AxMat/gtk-4.0/gtk.css
 dots/.config/gtk-3.0/colors.css
 dots/.config/hypr/source/colors.conf
 dots/.config/kitty/colors.conf
