@@ -1,17 +1,32 @@
 export XIDOTS_DIR="/home/xitonight/.xidots"
 
 if [ -z $SSH_CONNECTION ]; then
-    if ! tmux has-session -t "main" 2> /dev/null; then
-        tmux new-session -d -s "main" -n "main"
-        tmux neww -n "ssh" -t "main:2" 2> /dev/null
-        tmux split-window -t main:2 -h
-        tmux neww -d  -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
+  # create the session if it doesn't exist
+  if ! tmux has-session -t "main" 2> /dev/null; then
+    # create session and windows
+    tmux new-session -d -s "main" -n "main"
+    tmux neww -d -t "main:2" -n "ssh" 2> /dev/null
+    tmux neww -d  -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
+
+    # split "conf" and "ssh" windows horizontally
+    tmux split-window -h -t main:2
+    tmux split-window -h -t main:0
+
+    # automatically connect to mini in both panes in "ssh" window
+    tmux send-keys -t main:2.0 'tailscale ssh xitonight@mini' Enter
+    tmux send-keys -t main:2.1 'tailscale ssh xitonight@mini' Enter
+
+    # open nvim and check repo status in "conf" window
+    tmux send-keys -t main:0.0 'nvim' Enter
+    tmux send-keys -t main:0.1 'git status' Enter
+  fi
+  # if not connected to a tmux session 
+  # and if no other client is connected to the main session attach to it
+  if [ -z $TMUX ]; then
+    if [ -z "$(tmux list-clients -t "main")" ]; then
+      tmux attach -t main 2> /dev/null
     fi
-    if [ -z $TMUX ]; then
-      if [ -z "$(tmux list-clients -t "main")" ]; then
-        tmux attach -t main 2> /dev/null
-      fi
-    fi
+  fi
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
