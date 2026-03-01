@@ -5,45 +5,23 @@ reload_apps = true
 kitty = true
 gtk_theme = true
 
-[config.wallpaper]
-command = "awww"
-arguments = [
-  "img",
-  "-t",
-  "fade",
-  "--transition-duration",
-  "0.5",
-  "--transition-step",
-  "255",
-  "--transition-fps",
-  "60",
-  "-f",
-  "Nearest",
-]
-set = true
-
 [templates.hyprland]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/hyprland-colors.conf"
-output_path = "~/.config/Ax-Shell/config/hypr/colors.conf"
+input_path = "~/.config/matugen/templates/colors-hyprland.conf"
+output_path = "~/.config/hypr/source/colors.conf"
 
 [templates.kitty]
 input_path = "~/.config/matugen/templates/colors-kitty.conf"
 output_path = "~/.config/kitty/colors.conf"
 post_hook = "killall -SIGUSR1 kitty &"
 
-[templates.slurp]
-input_path = "~/.config/matugen/templates/colors-slurp.sh"
-output_path = "~/.config/kitty/slurp.sh"
-
 [templates.opencode]
 input_path = "~/.config/matugen/templates/colors-opencode.json"
 output_path = "~/.config/opencode/themes/matucode.json"
-pre_hook = "if [ ! -d ~/.config/opencode/themes ]; then mkdir ~/.config/opencode/themes fi"
+pre_hook = "if [ ! -d ~/.config/opencode/themes ]; then mkdir ~/.config/opencode/themes; fi"
 
 [templates.gtk3]
 input_path = "~/.config/matugen/templates/colors.css"
 output_path = "~/.config/gtk-3.0/colors.css"
-post_hook = "killall swayosd-server; uwsm-app $(swayosd-server > /dev/null 2>&1 &)"
 
 [templates.gtk4]
 input_path = "~/.config/matugen/templates/colors.css"
@@ -77,15 +55,11 @@ post_hook = "pywalfox update &"
 [templates.pywalsh]
 input_path = "~/.config/matugen/templates/colors.sh"
 output_path = "~/.cache/wal/colors.sh"
-post_hook = "walogram -B > /dev/null 2>&1 &"
+post_hook = "walogram -Bc > /dev/null 2>&1 &"
 
 [templates.pywalwalfile]
 input_path = "~/.config/matugen/templates/wal"
 output_path = "~/.cache/wal/wal"
-
-[templates.fzf]
-input_path = "~/.config/matugen/templates/colors-fzf"
-output_path = "~/.zsh/fzf_theme"
 
 [templates.zathura]
 input_path = "~/.config/matugen/templates/colors-zathura"
@@ -95,11 +69,6 @@ output_path = "~/.config/zathura/zathurarc"
 input_path = "~/.config/matugen/templates/colors-cava"
 output_path = "~/.config/cava/config"
 post_hook = "killall -SIGUSR1 cava &"
-
-[templates.ax-shell]
-input_path = "~/.config/Ax-Shell/config/matugen/templates/ax-shell.css"
-output_path = "~/.config/Ax-Shell/styles/colors.css"
-post_hook = "fabric-cli exec ax-shell 'app.set_css()' &"
 
 [config.custom_colors.red]
 color = "#FF0000"

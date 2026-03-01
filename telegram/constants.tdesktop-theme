@@ -1,7 +1,7 @@
 colorPink: #ff7fc6;
 colorGreen: #0bd500;
 
-windowBg: color0;                                            
+windowBg: color0; // window background (no shit)
 windowFg: color7;                                            
 windowBgOver: colorDarker8_30;                              
 windowBgRipple: color1;                                      
@@ -50,7 +50,7 @@ outlineButtonBgOver: colorLighter0_40;
 outlineButtonOutlineFg: color2;                              
 outlineButtonBgRipple: colorLighter0_60;                     
 
-menuBg: color0;                                              
+menuBg: windowBg;                                              
 menuBgOver: colorLighter0_40;                                
 menuBgRipple: colorLighter0_60;                              
 menuIconFg: color7;                                          
@@ -89,7 +89,7 @@ tooltipFg: color0;
 tooltipBorderFg: color7;                                     
 
 titleShadow: colorAlpha0_11;                                 
-titleBg: color0;                                             
+titleBg: windowBg;                                             
 titleBgActive: titleBg;                                      
 titleButtonBg: titleBg;                                      
 titleButtonFg: color7;                                       
@@ -191,11 +191,11 @@ dialogsUnreadBgMutedOver: colorLighter8_10;
 dialogsUnreadFgOver: dialogsUnreadFg;                        
 
 dialogsBgActive: color1;                                     
-dialogsNameFgActive: color9;                       
-dialogsChatIconFgActive: color9;                
-dialogsDateFgActive: color9;                       
-dialogsTextFgActive: color9;                       
-dialogsTextFgServiceActive: color9;                
+dialogsNameFgActive: color8;                       
+dialogsChatIconFgActive: color8;                
+dialogsDateFgActive: color8;                       
+dialogsTextFgActive: color8;                       
+dialogsTextFgServiceActive: color8;                
 dialogsDraftFgActive: colorLighter15_40;                      
 dialogsVerifiedIconBgActive: dialogsTextFgActive;             
 dialogsVerifiedIconFgActive: dialogsBgActive;                 
@@ -214,7 +214,7 @@ dialogsForwardFg: dialogsNameFgActive;
 searchedBarBg: colorLighter0_40;                             
 searchedBarFg: color7;                                       
 
-topBarBg: color0;                                            
+topBarBg: windowBg;                                            
 
 emojiPanBg: windowBg;                                        
 emojiPanCategories: color0;                                  
@@ -501,7 +501,7 @@ botKbDownBg: colorLighter0_40;
 
 overviewCheckBorder: color2;                                 
 
-sideBarBg: color0;
+sideBarBg: windowBg;
 sideBarBgActive: color1;
 sideBarBgRipple: colorDarker1_30;
 sideBarTextFg: color2;

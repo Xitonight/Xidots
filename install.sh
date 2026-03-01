@@ -305,7 +305,7 @@ setup_kanata() {
       sudo groupdel uinput
       sudo groupadd --system uinput
     else
-      echo "uinput system group already exists."
+      echo "uinput system group is already configured."
     fi
   else
     echo "Creating uinput system group..."
@@ -318,14 +318,17 @@ setup_kanata() {
   if [ ! -e /etc/udev/rules.d/99-input.rules ]; then
     sudo touch /etc/udev/rules.d/99-input.rules
     echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules
+    sudo udevadm control --reload-rules && sudo udevadm trigger
   fi
-
-  sudo udevadm control --reload-rules && sudo udevadm trigger
 
   sudo modprobe uinput
 
   systemctl --user daemon-reload
-  systemctl --user enable --now kanata.service
+  if [ "$(systemctl --user is-enabled kanata.service)" != "enabled" ]; then
+    systemctl --user enable --now kanata.service
+  else
+    echo "Kanata is already up and running!"
+  fi
 }
 
 enable_bluetooth() {
@@ -336,7 +339,11 @@ enable_bluetooth() {
 | |_) | | |_| |  __/ || (_) | (_) | |_| | | |
 |____/|_|\\__,_|\\___|\\__\\___/ \\___/ \\__|_| |_|
 " "Enabling Bluetooth..."
-  systemctl enable --now bluetooth.service
+  if [ "$(systemctl is-enabled bluetooth.service)" != "enabled" ]; then
+    systemctl enable --now bluetooth.service
+  else
+    echo "Bluetooth is already enabled."
+  fi
 }
 
 if [ "$(id -u)" -eq 0 ]; then

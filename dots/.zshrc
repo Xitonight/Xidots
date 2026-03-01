@@ -3,8 +3,8 @@ export XIDOTS_DIR="/home/xitonight/.xidots"
 if [ -z $SSH_CONNECTION ]; then
     if ! tmux has-session -t "main" 2> /dev/null; then
         tmux new-session -d -s "main" -n "main"
-        tmux neww -n "yay" -t "main:2" 2> /dev/null
-        tmux neww -n "ssh" -t "main:3" 2> /dev/null
+        tmux neww -n "ssh" -t "main:2" 2> /dev/null
+        tmux split-window -t main:2 -h
         tmux neww -d  -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
     fi
     if [ -z $TMUX ]; then
@@ -30,8 +30,7 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Source fzf theme
-source "$HOME/.zsh/fzf_theme"
+export FZF_DEFAULT_OPTS='--color=base16'
 
 # Enable the p10k zsh prompt
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -189,3 +188,6 @@ export MATUVIM_DIR="/home/xitonight/.matuvim"
 
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$PATH"
+
+# Created by `pipx` on 2026-02-02 13:49:49
+export PATH="$PATH:/home/xitonight/.local/bin"
