@@ -1,4 +1,4 @@
-color0="{{colors.surface.default.hex}}"
+color0="{{colors.background.default.hex}}"
 color1="{{colors.primary.default.hex | lighten: -12.5}}"
 color2="{{colors.primary.default.hex | lighten: -10.0}}"
 color3="{{colors.primary.default.hex | lighten: -7.5}}"

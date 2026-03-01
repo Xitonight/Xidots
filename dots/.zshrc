@@ -30,8 +30,7 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Source fzf theme
-source "$HOME/.zsh/fzf_theme"
+export FZF_DEFAULT_OPTS='--color=base16'
 
 # Enable the p10k zsh prompt
 zinit ice depth=1; zinit light romkatv/powerlevel10k

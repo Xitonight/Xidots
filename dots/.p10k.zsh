@@ -41,8 +41,8 @@
   local grey='242'
   local red='1'
   local yellow='2'
-  local blue='4'    # directory
-  local magenta='2' # arrow
+  local blue='16'    # directory
+  local magenta='18' # arrow
   local cyan='2'
   local white='7'
 
