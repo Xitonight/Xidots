@@ -1,9 +1,9 @@
 {
-    "customText": "Ambxst",
-    "disableHoverExpansion": true,
+    "theme": "default",
+    "position": "top",
     "hoverRegionHeight": 8,
     "keepHidden": false,
     "noMediaDisplay": "userHost",
-    "position": "top",
-    "theme": "default"
+    "customText": "Ambxst",
+    "disableHoverExpansion": true
 }

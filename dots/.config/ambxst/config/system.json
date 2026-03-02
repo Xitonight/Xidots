@@ -2,11 +2,12 @@
     "disks": [
         "/"
     ],
+    "updateServiceEnabled": true,
     "idle": {
         "general": {
-            "after_sleep_cmd": "ambxst screen on",
+            "lock_cmd": "ambxst lock",
             "before_sleep_cmd": "loginctl lock-session",
-            "lock_cmd": "ambxst lock"
+            "after_sleep_cmd": "ambxst screen on"
         },
         "listeners": [
             {
@@ -32,19 +33,18 @@
         ]
     },
     "ocr": {
+        "eng": true,
+        "spa": false,
+        "lat": false,
+        "jpn": false,
         "chi_sim": false,
         "chi_tra": false,
-        "eng": true,
-        "jpn": false,
-        "kor": false,
-        "lat": false,
-        "spa": false
+        "kor": false
     },
     "pomodoro": {
-        "autoStart": false,
+        "workTime": 1500,
         "restTime": 300,
-        "syncSpotify": false,
-        "workTime": 1500
-    },
-    "updateServiceEnabled": true
+        "autoStart": false,
+        "syncSpotify": false
+    }
 }

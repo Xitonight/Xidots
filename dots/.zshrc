@@ -114,6 +114,9 @@ alias la='eza -A --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
+alias lta='eza -a --icons=auto --tree' # list folder as tree
+alias ltt='eza --icons=auto --tree --level 1' # list folder as tree
+alias ltta='eza -a --icons=auto --tree --level 1' # list folder as tree
 
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'

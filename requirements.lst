@@ -46,7 +46,7 @@ ttf-poppins
 
 # ---------------------------------------------- THEMING
 bibata-cursor-theme-bin
-matugen-bin
+matugen
 nwg-look
 python-pywal
 python-pywalfox
@@ -64,7 +64,7 @@ neovim
 nm-connection-editor
 obsidian
 obs-studio
-opencode-bin
+opencode
 scrcpy
 tailscale
 telegram-desktop
@@ -106,5 +106,5 @@ resvg
 systemd-resolvconf
 udiskie
 usbutils
-wl-clip-persist-git
+wl-clip-persist
 xdg-user-dirs-gtk
