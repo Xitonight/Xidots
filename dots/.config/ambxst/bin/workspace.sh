@@ -1,24 +1,23 @@
 #!/usr/bin/env bash
 
 target_workspace="$1"
-regex="workspace:.*\(special:(.*)\)"
-active_window_info=$(hyprctl activewindow)
 
+# 1. Validation
 if [[ -z "$target_workspace" ]]; then
   notify-send "$0 Error: no parameters provided"
   exit 1
 fi
 
-if [[ $target_workspace -gt 10 || $target_workspace -lt 1 ]]; then
-  notify-send "$0 Error: invalid workspace provided"
-  exit 1
+# 2. Check if we are currently inside a special workspace
+# We grab the name of the active workspace on the focused monitor
+current_ws=$(hyprctl monitors -j | jq -r '.[] | select(.focused==true) | .specialWorkspace.name')
+
+if [[ "$current_ws" =~ ^special:(.*) ]]; then
+  special_name="${BASH_REMATCH[1]}"
+  # Toggle it off before moving
+  hyprctl dispatch togglespecialworkspace "$special_name" >/dev/null
 fi
 
-if [[ $active_window_info =~ $regex ]]; then
-  special_workspace="${BASH_REMATCH[1]}"
-  echo "$special_workspace"
-  hyprctl dispatch togglespecialworkspace "$special_workspace" >/dev/null
-fi
-
+# 3. Perform the move
 hyprctl dispatch workspace "$target_workspace" >/dev/null
 exit 0
