@@ -15,7 +15,7 @@ Heavily adapted to my needs. Not suited for general public use. Read through the
 If you really want to proceed (and you've backed up your current config):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Xitonight/Xidots/development/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Xitonight/Xidots/main/install.sh | bash
 ```
 
 But seriously, don't.
