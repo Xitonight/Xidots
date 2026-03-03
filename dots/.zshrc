@@ -5,24 +5,31 @@ if [ -z $SSH_CONNECTION ]; then
   if ! tmux has-session -t "main" 2> /dev/null; then
     # create session and windows
     tmux new-session -d -s "main" -n "main"
-    tmux neww -d -t "main:2" -n "ssh" 2> /dev/null
+    tmux neww -d -t "main:3" -n "ssh" 2> /dev/null
     tmux neww -d  -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
+    tmux neww -d  -t "main:2" -n "proj" -c ~/Projects 2> /dev/null
 
-    # split "conf" and "ssh" windows horizontally
+    # split panes
     tmux split-window -h -t main:2
+    tmux split-window -v -t main:2.2
+    tmux split-window -h -t main:3
     tmux split-window -h -t main:0
-
-    # automatically connect to mini in both panes in "ssh" window
-    tmux send-keys -t main:2.1 'tailscale ssh xitonight@mini' Enter
-    tmux send-keys -t main:2.1 'clear' Enter
-    tmux send-keys -t main:2.2 'tailscale ssh xitonight@mini' Enter
-    tmux send-keys -t main:2.2 'clear' Enter
 
     # open nvim and check repo status in "conf" window
     tmux send-keys -t main:0.1 'nvim' Enter
     tmux send-keys -t main:0.2 'cd $XIDOTS_DIR' Enter 'clear' Enter 'git status' Enter
     tmux send-keys -t main:0.2 'clear' Enter
     tmux send-keys -t main:0.2 'git status' Enter
+
+    # cd into ~/Projects in each pane from "proj" window
+    tmux send-keys -t main:2.2 'cd ~/Projects/' Enter
+    tmux send-keys -t main:2.3 'cd ~/Projects/' Enter
+
+    # automatically connect to mini in both panes in "ssh" window
+    tmux send-keys -t main:3.1 'tailscale ssh xitonight@mini' Enter
+    tmux send-keys -t main:3.1 'clear' Enter
+    tmux send-keys -t main:3.2 'tailscale ssh xitonight@mini' Enter
+    tmux send-keys -t main:3.2 'clear' Enter
   fi
   # if not connected to a tmux session 
   # and if no other client is connected to the main session attach to it
