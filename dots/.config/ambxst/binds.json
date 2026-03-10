@@ -63,10 +63,8 @@
                 "argument": "ambxst run lens",
                 "dispatcher": "exec",
                 "flags": "",
-                "key": "L",
+                "key": "",
                 "modifiers": [
-                    "SUPER",
-                    "ALT"
                 ]
             },
             "lockscreen": {
