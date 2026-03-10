@@ -148,6 +148,8 @@ alias zconf='nvim $HOME/.zshrc'
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
 alias nvimconf='z $MATUVIM_DIR; nvim; z'
 
+alias rsy='rsync -ahP'
+
 alias nvims='sudoedit'
 alias mkdir='mkdir -p'
 alias rf='rm -rf'
