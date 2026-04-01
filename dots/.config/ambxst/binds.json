@@ -1,58 +1,76 @@
 {
     "ambxst": {
         "assistant": {
-            "argument": "ambxst run assistant",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.assistant"
+            },
             "key": "",
             "modifiers": [
             ]
         },
         "clipboard": {
-            "argument": "ambxst run clipboard",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.clipboard"
+            },
             "key": "C",
             "modifiers": [
                 "SUPER"
             ]
         },
         "dashboard": {
-            "argument": "ambxst run dashboard",
-            "dispatcher": "exec",
-            "flags": "",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.dashboard"
+            },
             "key": "D",
             "modifiers": [
                 "SUPER"
             ]
         },
         "emoji": {
-            "argument": "ambxst run emoji",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.emoji"
+            },
             "key": "PERIOD",
             "modifiers": [
                 "SUPER"
             ]
         },
         "launcher": {
-            "argument": "ambxst run launcher",
-            "dispatcher": "exec",
-            "flags": "r",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.launcher"
+            },
             "key": "A",
             "modifiers": [
                 "SUPER"
             ]
         },
         "notes": {
-            "argument": "ambxst run notes",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.notes"
+            },
             "key": "",
             "modifiers": [
             ]
         },
         "system": {
             "config": {
-                "argument": "ambxst run config",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.config"
+                },
                 "key": "C",
                 "modifiers": [
                     "SUPER",
@@ -60,17 +78,21 @@
                 ]
             },
             "lens": {
-                "argument": "ambxst run lens",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.lens"
+                },
                 "key": "",
                 "modifiers": [
                 ]
             },
             "lockscreen": {
-                "argument": "loginctl lock-session",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "system.lock"
+                },
                 "key": "L",
                 "modifiers": [
                     "SUPER",
@@ -79,27 +101,33 @@
                 ]
             },
             "overview": {
-                "argument": "ambxst run overview",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.overview"
+                },
                 "key": "TAB",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "powermenu": {
-                "argument": "ambxst run powermenu",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.powermenu"
+                },
                 "key": "ESCAPE",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "quit": {
-                "argument": "ambxst quit",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.quit"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -109,9 +137,11 @@
                 ]
             },
             "reload": {
-                "argument": "ambxst reload",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.reload"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -119,9 +149,11 @@
                 ]
             },
             "screenrecord": {
-                "argument": "ambxst run screenrecord",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenrecord"
+                },
                 "key": "R",
                 "modifiers": [
                     "SUPER",
@@ -129,18 +161,22 @@
                 ]
             },
             "screenshot": {
-                "argument": "ambxst run screenshot",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenshot"
+                },
                 "key": "P",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "tools": {
-                "argument": "ambxst run tools",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.tools"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER"
@@ -148,15 +184,21 @@
             }
         },
         "tmux": {
-            "argument": "ambxst run tmux",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.tmux"
+            },
             "key": "",
             "modifiers": [
             ]
         },
         "wallpapers": {
-            "argument": "ambxst run wallpapers",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.wallpapers"
+            },
             "key": "COMMA",
             "modifiers": [
                 "SUPER"
@@ -167,14 +209,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "killactive",
-                    "flags": ""
+                    "id": "window.close",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -191,14 +230,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 1"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -215,14 +252,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 2",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 2"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -239,14 +274,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 3",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 3"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -263,14 +296,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 4",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 4"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -287,14 +318,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 5"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -311,14 +340,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 6",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 6"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -335,14 +362,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 7",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 7"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -359,14 +384,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 8",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 8"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -383,14 +406,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 9",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 9"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -407,14 +428,12 @@
         {
             "actions": [
                 {
-                    "argument": "~/.config/ambxst/bin/workspace.sh 10",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "~/.config/ambxst/bin/workspace.sh 10"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -431,14 +450,12 @@
         {
             "actions": [
                 {
-                    "argument": "1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "1"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -456,14 +473,12 @@
         {
             "actions": [
                 {
-                    "argument": "2",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "2"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -481,14 +496,12 @@
         {
             "actions": [
                 {
-                    "argument": "3",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "3"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -506,14 +519,12 @@
         {
             "actions": [
                 {
-                    "argument": "4",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "4"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -531,14 +542,12 @@
         {
             "actions": [
                 {
-                    "argument": "5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "5"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -556,14 +565,12 @@
         {
             "actions": [
                 {
-                    "argument": "6",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "6"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -581,14 +588,12 @@
         {
             "actions": [
                 {
-                    "argument": "7",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "7"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -606,14 +611,12 @@
         {
             "actions": [
                 {
-                    "argument": "8",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "8"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -631,14 +634,12 @@
         {
             "actions": [
                 {
-                    "argument": "9",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "9"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -656,14 +657,12 @@
         {
             "actions": [
                 {
-                    "argument": "10",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "10"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -681,274 +680,12 @@
         {
             "actions": [
                 {
-                    "argument": "1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "-1"
                     },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
+                    "id": "workspace.switch-occupied",
+                    "layouts": [
                     ]
-                }
-            ],
-            "name": "Move to Workspace Silent 1"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "2",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 2"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "3",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 3"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "4",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 4"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 5"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "6",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 6"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "7",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 7"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "8",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 8"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "9",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 9"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "10",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace Silent 10"
-        },
-        {
-            "actions": [
-                {
-                    "argument": "e-1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
-                    },
-                    "dispatcher": "workspace",
-                    "flags": ""
                 }
             ],
             "enabled": true,
@@ -965,14 +702,12 @@
         {
             "actions": [
                 {
-                    "argument": "e+1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "+1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-occupied",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -989,14 +724,12 @@
         {
             "actions": [
                 {
-                    "argument": "e-1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "-1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-occupied",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1014,14 +747,12 @@
         {
             "actions": [
                 {
-                    "argument": "e+1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "+1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-occupied",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1039,14 +770,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "movewindow",
-                    "flags": "m"
+                    "id": "window.drag",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1063,14 +791,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "resizewindow",
-                    "flags": "m"
+                    "id": "window.resize-drag",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1087,14 +812,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl play-pause",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "media.play-pause",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1110,14 +832,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl previous",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "media.prev",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1133,14 +852,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl next",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "media.next",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1156,14 +872,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl play-pause",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "media.play-pause-locked",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1179,14 +892,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl stop",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "media.stop-locked",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1202,14 +912,11 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "audio.volume-up",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1225,14 +932,11 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "audio.volume-down",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1248,14 +952,11 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "audio.mute-toggle",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1271,14 +972,11 @@
         {
             "actions": [
                 {
-                    "argument": "ambxst brightness +5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "brightness.up",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1294,14 +992,11 @@
         {
             "actions": [
                 {
-                    "argument": "ambxst brightness -5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "brightness.down",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1317,14 +1012,11 @@
         {
             "actions": [
                 {
-                    "argument": "notify-send \"Soon\"",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "system.calculator",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1340,14 +1032,11 @@
         {
             "actions": [
                 {
-                    "argument": "loginctl lock-session",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "system.lock-locked",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1363,14 +1052,11 @@
         {
             "actions": [
                 {
-                    "argument": "hyprctl dispatch dpms off",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "system.dpms-off",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1386,14 +1072,11 @@
         {
             "actions": [
                 {
-                    "argument": "hyprctl dispatch dpms on",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "system.dpms-on",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1409,27 +1092,23 @@
         {
             "actions": [
                 {
-                    "argument": "focus u",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 },
                 {
-                    "argument": "u",
-                    "compositor": {
-                        "layouts": [
-                            "dwindle",
-                            "master"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                        "dwindle",
+                        "master"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1446,27 +1125,23 @@
         {
             "actions": [
                 {
-                    "argument": "focus d",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 },
                 {
-                    "argument": "d",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1483,27 +1158,23 @@
         {
             "actions": [
                 {
-                    "argument": "focus l",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 },
                 {
-                    "argument": "l",
-                    "compositor": {
-                        "layouts": [
-                            "dwindle",
-                            "master"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                        "dwindle",
+                        "master"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1520,27 +1191,23 @@
         {
             "actions": [
                 {
-                    "argument": "focus r",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 },
                 {
-                    "argument": "r",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1557,27 +1224,23 @@
         {
             "actions": [
                 {
-                    "argument": "l",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 },
                 {
-                    "argument": "movewindowto l",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1595,27 +1258,23 @@
         {
             "actions": [
                 {
-                    "argument": "r",
-                    "compositor": {
-                        "layouts": [
-                            "dwindle",
-                            "master"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                        "dwindle",
+                        "master"
+                    ]
                 },
                 {
-                    "argument": "movewindowto r",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1633,27 +1292,23 @@
         {
             "actions": [
                 {
-                    "argument": "u",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 },
                 {
-                    "argument": "movewindowto u",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1671,26 +1326,23 @@
         {
             "actions": [
                 {
-                    "argument": "d",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 },
                 {
-                    "argument": "movewindowto d",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1708,27 +1360,23 @@
         {
             "actions": [
                 {
-                    "argument": "colresize +0.1",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "+0.1"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.resize-column",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 },
                 {
-                    "argument": "50 0",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "50 0"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1746,27 +1394,23 @@
         {
             "actions": [
                 {
-                    "argument": "colresize -0.1",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "-0.1"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.resize-column",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 },
                 {
-                    "argument": "-50 0",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "-50 0"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1784,14 +1428,14 @@
         {
             "actions": [
                 {
-                    "argument": "0 50",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "0 50"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1809,14 +1453,14 @@
         {
             "actions": [
                 {
-                    "argument": "0 -50",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "0 -50"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                        "master",
+                        "dwindle"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1834,15 +1478,12 @@
         {
             "actions": [
                 {
-                    "argument": "promote",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.promote",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1860,15 +1501,12 @@
         {
             "actions": [
                 {
-                    "argument": "togglefit",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.toggle-fit",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1886,15 +1524,12 @@
         {
             "actions": [
                 {
-                    "argument": "colresize +conf",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.toggle-full-column",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1912,15 +1547,13 @@
         {
             "actions": [
                 {
-                    "argument": "swapcol l",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.swap-column",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1947,15 +1580,13 @@
         {
             "actions": [
                 {
-                    "argument": "swapcol r",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.swap-column",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -1982,15 +1613,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 1",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "1"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2009,15 +1638,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 2",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "2"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2036,15 +1663,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 3",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "3"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2063,15 +1688,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 4",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "4"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2090,15 +1713,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 5",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "5"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2117,15 +1738,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 6",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "6"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2144,15 +1763,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 7",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "7"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2171,15 +1788,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 8",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "8"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2198,15 +1813,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 9",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "9"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2225,15 +1838,13 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 10",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "10"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                        "scrolling"
+                    ]
                 }
             ],
             "enabled": true,
@@ -2252,14 +1863,14 @@
         {
             "actions": [
                 {
-                    "argument": "1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "1",
+                        "dispatcher": "centerwindow",
+                        "flags": ""
                     },
-                    "dispatcher": "centerwindow",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2276,14 +1887,14 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "",
+                        "dispatcher": "pin",
+                        "flags": ""
                     },
-                    "dispatcher": "pin",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2300,14 +1911,12 @@
         {
             "actions": [
                 {
-                    "argument": "kitty",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "kitty"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2324,14 +1933,12 @@
         {
             "actions": [
                 {
-                    "argument": "kitty --class kitty-floating -1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "kitty --class kitty-floating -1"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2349,14 +1956,12 @@
         {
             "actions": [
                 {
-                    "argument": "hyprctl switchxkblayout current next",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "hyprctl switchxkblayout current next"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2374,14 +1979,12 @@
         {
             "actions": [
                 {
-                    "argument": "kitty --class kitty-btop btop",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "kitty --class kitty-btop btop"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2399,14 +2002,12 @@
         {
             "actions": [
                 {
-                    "argument": "kitty --class kitty-pulsemixer pulsemixer",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "kitty --class kitty-pulsemixer pulsemixer"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2424,14 +2025,12 @@
         {
             "actions": [
                 {
-                    "argument": "kitty --class kitty-nmtui --override window_padding_width=0 nmtui",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "kitty --class kitty-nmtui --override window_padding_width=0 nmtui"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2449,14 +2048,14 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "",
+                        "dispatcher": "togglefloating",
+                        "flags": ""
                     },
-                    "dispatcher": "togglefloating",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2473,14 +2072,14 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "",
+                        "dispatcher": "exit",
+                        "flags": ""
                     },
-                    "dispatcher": "exit",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2500,14 +2099,14 @@
         {
             "actions": [
                 {
-                    "argument": "1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "1",
+                        "dispatcher": "fullscreen",
+                        "flags": ""
                     },
-                    "dispatcher": "fullscreen",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2524,14 +2123,14 @@
         {
             "actions": [
                 {
-                    "argument": "0",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "0",
+                        "dispatcher": "fullscreen",
+                        "flags": ""
                     },
-                    "dispatcher": "fullscreen",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2549,14 +2148,11 @@
         {
             "actions": [
                 {
-                    "argument": "telegram",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "togglespecialworkspace",
-                    "flags": ""
+                    "id": "workspace.toggle-special",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2573,14 +2169,11 @@
         {
             "actions": [
                 {
-                    "argument": "special:telegram",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window-special",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2598,14 +2191,11 @@
         {
             "actions": [
                 {
-                    "argument": "special:telegram",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "movetoworkspacesilent",
-                    "flags": ""
+                    "id": "workspace.move-window-special-silent",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2624,14 +2214,14 @@
         {
             "actions": [
                 {
-                    "argument": "-50 0",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "-50 0",
+                        "dispatcher": "moveactive",
+                        "flags": "e"
                     },
-                    "dispatcher": "moveactive",
-                    "flags": "e"
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2649,14 +2239,14 @@
         {
             "actions": [
                 {
-                    "argument": "0 -50",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "0 -50",
+                        "dispatcher": "moveactive",
+                        "flags": "e"
                     },
-                    "dispatcher": "moveactive",
-                    "flags": "e"
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2674,14 +2264,14 @@
         {
             "actions": [
                 {
-                    "argument": "0 50",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "0 50",
+                        "dispatcher": "moveactive",
+                        "flags": "e"
                     },
-                    "dispatcher": "moveactive",
-                    "flags": "e"
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2699,14 +2289,14 @@
         {
             "actions": [
                 {
-                    "argument": "50 0",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "50 0",
+                        "dispatcher": "moveactive",
+                        "flags": ""
                     },
-                    "dispatcher": "moveactive",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2720,77 +2310,333 @@
                 }
             ],
             "name": "Move floating window right"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "1"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "1",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 1 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "2"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "2",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 2 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "3"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "3",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 3 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "4"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "4",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 4 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "5"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "5",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 5 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "6"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "6",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 6 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "7"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "7",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 7 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "8"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "8",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 8 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "9"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "9",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 9 silent"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "index": "10"
+                    },
+                    "id": "workspace.move-window-silent",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "0",
+                    "modifiers": [
+                        "SUPER",
+                        "SHIFT",
+                        "ALT"
+                    ]
+                }
+            ],
+            "name": "Move to workspace 10 silent"
         }
     ],
     "defaultAmbxstBinds": {
         "ambxst": {
             "assistant": {
-                "argument": "ambxst run assistant",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.assistant"
+                },
                 "key": "A",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "clipboard": {
-                "argument": "ambxst run clipboard",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.clipboard"
+                },
                 "key": "V",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "dashboard": {
-                "argument": "ambxst run dashboard",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.dashboard"
+                },
                 "key": "D",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "emoji": {
-                "argument": "ambxst run emoji",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.emoji"
+                },
                 "key": "PERIOD",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "launcher": {
-                "argument": "ambxst run launcher",
-                "dispatcher": "exec",
-                "flags": "r",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.launcher"
+                },
                 "key": "Super_L",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "notes": {
-                "argument": "ambxst run notes",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.notes"
+                },
                 "key": "N",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "tmux": {
-                "argument": "ambxst run tmux",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.tmux"
+                },
                 "key": "T",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "wallpapers": {
-                "argument": "ambxst run wallpapers",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.wallpapers"
+                },
                 "key": "COMMA",
                 "modifiers": [
                     "SUPER"
@@ -2799,9 +2645,11 @@
         },
         "system": {
             "config": {
-                "argument": "ambxst run config",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.config"
+                },
                 "key": "C",
                 "modifiers": [
                     "SUPER",
@@ -2809,9 +2657,11 @@
                 ]
             },
             "lens": {
-                "argument": "ambxst run lens",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.lens"
+                },
                 "key": "A",
                 "modifiers": [
                     "SUPER",
@@ -2819,36 +2669,44 @@
                 ]
             },
             "lockscreen": {
-                "argument": "loginctl lock-session",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "system.lock"
+                },
                 "key": "L",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "overview": {
-                "argument": "ambxst run overview",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.overview"
+                },
                 "key": "TAB",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "powermenu": {
-                "argument": "ambxst run powermenu",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.powermenu"
+                },
                 "key": "ESCAPE",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "quit": {
-                "argument": "ambxst quit",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.quit"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -2857,9 +2715,11 @@
                 ]
             },
             "reload": {
-                "argument": "ambxst reload",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.reload"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -2867,9 +2727,11 @@
                 ]
             },
             "screenrecord": {
-                "argument": "ambxst run screenrecord",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenrecord"
+                },
                 "key": "R",
                 "modifiers": [
                     "SUPER",
@@ -2877,9 +2739,11 @@
                 ]
             },
             "screenshot": {
-                "argument": "ambxst run screenshot",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenshot"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER",
@@ -2887,9 +2751,11 @@
                 ]
             },
             "tools": {
-                "argument": "ambxst run tools",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.tools"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER"
