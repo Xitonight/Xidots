@@ -39,6 +39,10 @@ end)
 vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/snippets"
 vim.g.vscode_snippets_exclude = { "tex", "typescriptreact" }
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript",
+}
+
 require("luasnip").config.set_config {
   enable_autosnippets = true,
   store_selection_keys = "<Tab>",
