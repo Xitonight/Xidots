@@ -145,6 +145,7 @@ alias iny='yay -Sy --noconfirm'
 alias un='yay -R'
 alias purge='yay -Rns'
 alias up='yay -Syu'
+alias orphans='yay -Qqtd'
 
 alias unstow='stow -D'
 
