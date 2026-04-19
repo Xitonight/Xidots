@@ -1,5 +1,4 @@
 local nvlsp = require "nvchad.configs.lspconfig"
-local lspconfig = require "lspconfig"
 
 nvlsp.defaults()
 
