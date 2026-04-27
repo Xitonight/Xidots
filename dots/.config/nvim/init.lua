@@ -124,3 +124,15 @@ autocmd("BufWritePre", {
     vim.lsp.buf.format { async = false }
   end,
 })
+
+-- Match Noice Signature/Doc colors to CMP/Standard Floats
+local highlights = {
+  -- The background of the signature help window
+  NoicePopup = { link = "CmpPmenu" },
+  -- The border of the signature help window
+  NoicePopupBorder = { link = "CmpPmenuBorder" },
+}
+
+for group, settings in pairs(highlights) do
+  vim.api.nvim_set_hl(0, group, settings)
+end

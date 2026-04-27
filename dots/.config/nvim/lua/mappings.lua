@@ -77,7 +77,7 @@ map("n", "<leader>fr", "<cmd>Telescope lsp_references<CR>", { desc = "telescope 
 
 map("v", "<C-c>", '"+y', { desc = "Yank into system clipboard" })
 
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save current open buffer" })
+map("n", "<C-s>", "<cmd> w <cr>", { desc = "Save current open buffer" })
 
 map(
   "n",
@@ -88,3 +88,4 @@ map(
 map("n", "<leader>zm", "<cmd>ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 map("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+map("i", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
