@@ -244,14 +244,22 @@ return {
       },
     },
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      -- "rcarriga/nvim-notify",
     },
   },
 
-  { "nvim-telescope/telescope-ui-select.nvim" },
+  -- Code action menu with telescope (Noice's one is HORRIBLE)
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    init = function()
+      require("telescope").setup {
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {},
+          },
+        },
+      }
+      require("telescope").load_extension "ui-select"
+    end,
+  },
 }
