@@ -193,7 +193,7 @@ function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
 }
 eval "$(zoxide init zsh)"
-eval "$(pay-respects zsh --alias)"
+eval "$(pay-respects zsh)"
 export _PR_AI_DISABLE
 
 export XDG_DESKTOP_DIR=$(xdg-user-dir DESKTOP)
