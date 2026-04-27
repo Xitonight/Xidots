@@ -58,6 +58,9 @@ qt6-wayland
 # ---------------------------------------------- APPS
 android-studio
 bitwarden
+docker
+docker-buildx
+docker-compose
 kanata-bin
 kitty
 neovim
@@ -98,6 +101,7 @@ tmux
 zoxide
 
 # ---------------------------------------------- UTILS
+deno
 inetutils
 jdk17-openjdk
 libinput-gestures
