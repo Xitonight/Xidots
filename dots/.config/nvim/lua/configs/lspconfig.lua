@@ -51,16 +51,9 @@ local servers = {
   ts_ls = {},
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-
 for name, opts in pairs(servers) do
   vim.lsp.enable(name)
   vim.lsp.config(name, opts)
-  vim.lsp.config(name, { capabilities = capabilities })
 end
 
 local base_on_attach = vim.lsp.config.eslint.on_attach
@@ -76,5 +69,4 @@ vim.lsp.config("eslint", {
       command = "LspEslintFixAll",
     })
   end,
-  capabilities = capabilities,
 })
