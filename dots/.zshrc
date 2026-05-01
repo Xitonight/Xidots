@@ -182,6 +182,17 @@ alias .5='z ../../../../..'
 alias mount='sudo mount'
 alias umount='sudo umount'
 
+p() {
+    local dir
+    # Find directories, strip the ./ and pipe to fzf
+    dir=$(find ~/Projects -maxdepth 2 -type d | sed "s|^$HOME/Projects/||" | fzf --header="Select Project")
+    
+    # Only jump if we actually picked something (didn't hit ESC)
+    if [ -n "$dir" ]; then
+        z "$HOME/Projects/$dir"
+    fi
+}
+
 # Manpager with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
