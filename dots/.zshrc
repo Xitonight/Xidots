@@ -78,8 +78,7 @@ autoload -U compinit && compinit
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
+zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
@@ -95,6 +94,11 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Not working, probably cause of zsh-vi-mode
+# bindkey -e
+# bindkey '^p' history-search-backward
+# bindkey '^n' history-search-forward
 
 # History tweaks
 HISTSIZE=10000
@@ -116,9 +120,9 @@ setopt extendedglob
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A --color=always $realpath'
-zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A --color=always $realpath'
-zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:git-(commit|add|diff|restore):*' fzf-preview \
 	'git diff $realpath | delta --syntax-theme=base16'
 
@@ -182,6 +186,8 @@ alias .5='z ../../../../..'
 alias mount='sudo mount'
 alias umount='sudo umount'
 
+alias mux='tmuxinator'
+
 p() {
     local dir
     # Find directories, strip the ./ and pipe to fzf
@@ -233,7 +239,9 @@ esac
 # pnpm end
 
 # Source nvm
-source /usr/share/nvm/init-nvm.sh
+# TODO replace with faster alternative
+# as of now this worsens startup time of almost an entire second 
+# source /usr/share/nvm/init-nvm.sh
 
 # TexLive
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
