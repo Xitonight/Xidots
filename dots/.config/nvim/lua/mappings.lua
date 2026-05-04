@@ -24,21 +24,6 @@ map("n", "<leader>e", function()
   vim.cmd "NvimTreeToggle"
 end, { desc = "toggle NvimTree" })
 
-map("n", "<leader>ru", function()
-  local filetype = vim.bo.filetype
-  if filetype == "typescript" or filetype == "typescriptreact" then
-    vim.lsp.buf.code_action {
-      apply = true,
-      context = {
-        only = { "source.removeUnused.ts" },
-        diagnostics = {},
-      },
-    }
-  else
-    vim.notify("This command is only available for TypeScript files.", vim.log.levels.WARN)
-  end
-end, { desc = "Remove Unused Imports (TypeScript)" })
-
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action {
     apply = false,
@@ -72,12 +57,12 @@ map(
   "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
   { desc = "telescope find files" }
 )
-map("n", "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", { desc = "telescope find files" })
+map("n", "<leader>fi", "<cmd>Telescope lsp_implementations<CR>", { desc = "telescope list implementations" })
 map("n", "<leader>fr", "<cmd>Telescope lsp_references<CR>", { desc = "telescope find references" })
 
 map("v", "<C-c>", '"+y', { desc = "Yank into system clipboard" })
 
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save current open buffer" })
+map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save current open buffer" })
 
 map(
   "n",
