@@ -78,14 +78,22 @@ autoload -U compinit && compinit
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_VI_EDITOR=nvim
+function zvm_config() {
+  # Set custom cursors for each vi mode
+  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+  ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+  ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+  ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+
+  # Set custom colors for highlight (visual-mode)
+  ZVM_VI_HIGHLIGHT_FOREGROUND=0
+  ZVM_VI_HIGHLIGHT_BACKGROUND=2
+  ZVM_VI_HIGHLIGHT_EXTRASTYLE=bold,underline
+}
+
+zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # Enable Oh-My-zsh plugins
 zinit snippet OMZP::sudo
@@ -94,11 +102,6 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Not working, probably cause of zsh-vi-mode
-# bindkey -e
-# bindkey '^p' history-search-backward
-# bindkey '^n' history-search-forward
 
 # History tweaks
 HISTSIZE=10000
@@ -163,7 +166,7 @@ alias nvmi='nvim'
 # Config files shortcuts
 alias zconf='nvim $HOME/.zshrc'
 alias kittyconf='nvim $HOME/.config/kitty/kitty.conf'
-alias nvimconf='z $MATUVIM_DIR; nvim; z'
+alias nvconf='nvim $HOME/.config/nvim'
 
 alias rsy='rsync -ahP'
 
@@ -199,19 +202,24 @@ p() {
     fi
 }
 
+
+# Shell integrations
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
+eval "$(pay-respects zsh)"
+export _PR_AI_DISABLE
+
+function zvm_after_init() {
+  bindkey -M viins '^p' history-search-backward
+  bindkey -M viins '^n' history-search-forward
+  bindkey ' ' magic-space
+  bindkey "^R" fzf-history-widget
+}
+
 # Manpager with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export BAT_THEME=base16
-
-# Shell integrations
-source <(fzf --zsh)
-function zvm_after_init() {
-  zvm_bindkey viins "^R" fzf-history-widget
-}
-eval "$(zoxide init zsh)"
-eval "$(pay-respects zsh)"
-export _PR_AI_DISABLE
 
 export XDG_DESKTOP_DIR=$(xdg-user-dir DESKTOP)
 export XDG_DOWNLOAD_DIR=$(xdg-user-dir DOWNLOAD)
