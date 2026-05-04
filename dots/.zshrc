@@ -124,7 +124,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -A -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -A -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -A -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:git-(commit|add|diff|restore):*' fzf-preview \
 	'git diff $realpath | delta --syntax-theme=base16'
@@ -191,6 +190,11 @@ alias umount='sudo umount'
 
 alias mux='tmuxinator'
 
+alias -g NE='2>/dev/null'
+alias -g NS='>/dev/null'
+alias -g NO='>/dev/null 2>&1'
+alias -g C='| wl-copy'
+
 p() {
     local dir
     # Find directories, strip the ./ and pipe to fzf
@@ -205,7 +209,7 @@ p() {
 
 # Shell integrations
 source <(fzf --zsh)
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(pay-respects zsh)"
 export _PR_AI_DISABLE
 
