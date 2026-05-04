@@ -60,10 +60,9 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-export FZF_DEFAULT_OPTS='--color=base16'
-
 # Enable zinit plugins 
 zinit light zsh-users/zsh-completions
+fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
@@ -198,12 +197,12 @@ p() {
 }
 
 # Shell integrations
-source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(pay-respects zsh)"
 export _PR_AI_DISABLE
 
 function zvm_after_init() {
+  FZF_CTRL_T_COMMAND= source <(fzf --zsh)
   bindkey -M viins '^p' history-search-backward
   bindkey -M viins '^n' history-search-forward
   bindkey ' ' magic-space
