@@ -80,6 +80,9 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 function zvm_config() {
+  # Use system clipboard (wl-copy)
+  ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
   # Set custom cursors for each vi mode
   ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
   ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
@@ -205,7 +208,6 @@ p() {
         z "$HOME/Projects/$dir"
     fi
 }
-
 
 # Shell integrations
 source <(fzf --zsh)
