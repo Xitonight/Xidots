@@ -51,13 +51,6 @@ if [ -z $SSH_CONNECTION ]; then
   fi
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Enables (or installs if not installed yet) the Zinit plugin manager for zsh
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -68,9 +61,6 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 export FZF_DEFAULT_OPTS='--color=base16'
-
-# Enable the p10k zsh prompt
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Enable zinit plugins 
 zinit light zsh-users/zsh-completions
@@ -103,8 +93,7 @@ zinit snippet OMZP::sudo
 
 zinit cdreplay -q
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.toml)"
 
 # History tweaks
 HISTSIZE=10000
@@ -118,7 +107,6 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-
 
 # Completion tweaks
 setopt globdots
