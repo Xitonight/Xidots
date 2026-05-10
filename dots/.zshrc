@@ -5,20 +5,11 @@ if [ -z $SSH_CONNECTION ]; then
   if ! tmux has-session -t "main" 2> /dev/null; then
     # create session and windows
     tmux new-session -d -s "main" -n "main"
-    tmux neww -d -t "main:4" -n "ssh" 2> /dev/null
+    tmux neww -d -t "main:2" -n "ssh" 2> /dev/null
     tmux neww -t "main:0" -n "conf" -c $XIDOTS_DIR 2> /dev/null
-    tmux neww -d  -t "main:2" -n "proj" -c ~/Projects 2> /dev/null
-    tmux neww -d  -t "main:3" -n "proj2" -c ~/Projects 2> /dev/null
 
-    # split panes
-    # split proj in 3 panes
-    tmux split-window -h -t main:2
-    tmux split-window -v -t main:2.2
-    # same for proj2
-    tmux split-window -h -t main:3
-    tmux split-window -v -t main:3.2
     # split ssh in two panes
-    tmux split-window -h -t main:4
+    tmux split-window -h -t main:2
     # same for conf
     tmux split-window -h -t main:0
 
@@ -28,19 +19,12 @@ if [ -z $SSH_CONNECTION ]; then
     tmux send-keys -t main:0.2 'clear' Enter
     tmux send-keys -t main:0.2 'git status' Enter
 
-    # cd into ~/Projects in each pane from "proj" window
-    tmux send-keys -t main:2.2 'cd ~/Projects/' Enter 'clear' Enter
-    tmux send-keys -t main:2.3 'cd ~/Projects/' Enter 'clear' Enter
-
-    tmux send-keys -t main:3.2 'cd ~/Projects/' Enter 'clear' Enter
-    tmux send-keys -t main:3.3 'cd ~/Projects/' Enter 'clear' Enter
-
     # automatically connect to mini in both panes in "ssh" window
-    tmux send-keys -t main:4.1 'tailscale ssh xitonight@mini' Enter
-    tmux send-keys -t main:4.2 'tailscale ssh xitonight@mini' Enter 'clear' Enter
+    tmux send-keys -t main:2.1 'tailscale ssh xitonight@mini' Enter
+    tmux send-keys -t main:2.2 'tailscale ssh xitonight@mini' Enter 'clear' Enter
     sleep 0.1
-    tmux send-keys -t main:4.1 'clear' Enter
-    tmux send-keys -t main:4.2 'clear' Enter
+    tmux send-keys -t main:2.1 'clear' Enter
+    tmux send-keys -t main:2.2 'clear' Enter
   fi
   # if not connected to a tmux session 
   # and if no other client is connected to the main session attach to it
@@ -192,7 +176,7 @@ p() {
     
     # Only jump if we actually picked something (didn't hit ESC)
     if [ -n "$dir" ]; then
-        z "$HOME/Projects/$dir"
+        cd "$HOME/Projects/$dir"
     fi
 }
 
@@ -206,7 +190,7 @@ function zvm_after_init() {
   bindkey -M viins '^p' history-search-backward
   bindkey -M viins '^n' history-search-forward
   bindkey ' ' magic-space
-  bindkey "^R" fzf-history-widget
+  bindkey '^R' fzf-history-widget
 }
 
 # Manpager with bat
