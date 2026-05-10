@@ -5,7 +5,7 @@ local lighten = require("base46.colors").change_hex_lightness
 M.base_30 = {
 	white = "{{colors.on_background.default.hex}}",
 	black = "{{colors.background.default.hex | lighten: -2.5}}",
-	darker_black = lighten("{{colors.background.default.hex | lighten: -2.5}}", -3),
+	darker_black = lighten("{{colors.background.default.hex | lighten: -2.5}}", -1),
 	black2 = lighten("{{colors.background.default.hex | lighten: -2.5}}", 6),
 	one_bg = lighten("{{colors.background.default.hex | lighten: -2.5}}", 10),
 	one_bg2 = lighten("{{colors.background.default.hex | lighten: -2.5}}", 16),
@@ -49,7 +49,7 @@ M.base_16 = {
 	base0A = "{{colors.blue.default.hex}}",
 	base0B = "{{colors.green.default.hex}}",
 	base0C = "{{colors.cyan.default.hex}}",
-	base0D = lighten("{{colors.blue.default.hex}}", 20),
+	base0D = lighten("{{colors.primary.default.hex}}", 3),
 	base0E = "{{colors.tertiary.default.hex}}",
 	base0F = "{{colors.inverse_surface.default.hex}}",
 }
@@ -59,21 +59,19 @@ M.type = "dark"
 M.polish_hl = {
 	defaults = {
 		Comment = {
-			italic = true,
+			italic = false,
 			fg = M.base_16.base03,
 		},
-	},
-	Syntax = {
-		String = {
-			fg = "{{colors.tertiary.default.hex}}",
+		Special = {
+			fg = "{{colors.primary.default.hex}}",
 		},
 	},
 	treesitter = {
 		["@comment"] = {
 			fg = M.base_16.base03,
 		},
-		["@string"] = {
-			fg = "{{colors.tertiary.default.hex}}",
+		["@punctuation.bracket"] = {
+			fg = "{{colors.secondary.default.hex}}",
 		},
 	},
 }
