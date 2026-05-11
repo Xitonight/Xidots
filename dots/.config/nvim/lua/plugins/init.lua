@@ -2,9 +2,6 @@ return {
   {
     "hrsh7th/nvim-cmp",
     enabled = false,
-    opts = function()
-      require "configs.cmp"
-    end,
   },
 
   {
@@ -12,6 +9,12 @@ return {
     opts = function()
       return require "configs.nvimtree"
     end,
+    -- enabled = false,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    enabled = false,
   },
 
   {
@@ -69,10 +72,5 @@ return {
     lazy = false,
     event = { "BufWritePre", "BufNewFile" },
     opts = {},
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    enabled = false,
   },
 }
