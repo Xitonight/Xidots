@@ -8,7 +8,6 @@ local servers = {
   clangd = {},
   cssls = {},
   denols = {},
-  eslint = {},
   gopls = {
     settings = {
       analyses = {
@@ -47,8 +46,7 @@ local servers = {
   },
   svelte = {},
   taplo = {},
-  tailwindcss = {},
-  ts_ls = {},
+  vtsls = {},
 }
 
 for name, opts in pairs(servers) do
@@ -56,17 +54,6 @@ for name, opts in pairs(servers) do
   vim.lsp.config(name, opts)
 end
 
-local base_on_attach = vim.lsp.config.eslint.on_attach
-vim.lsp.config("eslint", {
-  on_attach = function(client, bufnr)
-    if not base_on_attach then
-      return
-    end
-
-    base_on_attach(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "LspEslintFixAll",
-    })
-  end,
-})
+return {
+  "neovim/nvim-lspconfig",
+}
