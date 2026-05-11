@@ -1,3 +1,5 @@
+dofile(vim.g.base46_cache .. "flash")
+
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
