@@ -15,16 +15,6 @@ M.base46 = {
   transparency = false,
 }
 
-M.mason = {
-  pkgs = {
-    "shellcheck",
-  },
-}
-
-M.nvdash = {
-  load_on_startup = true,
-}
-
 M.ui = {
   tabufline = {
     enabled = false,
