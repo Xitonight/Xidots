@@ -1,18 +1,13 @@
--- Add this anywhere in your init.lua
--- vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { link = "Type" })
-
 local colors = require("base46").get_theme_tb "base_16"
 
--- 1. Define your table with mapping keys instead of raw strings
 local highlights = {
-  SnacksDashboardHeader = { fg = colors.base0C }, -- Map to base30 'blue'
-  SnacksDashboardIcon = { fg = colors.base0C },
+  SnacksDashboardHeader = { fg = colors.base0D }, -- Map to base30 'blue'
+  SnacksDashboardIcon = { fg = colors.base0D },
   SnacksDashboardSpecial = { fg = colors.base0E },
   SnacksDashboardDesc = { fg = colors.base05 },
   SnacksDashboardFooter = { fg = colors.base05 },
 }
 
--- 2. Loop and Apply
 for group, settings in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, settings)
 end

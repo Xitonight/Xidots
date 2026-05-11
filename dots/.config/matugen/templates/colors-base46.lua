@@ -49,7 +49,7 @@ M.base_16 = {
 	base0A = "{{colors.blue.default.hex}}",
 	base0B = "{{colors.green.default.hex}}",
 	base0C = "{{colors.cyan.default.hex}}",
-	base0D = lighten("{{colors.primary.default.hex}}", 3),
+	base0D = "{{colors.primary.default.hex}}",
 	base0E = "{{colors.tertiary.default.hex}}",
 	base0F = "{{colors.inverse_surface.default.hex}}",
 }
