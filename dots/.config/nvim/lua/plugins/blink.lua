@@ -1,5 +1,13 @@
 dofile(vim.g.base46_cache .. "blink")
 
+local highlights = {
+  BlinkCmpKindKeyword = { link = "BlinkCmpKindReference" },
+}
+
+for group, settings in pairs(highlights) do
+  vim.api.nvim_set_hl(0, group, settings)
+end
+
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -87,7 +95,7 @@ return {
         "rafamadriz/friendly-snippets",
         config = function()
           require("luasnip.loaders.from_vscode").lazy_load()
-          require("luasnip.loaders.from_vscode").lazy_load { paths = { vim.fn.stdpath "config" .. "/snippets" } }
+          require("luasnip.loaders.from_vscode").lazy_load { paths = { vim.fn.stdpath "config" .. "/lua/snippets" } }
         end,
       },
     },
