@@ -4,7 +4,7 @@ local highlights = {
   SnacksDashboardHeader = { fg = colors.base0D }, -- Map to base30 'blue'
   SnacksDashboardIcon = { fg = colors.base0D },
   SnacksDashboardSpecial = { fg = colors.base0E },
-  SnacksDashboardDesc = { fg = colors.base05 },
+  SnacksDashboardDesc = { link = "Comment" },
   SnacksDashboardFooter = { fg = colors.base05 },
 }
 
@@ -94,8 +94,8 @@ return {
       -- find
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
       { "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" },
-      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files (cwd)" },
-      { "<leader>fF", function() Snacks.picker.files({ cwd = Snacks.git.get_root() }) end, desc = "Find Files" },
+      { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end, desc = "Find Files (cwd)" },
+      { "<leader>fF", function() Snacks.picker.files({ hidden = true, cwd = Snacks.git.get_root() }) end, desc = "Find Files" },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (git-files)" },
       { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
       { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
