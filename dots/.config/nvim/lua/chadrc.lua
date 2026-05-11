@@ -14,8 +14,9 @@ M.base46 = {
   theme = "chadwal",
   transparency = false,
   integrations = {
-    "grug_far",
     "flash",
+    "grug_far",
+    "trouble",
   },
 }
 

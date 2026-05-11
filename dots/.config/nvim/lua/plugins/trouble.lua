@@ -1,3 +1,5 @@
+dofile(vim.g.base46_cache .. "trouble")
+
 return {
   "folke/trouble.nvim",
   cmd = { "Trouble" },
