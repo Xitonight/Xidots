@@ -16,7 +16,7 @@ map("n", "<leader>vn", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>vrn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 -- which-key
-map("n", "<leader>wk", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+map("n", "<leader>wk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 
 -- NvChad related
 map("n", "<leader>th", function()
@@ -33,8 +33,8 @@ map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result
 map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
 
 -- Comment
-map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
-map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
+map("n", "<leader>cc", "gcc", { desc = "toggle comment", remap = true })
+map("v", "<leader>cc", "gc", { desc = "toggle comment", remap = true })
 
 -- Window navigation (integration with tmux)
 map("n", "<C-h>", function()
@@ -53,9 +53,9 @@ end, { desc = "window up" })
 -- Lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-map("n", "<leader>e", function()
-  vim.cmd "NvimTreeToggle"
-end, { desc = "toggle NvimTree" })
+-- Explorers
+map("n", "<leader>eo", "<cmd>Oil<CR>", { desc = "toggle NvimTree" })
+map("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "toggle NvimTree" })
 
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action {
@@ -68,7 +68,3 @@ end, { desc = "Open Code Action Menu" })
 
 map("v", "<C-c>", '"+y', { desc = "Yank into system clipboard" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
-
-map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save current open buffer" })
-
-map("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
