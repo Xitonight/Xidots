@@ -153,11 +153,11 @@ alias resetwifi='sudo tc qdisc del dev wlp0s20f0u11 root netem'
 
 alias espidf="source $HOME/.esp/esp-idf/export.sh &> /dev/null"
 
-alias ..='z ..'
-alias ...='z ../..'
-alias .3='z ../../..'
-alias .4='z ../../../..'
-alias .5='z ../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
 
 alias mount='sudo mount'
 alias umount='sudo umount'
