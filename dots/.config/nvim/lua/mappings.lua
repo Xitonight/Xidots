@@ -54,9 +54,9 @@ end, { desc = "window up" })
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- Mason
-map("n", "<leader>mm", "<cmd>Mason<cr>", { desc = "Lazy" })
-map("n", "<leader>mu", "<cmd>MasonUpdate<cr>", { desc = "Lazy" })
-map("n", "<leader>mi", "<cmd>MasonInstallAll<cr>", { desc = "Lazy" })
+map("n", "<leader>mm", "<cmd>Mason<cr>", { desc = "Open Mason menu" })
+map("n", "<leader>mu", "<cmd>MasonUpdate<cr>", { desc = "Mason update" })
+map("n", "<leader>mi", "<cmd>MasonInstallAll<cr>", { desc = "Mason intall all" })
 
 -- Explorers
 map("n", "<leader>eo", "<cmd>Oil<CR>", { desc = "toggle NvimTree" })
