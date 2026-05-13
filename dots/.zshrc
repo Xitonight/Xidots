@@ -195,6 +195,7 @@ function sesh-sessions() {
 
 # Shell integrations
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(mise activate zsh)"
 eval "$(pay-respects zsh)"
 export _PR_AI_DISABLE
 
@@ -240,11 +241,6 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# Source nvm
-# TODO: replace with faster alternative
-# as of now this worsens startup time of almost an entire second
-# source /usr/share/nvm/init-nvm.sh
 
 # TexLive
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"

@@ -112,25 +112,6 @@ install_packages() {
   fi
 }
 
-install_npm() {
-  print_header "
- _   _
-| \\ | |_ __  _ __ ___
-|  \\| | '_ \\| '_ \` _ \\
-| |\\  | |_) | | | | | |
-|_| \\_| .__/|_| |_| |_|
-      |_|
-" "Setting up Node.js environment..."
-  source /usr/share/nvm/init-nvm.sh
-  if command -v npm &>/dev/null; then
-    echo "Installing node / npm..."
-    nvm install lts/jod
-    nvm use lts/jod
-  fi
-  # Install pnpm globally
-  npm install -g pnpm@latest
-}
-
 stow_dots() {
   print_header "
  ____  _

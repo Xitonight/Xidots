@@ -93,7 +93,7 @@ git
 git-delta
 github-cli
 lolcat
-nvm
+mise
 pay-respects-bin
 pipes.sh
 ripgrep
@@ -102,6 +102,7 @@ tmux
 zoxide
 
 # ---------------------------------------------- UTILS
+clang
 deno
 inetutils
 jdk17-openjdk
