@@ -1,6 +1,7 @@
 return {
   "folke/todo-comments.nvim",
   cmd = { "TodoTrouble", "TodoTelescope" },
+  lazy = false,
   opts = {},
   -- stylua: ignore
   keys = {
