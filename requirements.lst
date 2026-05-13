@@ -107,6 +107,7 @@ deno
 inetutils
 jdk17-openjdk
 libinput-gestures
+oh-my-posh
 python-watchdog
 resvg
 systemd-resolvconf
