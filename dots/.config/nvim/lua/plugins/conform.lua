@@ -4,6 +4,7 @@ return {
   opts = {
     formatters_by_ft = {
       cmake = { "cmake_format" },
+      cpp = { "clang-format" },
       css = { "prettier", "prettierd", stop_after_first = true },
       go = { "golines" },
       html = { "prettier", "prettierd", stop_after_first = true },
@@ -16,6 +17,7 @@ return {
       toml = { "taplo" },
       typescript = { "eslint_d" },
       typescriptreact = { "eslint_d" },
+      zsh = { "shfmt" },
     },
 
     format_on_save = {
