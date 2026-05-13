@@ -13,7 +13,7 @@
 
 (defvar
   tap-time 200
-  hold-time 200
+  hold-time 120
 )
 
 (defalias
@@ -25,7 +25,7 @@
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l ralt)
   ; (tap-hold $tap-time $hold-time Semicolon rmet)
-  spacemode (tap-hold 100 100 spc (layer-while-held spacemods))
+  spacemode (tap-hold $tap-time $hold-time spc (layer-while-held spacemods))
 )
 
 (deflayer base
