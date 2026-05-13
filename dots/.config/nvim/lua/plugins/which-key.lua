@@ -20,6 +20,7 @@ return {
         { "<leader>s", group = "search" },
         { "<leader>u", group = "ui" },
         { "<leader>x", group = "diagnostics/quickfix" },
+        { "<leader>m", group = "Mason" },
         { "[", group = "prev" },
         { "]", group = "next" },
         { "g", group = "goto" },
