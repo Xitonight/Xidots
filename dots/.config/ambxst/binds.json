@@ -81,10 +81,14 @@
                 "action": {
                     "args": {
                     },
-                    "id": "ambxst.lens"
+                    "id": "ambxst.lens",
+                    "layouts": [
+                    ]
                 },
-                "key": "",
+                "key": "G",
                 "modifiers": [
+                    "SUPER",
+                    "ALT"
                 ]
             },
             "lockscreen": {
