@@ -8,15 +8,7 @@ local servers = {
   clangd = {},
   cssls = {},
   denols = {},
-  gopls = {
-    settings = {
-      analyses = {
-        unusedparams = true,
-      },
-      staticcheck = true,
-      gofumpt = true,
-    },
-  },
+  gopls = {},
   html = {},
   jsonls = {},
   kotlin_lsp = {},
