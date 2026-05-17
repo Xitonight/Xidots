@@ -22,4 +22,10 @@ return {
     ),
     { condition = line_begin }
   ),
+  autosnippet(
+    { trig = ";;", regTrig = true, wordTrig = false },
+    fmta([[ := <>]], {
+      i(1),
+    })
+  ),
 }
