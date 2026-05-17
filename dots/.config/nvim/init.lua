@@ -36,9 +36,6 @@ vim.schedule(function()
   require "mappings"
 end)
 
-vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/snippets"
-vim.g.vscode_snippets_exclude = { "tex", "typescriptreact" }
-
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
