@@ -1,0 +1,15 @@
+---
+name: xidots
+project_root: "/home/xitonight/.xidots"
+attach: false
+windows:
+- main:
+    layout: 25c3,140x35,0,0{70x35,0,0,4,69x35,71,0,28}
+    panes:
+      - nvim:
+        - cd /home/xitonight/.xidots
+        - nvim
+        - fr
+      - git:
+        - cd /home/xitonight/.xidots
+        - clear && git status

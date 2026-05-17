@@ -99,6 +99,7 @@ pipes.sh
 ripgrep
 sesh-bin
 tmux
+tmuxinator
 zoxide
 
 # ---------------------------------------------- UTILS

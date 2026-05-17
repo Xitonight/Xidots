@@ -6,25 +6,13 @@ if [ -z $SSH_CONNECTION ]; then
     # create session and windows
     tmux new-session -d -s "main" -n "main"
     tmux neww -d -t "main:2" -n "ssh" 2>/dev/null
-    tmux neww -t "main:0" -n "conf" -c $XIDOTS_DIR 2>/dev/null
 
     # split ssh in two panes
     tmux split-window -h -t main:2
-    # same for conf
-    tmux split-window -h -t main:0
-
-    # open nvim and check repo status in "conf" window
-    tmux send-keys -t main:0.1 'nvim' Enter
-    tmux send-keys -t main:0.2 'cd $XIDOTS_DIR' Enter 'clear' Enter 'git status' Enter
-    tmux send-keys -t main:0.2 'clear' Enter
-    tmux send-keys -t main:0.2 'git status' Enter
 
     # automatically connect to mini in both panes in "ssh" window
     tmux send-keys -t main:2.1 'tailscale ssh xitonight@mini' Enter
-    tmux send-keys -t main:2.2 'tailscale ssh xitonight@mini' Enter 'clear' Enter
-    sleep 0.1
-    tmux send-keys -t main:2.1 'clear' Enter
-    tmux send-keys -t main:2.2 'clear' Enter
+    tmux send-keys -t main:2.2 'tailscale ssh xitonight@mini' Enter
   fi
   # if not connected to a tmux session
   # and if no other client is connected to the main session attach to it
