@@ -28,4 +28,7 @@ return {
     require("mini.ai").setup(opts)
     require("configs.mini-ai-whichkey").ai_whichkey(opts)
   end,
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
 }
