@@ -5,8 +5,8 @@ local map = vim.keymap.set
 -- General Vim actions
 map({ "n", "v" }, ";", ":", { desc = "CMD enter command mode" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
-map("n", "<leader>vui", vim.show_pos, { desc = "Inspect Pos" })
-map("n", "<leader>vuI", function()
+map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+map("n", "<leader>uI", function()
   vim.treesitter.inspect_tree()
   vim.api.nvim_input "I"
 end, { desc = "Inspect Tree" })
