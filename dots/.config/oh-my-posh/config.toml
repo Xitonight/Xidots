@@ -14,7 +14,7 @@ newline = true
 type = 'path'
 style = 'plain'
 background = 'transparent'
-foreground = '4'
+foreground = '16'
 template = '{{ .Path }}'
 
 [blocks.segments.properties]
