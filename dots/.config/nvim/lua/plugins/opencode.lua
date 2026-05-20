@@ -34,7 +34,7 @@ return {
       function()
         require("opencode").ask("@this: ", { submit = true })
       end,
-      { desc = "Ask opencode…" },
+      desc = "Ask opencode…",
     },
     {
       mode = { "n", "x" },
@@ -42,14 +42,14 @@ return {
       function()
         require("opencode").select()
       end,
-      { desc = "Execute opencode action…" },
+      desc = "Execute opencode action…",
     },
     {
       "<leader>os",
       function()
         require("opencode").select_server()
       end,
-      { desc = "Select opencode server" },
+      desc = "Select opencode server",
       mode = { "n", "t" },
     },
     {
@@ -57,7 +57,8 @@ return {
       function()
         return require("opencode").operator "@this "
       end,
-      { desc = "Add range to opencode", expr = true },
+      desc = "Add range to opencode",
+      expr = true,
       mode = { "n", "x" },
     },
     {
@@ -65,7 +66,8 @@ return {
       function()
         return require("opencode").operator "@this " .. "_"
       end,
-      { desc = "Add line to opencode", expr = true },
+      desc = "Add line to opencode",
+      expr = true,
       mode = "n",
     },
   },
