@@ -14,28 +14,7 @@ local servers = {
   kotlin_lsp = {},
   lua_ls = {},
   prismals = {},
-  pyright = {
-    settings = {
-      pyright = {
-        disableOrganizeImports = true,
-      },
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true,
-      },
-    },
-    root_markers = {
-      "main.py",
-      "pyproject.toml",
-      "setup.py",
-      "setup.cfg",
-      "requirements.txt",
-      "Pipfile",
-      "pyrightconfig.json",
-      ".git",
-    },
-  },
+  basedpyright = {},
   svelte = {},
   taplo = {},
   vtsls = {},
