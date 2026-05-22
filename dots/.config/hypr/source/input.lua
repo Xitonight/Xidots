@@ -1,0 +1,13 @@
+hl.config({
+  input = {
+    kb_layout = "us,it",
+    follow_mouse = 2,
+    force_no_accel = true,
+    scroll_method = "on_button_down",
+  },
+})
+
+hl.device({
+  name = "synps/2-synaptics-touchpad",
+  enabled = false,
+})

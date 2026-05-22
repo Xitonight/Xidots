@@ -1,0 +1,14 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+  hl.exec_cmd(
+    'udiskie --event-hook="stow --target=$HOME/Mounts/ --dir=/run/media/ --restow $USER"'
+  )
+  hl.exec_cmd("[workspace special silent] Telegram")
+  hl.exec_cmd("[workspace 2 silent] zen-browser")
+  hl.exec_cmd("[workspace 3 silent] bitwarden-desktop")
+  hl.exec_cmd("[workspace 1 silent] kitty")
+end)
+
+os.execute(
+  "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME"
+)

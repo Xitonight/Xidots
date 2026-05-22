@@ -1,0 +1,20 @@
+hl.bind("SUPER + ALT + SHIFT + R", hl.dsp.submap("resize"))
+
+hl.define_submap("resize", function()
+  hl.bind("H", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true })
+  hl.bind("J", hl.dsp.window.resize({ x = 0, y = 50, relative = true }), { repeating = true })
+  hl.bind("K", hl.dsp.window.resize({ x = 0, y = -50, relative = true }), { repeating = true })
+  hl.bind("L", hl.dsp.window.resize({ x = 50, y = 0, relative = true }), { repeating = true })
+  hl.bind("C", hl.dsp.window.center({ always_center = true }))
+  hl.bind("catchall", hl.dsp.submap("reset"))
+end)
+
+hl.bind("SUPER + ALT + SHIFT + M", hl.dsp.submap("move"))
+
+hl.define_submap("move", function()
+  hl.bind("H", hl.dsp.window.move({ x = -50, y = 0 }), { repeating = true })
+  hl.bind("K", hl.dsp.window.move({ x = 0, y = -50 }), { repeating = true })
+  hl.bind("J", hl.dsp.window.move({ x = 0, y = 50 }), { repeating = true })
+  hl.bind("L", hl.dsp.window.move({ x = 50, y = 0 }), { repeating = true })
+  hl.bind("catchall", hl.dsp.submap("reset"))
+end)

@@ -1,0 +1,18 @@
+hl.config({
+  animations = {
+    enabled = true,
+  },
+})
+
+hl.curve("myBezier", { type = "bezier", points = { { 0.4, 0.0 }, { 0.2, 1.0 } } })
+
+hl.animation({ leaf = "windows", enabled = true, speed = 2.5, bezier = "myBezier", style = "popin 80%" })
+hl.animation({ leaf = "border", enabled = true, speed = 2.5, bezier = "myBezier" })
+hl.animation({ leaf = "fade", enabled = true, speed = 2.5, bezier = "myBezier" })
+hl.animation({
+  leaf = "workspaces",
+  enabled = true,
+  speed = 2.5,
+  bezier = "myBezier",
+  style = "slidefadevert 20%",
+})

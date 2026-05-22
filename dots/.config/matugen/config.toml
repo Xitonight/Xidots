@@ -6,8 +6,8 @@ kitty = true
 gtk_theme = true
 
 [templates.hyprland]
-input_path = "~/.config/matugen/templates/colors-hyprland.conf"
-output_path = "~/.config/hypr/source/colors.conf"
+input_path = "~/.config/matugen/templates/colors-hyprland.lua"
+output_path = "~/.config/hypr/source/colors.lua"
 
 [templates.kitty]
 input_path = "~/.config/matugen/templates/colors-kitty.conf"

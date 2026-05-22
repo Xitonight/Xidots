@@ -1,0 +1,16 @@
+hl.config({
+  misc = {
+    force_default_wallpaper = 1,
+    disable_hyprland_logo = 1,
+    focus_on_activate = 1,
+    allow_session_lock_restore = 1,
+    middle_click_paste = 0,
+    on_focus_under_fullscreen = 1,
+  },
+  ecosystem = {
+    no_update_news = true,
+  },
+  xwayland = {
+    force_zero_scaling = true,
+  },
+})
