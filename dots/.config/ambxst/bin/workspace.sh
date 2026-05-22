@@ -15,9 +15,9 @@ current_ws=$(hyprctl monitors -j | jq -r '.[] | select(.focused==true) | .specia
 if [[ "$current_ws" =~ ^special:(.*) ]]; then
   special_name="${BASH_REMATCH[1]}"
   # Toggle it off before moving
-  hyprctl dispatch togglespecialworkspace "$special_name" >/dev/null
+  hyprctl dispatch "hl.dsp.workspace.toggle_special('$special_name')" >/dev/null
 fi
 
 # 3. Perform the move
-hyprctl dispatch workspace "$target_workspace" >/dev/null
+hyprctl dispatch "hl.dsp.focus({ workspace = '$target_workspace' })" >/dev/null
 exit 0
