@@ -1,12 +1,14 @@
+-- Ambxst
+loadfile(os.getenv("HOME") .. "/.local/share/ambxst/hyprland.lua")()
+
 require("source/nvidia")
 require("source/env")
 require("source/autostart")
 require("source/misc")
+require("source/submaps")
 require("source/appearence")
 require("source/animations")
 require("source/input")
-require("source/submaps")
-require("source/keybinds")
 require("source/windowrules")
 
 local hostname = io.popen("hostname"):read("*a"):gsub("%s+", "")
@@ -17,6 +19,3 @@ hl.monitor({
 	position = "auto",
 	scale = hostname == "archpad" and 1.33 or 1,
 })
-
--- OVERRIDES
--- Down here you can write or require anything that you want to override.
