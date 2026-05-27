@@ -2104,11 +2104,9 @@
             "actions": [
                 {
                     "args": {
-                        "argument": "1",
-                        "dispatcher": "fullscreen",
-                        "flags": ""
+                        "command": "hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = \"maximized\", action = \"toggle\" })'"
                     },
-                    "id": "legacy.dispatcher",
+                    "id": "command.run",
                     "layouts": [
                     ]
                 }
@@ -2128,11 +2126,9 @@
             "actions": [
                 {
                     "args": {
-                        "argument": "0",
-                        "dispatcher": "fullscreen",
-                        "flags": ""
+                        "command": "hyprctl dispatch 'hl.dsp.window.fullscreen({ action = \"toggle\" })'"
                     },
-                    "id": "legacy.dispatcher",
+                    "id": "command.run",
                     "layouts": [
                     ]
                 }
