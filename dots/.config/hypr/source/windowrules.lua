@@ -3,8 +3,12 @@ hl.window_rule({ match = { class = "org.gnome.Calculator" }, float = true })
 hl.window_rule({ match = { class = "Bitwarden" }, float = true })
 
 -- Opacity
-hl.window_rule({ match = { fullscreen = false }, opacity = 0.98 })
-hl.window_rule({ match = { class = "kitty|imv|swappy" }, opaque = true })
+hl.window_rule({ match = { fullscreen = false }, opacity = 0.95 })
+hl.window_rule({ match = { class = "imv|swappy" }, opaque = true })
+hl.window_rule({
+	match = { class = "kitty" },
+	opaque = false,
+})
 
 -- Center floating (not xwayland popups)
 hl.window_rule({ match = { xwayland = false, float = true }, center = true })
