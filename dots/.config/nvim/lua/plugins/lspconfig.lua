@@ -18,6 +18,7 @@ local servers = {
   svelte = {},
   taplo = {},
   vtsls = {},
+  yamlls = {},
 }
 
 for name, opts in pairs(servers) do
