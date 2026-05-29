@@ -39,6 +39,7 @@ return {
     opts = {
       snippets = { preset = "default" },
       appearance = { nerd_font_variant = "normal" },
+      signature = { enabled = false },
       completion = {
         accept = {
           auto_brackets = {
