@@ -120,6 +120,9 @@ alias unstow='stow -D'
 
 # Corrections for nvim lmfao
 alias vim='nvim'
+
+alias j='just'
+
 alias nivm='nvim'
 alias nimv='nvim'
 alias nvmim='nvim'
