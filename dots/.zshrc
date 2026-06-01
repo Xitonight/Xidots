@@ -118,15 +118,12 @@ alias orphans='yay -Qqtd'
 
 alias unstow='stow -D'
 
-# Corrections for nvim lmfao
+alias v='nvim'
 alias vim='nvim'
 
 alias j='just'
 
-alias nivm='nvim'
-alias nimv='nvim'
-alias nvmim='nvim'
-alias nvmi='nvim'
+alias open='xdg-open'
 
 # Config files shortcuts
 alias zconf='nvim $HOME/.zshrc'
