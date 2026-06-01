@@ -65,10 +65,10 @@ return {
  ]],
         -- stylua: ignore
         keys = {
-          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files', {hidden = true})" },
+          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files', {hidden = true, cwd = Snacks.git.get_root()})" },
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
           { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep', {hidden = true})" },
-          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles', {hidden = true})" },
+          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles', {hidden = true, cwd = Snacks.git.get_root()})" },
           { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
@@ -97,8 +97,8 @@ return {
       { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end, desc = "Find Files (cwd)" },
       { "<leader>fF", function() Snacks.picker.files({ hidden = true, cwd = Snacks.git.get_root() }) end, desc = "Find Files" },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (git-files)" },
-      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
-      { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
+      { "<leader>fr", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
+      { "<leader>fR", function() Snacks.picker.recent() end, desc = "Recent" },
       { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
       -- git
       { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (hunks)" },
