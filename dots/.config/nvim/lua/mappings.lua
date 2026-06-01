@@ -63,12 +63,7 @@ map("n", "<leader>eo", "<cmd>Oil<CR>", { desc = "toggle NvimTree" })
 map("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "toggle NvimTree" })
 
 map("n", "<leader>ca", function()
-  vim.lsp.buf.code_action {
-    apply = false,
-    context = {
-      diagnostics = {},
-    },
-  }
+  vim.lsp.buf.code_action()
 end, { desc = "Open Code Action Menu" })
 
 map("v", "<C-c>", '"+y', { desc = "Yank into system clipboard" })
