@@ -12,16 +12,22 @@ path = "~/.xidots"
 preview_command = "git -C ~/.xidots status"
 
 [[session]]
-name = "Papers"
+name = "papers"
 path = "~/Pictures/Wallpapers"
 preview_command = "eza -1 --icons --color=always ~/Pictures/Wallpapers"
 
 [[session]]
-name = "Downloads"
+name = "downloads"
 path = "~/Downloads"
 
 [[session]]
-name = "Tmux config"
+name = "tmux conf"
 path = "~/.config/tmux"
 startup_command = "nvim tmux.conf"
 preview_command = "bat --color=always ~/.config/tmux/tmux.conf"
+
+[[session]]
+name = "nvim conf"
+path = "~/.config/nvim"
+startup_command = "nvim"
+preview_command = "bat --color=always ~/.config/nvim/init.lua"
