@@ -182,17 +182,17 @@ function sesh-sessions() {
 }
 
 # Shell integrations
+source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(mise activate zsh)"
 eval "$(pay-respects zsh)"
 export _PR_AI_DISABLE
 
 function zvm_after_init() {
-  FZF_CTRL_T_COMMAND= source <(fzf --zsh)
   bindkey -M viins '^p' history-search-backward
   bindkey -M viins '^n' history-search-forward
-  bindkey ' ' magic-space
-  bindkey '^R' fzf-history-widget
+  bindkey -M viins ' ' magic-space
+  bindkey -M viins '^R' fzf-history-widget
 
   # Sesh
   zle -N sesh-sessions
