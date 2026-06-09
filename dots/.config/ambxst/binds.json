@@ -2,18 +2,15 @@
     "ambxst": {
         "assistant": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.assistant"
             },
             "key": "",
-            "modifiers": [
-            ]
+            "modifiers": []
         },
         "clipboard": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.clipboard"
             },
             "key": "C",
@@ -23,8 +20,7 @@
         },
         "dashboard": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.dashboard"
             },
             "key": "D",
@@ -34,8 +30,7 @@
         },
         "emoji": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.emoji"
             },
             "key": "PERIOD",
@@ -45,8 +40,7 @@
         },
         "launcher": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.launcher"
             },
             "key": "A",
@@ -56,19 +50,16 @@
         },
         "notes": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.notes"
             },
             "key": "",
-            "modifiers": [
-            ]
+            "modifiers": []
         },
         "system": {
             "config": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.config"
                 },
                 "key": "C",
@@ -79,11 +70,9 @@
             },
             "lens": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.lens",
-                    "layouts": [
-                    ]
+                    "layouts": []
                 },
                 "key": "G",
                 "modifiers": [
@@ -93,8 +82,7 @@
             },
             "lockscreen": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.lock"
                 },
                 "key": "L",
@@ -106,8 +94,7 @@
             },
             "overview": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.overview"
                 },
                 "key": "TAB",
@@ -117,8 +104,7 @@
             },
             "powermenu": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.powermenu"
                 },
                 "key": "ESCAPE",
@@ -128,8 +114,7 @@
             },
             "quit": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.quit"
                 },
                 "key": "B",
@@ -142,8 +127,7 @@
             },
             "reload": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.reload"
                 },
                 "key": "B",
@@ -154,8 +138,7 @@
             },
             "screenrecord": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenrecord"
                 },
                 "key": "R",
@@ -166,8 +149,7 @@
             },
             "screenshot": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenshot"
                 },
                 "key": "P",
@@ -177,8 +159,7 @@
             },
             "tools": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.tools"
                 },
                 "key": "S",
@@ -189,18 +170,15 @@
         },
         "tmux": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.tmux"
             },
             "key": "",
-            "modifiers": [
-            ]
+            "modifiers": []
         },
         "wallpapers": {
             "action": {
-                "args": {
-                },
+                "args": {},
                 "id": "ambxst.wallpapers"
             },
             "key": "COMMA",
@@ -209,2355 +187,12 @@
             ]
         }
     },
-    "custom": [
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "window.close",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Q",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Close Window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 1"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 1"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 2"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 2"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 3"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 3"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 4"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 4"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 5"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 5"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 6"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 6"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 7"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 7"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 8"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 8"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 9"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 9"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "~/.config/ambxst/bin/workspace.sh 10"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 10"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "1"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 1"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "2"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 2"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "3"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 3"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "4"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 4"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "5"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 5"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "6"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 6"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "7"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 7"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "8"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 8"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "9"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 9"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "10"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 10"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "offset": "-1"
-                    },
-                    "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "mouse_down",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Previous Occupied Workspace (Scroll)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "offset": "+1"
-                    },
-                    "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "mouse_up",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Next Occupied Workspace (Scroll)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "offset": "-1"
-                    },
-                    "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Z",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Previous Occupied Workspace"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "offset": "+1"
-                    },
-                    "id": "workspace.switch-occupied",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "X",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Next Occupied Workspace"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "window.drag",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "mouse:272",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Drag Window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "window.resize-drag",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "mouse:273",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Drag Resize Window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "media.play-pause",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioPlay",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Play/Pause"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "media.prev",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioPrev",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Previous Track"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "media.next",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioNext",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Next Track"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "media.play-pause-locked",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioMedia",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Media Play/Pause"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "media.stop-locked",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioStop",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Stop Playback"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "audio.volume-up",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioRaiseVolume",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Volume Up"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "audio.volume-down",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioLowerVolume",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Volume Down"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "audio.mute-toggle",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86AudioMute",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Mute Audio"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "brightness.up",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86MonBrightnessUp",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Brightness Up"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "brightness.down",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86MonBrightnessDown",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Brightness Down"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "system.calculator",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "XF86Calculator",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Calculator"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "system.lock-locked",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "switch:Lid Switch",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Lock on Lid Close"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "system.dpms-off",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "switch:on:Lid Switch",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Display Off on Lid Close"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "system.dpms-on",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "switch:off:Lid Switch",
-                    "modifiers": [
-                    ]
-                }
-            ],
-            "name": "Display On on Lid Open"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "u"
-                    },
-                    "id": "scrolling.focus",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "u"
-                    },
-                    "id": "window.focus",
-                    "layouts": [
-                        "dwindle",
-                        "master"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "k",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Focus Up"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "d"
-                    },
-                    "id": "scrolling.focus",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "d"
-                    },
-                    "id": "window.focus",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "j",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Focus Down"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "l"
-                    },
-                    "id": "scrolling.focus",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "l"
-                    },
-                    "id": "window.focus",
-                    "layouts": [
-                        "dwindle",
-                        "master"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "h",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Focus Left"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "r"
-                    },
-                    "id": "scrolling.focus",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "r"
-                    },
-                    "id": "window.focus",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "l",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Focus Right"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "l"
-                    },
-                    "id": "window.move",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "l"
-                    },
-                    "id": "scrolling.move-window",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "h",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move Window Left"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "r"
-                    },
-                    "id": "window.move",
-                    "layouts": [
-                        "dwindle",
-                        "master"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "r"
-                    },
-                    "id": "scrolling.move-window",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "l",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move Window Right"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "u"
-                    },
-                    "id": "window.move",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "u"
-                    },
-                    "id": "scrolling.move-window",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "k",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move Window Up"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "d"
-                    },
-                    "id": "window.move",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                },
-                {
-                    "args": {
-                        "direction": "d"
-                    },
-                    "id": "scrolling.move-window",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "j",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move Window Down"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "delta": "+0.1"
-                    },
-                    "id": "scrolling.resize-column",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                },
-                {
-                    "args": {
-                        "delta": "50 0"
-                    },
-                    "id": "window.resize",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "l",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Horizontal Resize +"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "delta": "-0.1"
-                    },
-                    "id": "scrolling.resize-column",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                },
-                {
-                    "args": {
-                        "delta": "-50 0"
-                    },
-                    "id": "window.resize",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "h",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Horizontal Resize -"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "delta": "0 50"
-                    },
-                    "id": "window.resize",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "j",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Vertical Resize +"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "delta": "0 -50"
-                    },
-                    "id": "window.resize",
-                    "layouts": [
-                        "master",
-                        "dwindle"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "k",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Vertical Resize -"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "scrolling.promote",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "SPACE",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Promote (Scrolling)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "scrolling.toggle-fit",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "SPACE",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Toggle Fit (Scrolling)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "scrolling.toggle-full-column",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "SPACE",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Toggle Full Column (Scrolling)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "l"
-                    },
-                    "id": "scrolling.swap-column",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Left",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "CTRL"
-                    ]
-                },
-                {
-                    "key": "h",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Swap Column Left"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "direction": "r"
-                    },
-                    "id": "scrolling.swap-column",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Right",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "CTRL"
-                    ]
-                },
-                {
-                    "key": "l",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Swap Column Right"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "1"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 1"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "2"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 2"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "3"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 3"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "4"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 4"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "5"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 5"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "6"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 6"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "7"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 7"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "8"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 8"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "9"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 9"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "10"
-                    },
-                    "id": "scrolling.move-column-workspace",
-                    "layouts": [
-                        "scrolling"
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move Column To Workspace 10"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "1",
-                        "dispatcher": "centerwindow",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "C",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Center active (floating) window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "",
-                        "dispatcher": "pin",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Y",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Pin active window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "kitty"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Return",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Open terminal"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "kitty --class kitty-floating -1"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Return",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Open floating terminal"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "hyprctl switchxkblayout current next"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "K",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Switch keyboard layout"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "kitty --class kitty-btop btop"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Escape",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Open btop"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "kitty --class kitty-pulsemixer pulsemixer"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "V",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Open pulsemixer"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "kitty --class kitty-nmtui --override window_padding_width=0 nmtui"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "W",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Open nmtui"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "",
-                        "dispatcher": "togglefloating",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Space",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Toggle floating for active window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "",
-                        "dispatcher": "exit",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "Escape",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Exit Hyprland"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = \"maximized\", action = \"toggle\" })'"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "F",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Toggle maximize (fullscreen with borders)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "hyprctl dispatch 'hl.dsp.window.fullscreen({ action = \"toggle\" })'"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "F",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Toggle fullscreen"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "workspace.toggle-special",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "T",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Toggle special workspace"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "workspace.move-window-special",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "T",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to special workspace"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                    },
-                    "id": "workspace.move-window-special-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "T",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to special workspace (silent)"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "-50 0",
-                        "dispatcher": "moveactive",
-                        "flags": "e"
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "H",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move floating window left"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "0 -50",
-                        "dispatcher": "moveactive",
-                        "flags": "e"
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "J",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move floating window down"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "0 50",
-                        "dispatcher": "moveactive",
-                        "flags": "e"
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "K",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move floating window up"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "50 0",
-                        "dispatcher": "moveactive",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "L",
-                    "modifiers": [
-                        "SUPER",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move floating window right"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "1"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 1 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "2"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 2 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "3"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 3 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "4"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 4 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "5"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 5 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "6"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 6 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "7"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 7 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "8"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 8 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "9"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 9 silent"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "10"
-                    },
-                    "id": "workspace.move-window-silent",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Move to workspace 10 silent"
-        }
-    ],
+    "custom": [],
     "defaultAmbxstBinds": {
         "ambxst": {
             "assistant": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.assistant"
                 },
                 "key": "A",
@@ -2567,8 +202,7 @@
             },
             "clipboard": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.clipboard"
                 },
                 "key": "V",
@@ -2578,8 +212,7 @@
             },
             "dashboard": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.dashboard"
                 },
                 "key": "D",
@@ -2589,8 +222,7 @@
             },
             "emoji": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.emoji"
                 },
                 "key": "PERIOD",
@@ -2600,8 +232,7 @@
             },
             "launcher": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.launcher"
                 },
                 "key": "Super_L",
@@ -2611,8 +242,7 @@
             },
             "notes": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.notes"
                 },
                 "key": "N",
@@ -2622,8 +252,7 @@
             },
             "tmux": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.tmux"
                 },
                 "key": "T",
@@ -2633,8 +262,7 @@
             },
             "wallpapers": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.wallpapers"
                 },
                 "key": "COMMA",
@@ -2646,8 +274,7 @@
         "system": {
             "config": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.config"
                 },
                 "key": "C",
@@ -2658,8 +285,7 @@
             },
             "lens": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.lens"
                 },
                 "key": "A",
@@ -2670,8 +296,7 @@
             },
             "lockscreen": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "system.lock"
                 },
                 "key": "L",
@@ -2681,8 +306,7 @@
             },
             "overview": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.overview"
                 },
                 "key": "TAB",
@@ -2692,8 +316,7 @@
             },
             "powermenu": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.powermenu"
                 },
                 "key": "ESCAPE",
@@ -2703,8 +326,7 @@
             },
             "quit": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.quit"
                 },
                 "key": "B",
@@ -2716,8 +338,7 @@
             },
             "reload": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.reload"
                 },
                 "key": "B",
@@ -2728,8 +349,7 @@
             },
             "screenrecord": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenrecord"
                 },
                 "key": "R",
@@ -2740,8 +360,7 @@
             },
             "screenshot": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.screenshot"
                 },
                 "key": "S",
@@ -2752,8 +371,7 @@
             },
             "tools": {
                 "action": {
-                    "args": {
-                    },
+                    "args": {},
                     "id": "ambxst.tools"
                 },
                 "key": "S",

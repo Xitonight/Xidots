@@ -10,6 +10,7 @@ require("source/appearence")
 require("source/animations")
 require("source/input")
 require("source/windowrules")
+require("source/keybinds")
 
 local hostname = io.popen("hostname"):read("*a"):gsub("%s+", "")
 
