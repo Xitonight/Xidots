@@ -169,6 +169,20 @@ p() {
   fi
 }
 
+cppath() {
+  echo "Param count:" $#
+  local target
+  if [[ $# -gt 1 ]]; then
+    echo "Please provide just one target."
+    return
+  fi
+  target="$1"
+  local fullpath
+  fullpath=$(realpath "$target")
+  wl-copy "$fullpath"
+  echo "Copied $fullpath to the clipboard."
+}
+
 function sesh-sessions() {
   {
     exec </dev/tty
