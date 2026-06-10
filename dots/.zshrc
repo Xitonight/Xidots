@@ -170,17 +170,29 @@ p() {
 }
 
 cppath() {
-  echo "Param count:" $#
-  local target
   if [[ $# -gt 1 ]]; then
     echo "Please provide just one target."
     return
   fi
+  local target
   target="$1"
   local fullpath
   fullpath=$(realpath "$target")
   wl-copy "$fullpath"
   echo "Copied $fullpath to the clipboard."
+}
+
+mksesh() {
+  # mksesh ~/Projects/active/mactosesh
+  if [[ $# -gt 1 ]]; then
+    echo "Please provide just one target."
+    return
+  fi
+  local target
+  target="$1"
+  mkdir -p "$target"
+  zoxide add "$target"
+  sesh connect "$target"
 }
 
 function sesh-sessions() {
