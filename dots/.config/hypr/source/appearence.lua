@@ -20,7 +20,7 @@ hl.config({
 		border_size = 2,
 		layout = "dwindle",
 		gaps_in = 2,
-		gaps_out = 2,
+		gaps_out = 8,
 	},
 	decoration = {
 		dim_special = 0.6,
@@ -32,10 +32,10 @@ hl.config({
 			contrast = 1,
 			brightness = 1,
 		},
-		rounding = 14,
+		rounding = 16,
 		shadow = {
 			enabled = true,
-			range = 10,
+			range = 8,
 			render_power = 2,
 			color = "rgba(0, 0, 0, 0.25)",
 		},

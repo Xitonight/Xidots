@@ -136,8 +136,8 @@ hl.bind("SUPER + SHIFT + CTRL + ALT + Escape", hl.dsp.exit())
 
 -- Lid switch
 hl.bind("switch:Lid Switch", hl.dsp.exec_cmd("loginctl lock-session"))
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("axctl monitor set-dpms 0 0"))
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("axctl monitor set-dpms 0 1"))
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms off"))
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms on"))
 
 -- Media keys
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
