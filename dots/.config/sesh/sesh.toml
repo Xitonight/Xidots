@@ -7,18 +7,9 @@ startup_command = "tmuxinator start --append && exit || clear"
 preview_command = "eza --all -1 --git --icons --color=always {}"
 
 [[session]]
-name = "xidots"
-path = "~/.xidots"
-preview_command = "git -C ~/.xidots status"
-
-[[session]]
 name = "papers"
 path = "~/Pictures/Wallpapers"
 preview_command = "eza -1 --icons --color=always ~/Pictures/Wallpapers"
-
-[[session]]
-name = "downloads"
-path = "~/Downloads"
 
 [[session]]
 name = "tmux conf"
