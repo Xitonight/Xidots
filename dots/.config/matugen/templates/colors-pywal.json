@@ -8,7 +8,7 @@
     "cursor": "{{colors.surface_bright.default.hex}}"
   },
   "colors": {
-    "color0": "{{colors.background.default.hex}}",
+    "color0": "{{colors.background.default.hex | lighten: -2.5}}",
     "color1": "{{colors.surface_variant.default.hex}}",
     "color2": "{{colors.secondary_fixed_dim.default.hex}}",
     "color3": "{{colors.outline.default.hex}}",
