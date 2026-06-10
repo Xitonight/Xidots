@@ -20,12 +20,12 @@ output_path = "~/.config/opencode/themes/matucode.json"
 pre_hook = "if [ ! -d ~/.config/opencode/themes ]; then mkdir ~/.config/opencode/themes; fi"
 
 [templates.gtk3]
-input_path = "~/.config/matugen/templates/colors.css"
-output_path = "~/.config/gtk-3.0/colors.css"
+input_path = "~/.config/matugen/templates/colors-gtk.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
 
 [templates.gtk4]
-input_path = "~/.config/matugen/templates/colors.css"
-output_path = "~/.config/gtk-4.0/colors.css"
+input_path = "~/.config/matugen/templates/colors-gtk.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
 
 [templates.qt5ct]
 input_path = "~/.config/matugen/templates/colors-qt.conf"

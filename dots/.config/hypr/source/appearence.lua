@@ -1,4 +1,4 @@
-hl.env("GTK_THEME", "AxMat")
+hl.env("GTK_THEME", "adw-gtk3-dark")
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprctl setcursor 'Bibata-Modern-Classic' 24")
 end)
