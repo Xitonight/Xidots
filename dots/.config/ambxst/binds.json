@@ -2,25 +2,30 @@
     "ambxst": {
         "assistant": {
             "action": {
-                "args": {},
+                "args": {
+                },
                 "id": "ambxst.assistant"
             },
             "key": "",
-            "modifiers": []
+            "modifiers": [
+            ]
         },
         "clipboard": {
             "action": {
-                "args": {},
-                "id": "ambxst.clipboard"
+                "args": {
+                },
+                "id": "ambxst.clipboard",
+                "layouts": [
+                ]
             },
-            "key": "C",
+            "key": "",
             "modifiers": [
-                "SUPER"
             ]
         },
         "dashboard": {
             "action": {
-                "args": {},
+                "args": {
+                },
                 "id": "ambxst.dashboard"
             },
             "key": "D",
@@ -30,36 +35,43 @@
         },
         "emoji": {
             "action": {
-                "args": {},
-                "id": "ambxst.emoji"
+                "args": {
+                },
+                "id": "ambxst.emoji",
+                "layouts": [
+                ]
             },
-            "key": "PERIOD",
+            "key": "",
             "modifiers": [
-                "SUPER"
             ]
         },
         "launcher": {
             "action": {
-                "args": {},
-                "id": "ambxst.launcher"
+                "args": {
+                },
+                "id": "ambxst.launcher",
+                "layouts": [
+                ]
             },
-            "key": "A",
+            "key": "",
             "modifiers": [
-                "SUPER"
             ]
         },
         "notes": {
             "action": {
-                "args": {},
+                "args": {
+                },
                 "id": "ambxst.notes"
             },
             "key": "",
-            "modifiers": []
+            "modifiers": [
+            ]
         },
         "system": {
             "config": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.config"
                 },
                 "key": "C",
@@ -70,9 +82,11 @@
             },
             "lens": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.lens",
-                    "layouts": []
+                    "layouts": [
+                    ]
                 },
                 "key": "G",
                 "modifiers": [
@@ -82,7 +96,8 @@
             },
             "lockscreen": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "system.lock"
                 },
                 "key": "L",
@@ -94,7 +109,8 @@
             },
             "overview": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.overview"
                 },
                 "key": "TAB",
@@ -104,17 +120,20 @@
             },
             "powermenu": {
                 "action": {
-                    "args": {},
-                    "id": "ambxst.powermenu"
+                    "args": {
+                    },
+                    "id": "ambxst.powermenu",
+                    "layouts": [
+                    ]
                 },
-                "key": "ESCAPE",
+                "key": "",
                 "modifiers": [
-                    "SUPER"
                 ]
             },
             "quit": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.quit"
                 },
                 "key": "B",
@@ -127,7 +146,8 @@
             },
             "reload": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.reload"
                 },
                 "key": "B",
@@ -138,7 +158,8 @@
             },
             "screenrecord": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.screenrecord"
                 },
                 "key": "R",
@@ -149,7 +170,8 @@
             },
             "screenshot": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.screenshot"
                 },
                 "key": "P",
@@ -159,7 +181,8 @@
             },
             "tools": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.tools"
                 },
                 "key": "S",
@@ -170,15 +193,18 @@
         },
         "tmux": {
             "action": {
-                "args": {},
+                "args": {
+                },
                 "id": "ambxst.tmux"
             },
             "key": "",
-            "modifiers": []
+            "modifiers": [
+            ]
         },
         "wallpapers": {
             "action": {
-                "args": {},
+                "args": {
+                },
                 "id": "ambxst.wallpapers"
             },
             "key": "COMMA",
@@ -187,12 +213,14 @@
             ]
         }
     },
-    "custom": [],
+    "custom": [
+    ],
     "defaultAmbxstBinds": {
         "ambxst": {
             "assistant": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.assistant"
                 },
                 "key": "A",
@@ -202,7 +230,8 @@
             },
             "clipboard": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.clipboard"
                 },
                 "key": "V",
@@ -212,7 +241,8 @@
             },
             "dashboard": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.dashboard"
                 },
                 "key": "D",
@@ -222,7 +252,8 @@
             },
             "emoji": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.emoji"
                 },
                 "key": "PERIOD",
@@ -232,7 +263,8 @@
             },
             "launcher": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.launcher"
                 },
                 "key": "Super_L",
@@ -242,7 +274,8 @@
             },
             "notes": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.notes"
                 },
                 "key": "N",
@@ -252,7 +285,8 @@
             },
             "tmux": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.tmux"
                 },
                 "key": "T",
@@ -262,7 +296,8 @@
             },
             "wallpapers": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.wallpapers"
                 },
                 "key": "COMMA",
@@ -274,7 +309,8 @@
         "system": {
             "config": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.config"
                 },
                 "key": "C",
@@ -285,7 +321,8 @@
             },
             "lens": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.lens"
                 },
                 "key": "A",
@@ -296,7 +333,8 @@
             },
             "lockscreen": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "system.lock"
                 },
                 "key": "L",
@@ -306,7 +344,8 @@
             },
             "overview": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.overview"
                 },
                 "key": "TAB",
@@ -316,7 +355,8 @@
             },
             "powermenu": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.powermenu"
                 },
                 "key": "ESCAPE",
@@ -326,7 +366,8 @@
             },
             "quit": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.quit"
                 },
                 "key": "B",
@@ -338,7 +379,8 @@
             },
             "reload": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.reload"
                 },
                 "key": "B",
@@ -349,7 +391,8 @@
             },
             "screenrecord": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.screenrecord"
                 },
                 "key": "R",
@@ -360,7 +403,8 @@
             },
             "screenshot": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.screenshot"
                 },
                 "key": "S",
@@ -371,7 +415,8 @@
             },
             "tools": {
                 "action": {
-                    "args": {},
+                    "args": {
+                    },
                     "id": "ambxst.tools"
                 },
                 "key": "S",
