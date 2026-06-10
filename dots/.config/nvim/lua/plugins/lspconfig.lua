@@ -3,6 +3,7 @@ local nvlsp = require "nvchad.configs.lspconfig"
 nvlsp.defaults()
 
 local servers = {
+  basedpyright = {},
   bashls = {},
   cmake = {},
   clangd = {},
@@ -14,7 +15,7 @@ local servers = {
   kotlin_lsp = {},
   lua_ls = {},
   prismals = {},
-  basedpyright = {},
+  qmlls = {},
   svelte = {},
   taplo = {},
   vtsls = {},
