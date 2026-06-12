@@ -67,7 +67,7 @@ post_hook = "pywalfox update &"
 [templates.pywalsh]
 input_path = "~/.config/matugen/templates/colors.sh"
 output_path = "~/.cache/wal/colors.sh"
-post_hook = "walogram -Bc >/dev/null 2>&1"
+post_hook = "walogram -Bc >/dev/null 2>&1 && pkill Telegram; hyprctl eval 'hl.exec_cmd(\"[workspace special silent] Telegram\")'"
 
 [templates.pywalwalfile]
 input_path = "~/.config/matugen/templates/wal"
