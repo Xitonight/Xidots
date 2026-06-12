@@ -1,0 +1,17 @@
+@import "shared/color.rasi"
+@import "shared/defaults.rasi"
+
+configuration {
+  modi: "drun,run";
+
+  display-drun: "󱓞  Apps";
+
+	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+}
+
+listview {
+  lines: 5;
+  columns: 2;
+
+  scrollbar: true;
+}

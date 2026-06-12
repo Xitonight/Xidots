@@ -1,0 +1,19 @@
+@import "shared/color.rasi"
+@import "shared/defaults.rasi"
+
+configuration {
+  modi: "emoji";
+
+  show-icons: false;
+
+  display-emoji: "󰞅  Emojis";
+
+  matching: "normal";
+}
+
+listview {
+  columns: 1;
+
+  scrollbar: false;
+}
+

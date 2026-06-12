@@ -111,11 +111,12 @@
                 "action": {
                     "args": {
                     },
-                    "id": "ambxst.overview"
+                    "id": "ambxst.overview",
+                    "layouts": [
+                    ]
                 },
-                "key": "TAB",
+                "key": "",
                 "modifiers": [
-                    "SUPER"
                 ]
             },
             "powermenu": {

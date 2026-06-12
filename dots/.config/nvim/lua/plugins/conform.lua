@@ -13,6 +13,7 @@ return {
       json = { "prettier", "prettierd", stop_after_first = true },
       lua = { "stylua" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+      rasi = { "prettier" },
       sh = { "shfmt" },
       toml = { "taplo" },
       typescript = { "eslint_d" },

@@ -1,0 +1,78 @@
+* {
+    primary: #8ecff2;
+    primary-transparent: rgba(142, 207, 242, 0.6);
+    primary-fixed: #c2e8ff;
+    primary-fixed-dim: #8ecff2;
+    on-primary: #003548;
+    on-primary-fixed: #001e2b;
+    on-primary-fixed-variant: #004d67;
+    primary-container: #004d67;
+    on-primary-container: #c2e8ff;
+    secondary: #b5c9d7;
+    secondary-fixed: #d1e5f3;
+    secondary-fixed-dim: #b5c9d7;
+    on-secondary: #20333d;
+    on-secondary-fixed: #091e28;
+    on-secondary-fixed-variant: #364954;
+    secondary-container: #364954;
+    on-secondary-container: #d1e5f3;
+    tertiary: #c9c1ea;
+    tertiary-fixed: #e5deff;
+    tertiary-fixed-dim: #c9c1ea;
+    on-tertiary: #312c4c;
+    on-tertiary-fixed: #1c1736;
+    on-tertiary-fixed-variant: #474364;
+    tertiary-container: #474364;
+    on-tertiary-container: #e5deff;
+    error: #ffb4ab;
+    on-error: #690005;
+    error-container: #93000a;
+    on-error-container: #ffdad6;
+    background: rgba(9, 13, 15, 0.6);
+    on-background: #dfe3e7;
+    surface: #0f1417;
+    surface-transparent: rgba(15, 20, 23, 0.6);
+    on-surface: #dfe3e7;
+    on-surface-variant: #c0c7cd;
+    outline: #8a9297;
+    outline-variant: #40484d;
+    shadow: #000000;
+    scrim: #000000;
+    inverse-surface: #dfe3e7;
+    inverse-on-surface: #2c3134;
+    inverse-primary: #196585;
+    surface-dim: #0f1417;
+    surface-bright: #353a3d;
+    surface-container-lowest: #0a0f12;
+    surface-container-low: #171c1f;
+    surface-container: #1b2023;
+    surface-container-transparent: rgba(27, 32, 35, 0.6);
+    surface-container-high: #262b2e;
+    surface-container-highest: #313539;
+
+
+    background-color:            @background;
+    normal-background:           @background;
+    active-background:           @background;
+    urgent-background:           @background;
+    selected-normal-background:  @surface-container-low;
+    selected-active-background:  @blue;
+    selected-urgent-background:  @red;
+    alternate-normal-background: @surface-dim;
+    alternate-active-background: @surface-dim;
+    alternate-urgent-background: @surface-dim;
+
+    text-color:                  @on-background;
+    normal-foreground:           @on-background;
+    active-foreground:           @on-background;
+    urgent-foreground:           @red;
+    selected-normal-foreground:  @on-background;
+    selected-active-foreground:  @background;
+    selected-urgent-foreground:  @background;
+    alternate-normal-foreground: @on-background;
+    alternate-active-foreground: @on-background;
+    alternate-urgent-foreground: @on-background;
+
+    separatorcolor:              @foreground;
+    border-color:                @primary;
+}

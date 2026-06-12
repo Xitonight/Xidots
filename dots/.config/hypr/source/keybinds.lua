@@ -131,6 +131,12 @@ hl.bind("SUPER + ALT + V", hl.dsp.exec_cmd("kitty --class kitty-pulsemixer pulse
 hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd("kitty --class kitty-nmtui --override window_padding_width=0 nmtui"))
 hl.bind("SUPER + ALT + K", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 
+-- Rofi
+hl.bind("SUPER + A", hl.dsp.exec_cmd("pkill rofi || rofi -show drun"))
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("pkill rofi || rofi -show window -config ~/.config/rofi/window.rasi"))
+hl.bind("SUPER + Period", hl.dsp.exec_cmd("pkill rofi || rofi -show emoji -config ~/.config/rofi/emoji.rasi"))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("pkill rofi || ~/.local/bin/rofi-clipboard"))
+
 -- System
 hl.bind("SUPER + SHIFT + CTRL + ALT + Escape", hl.dsp.exit())
 
