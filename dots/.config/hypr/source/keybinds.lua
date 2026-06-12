@@ -158,8 +158,5 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 
 -- Brightness
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("ambxst brightness +5"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("ambxst brightness -5"))
-
--- Calculator
-hl.bind("XF86Calculator", hl.dsp.exec_cmd('notify-send "Soon"'))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))

@@ -1,7 +1,9 @@
--- Ambxst
-loadfile(os.getenv("HOME") .. "/.local/share/ambxst/hyprland.lua")()
+local hostname = io.popen("hostname"):read("*a"):gsub("%s+", "")
 
-require("source/nvidia")
+if hostname ~= "archpad" then
+	require("source/nvidia")
+end
+
 require("source/env")
 require("source/autostart")
 require("source/misc")
@@ -11,8 +13,6 @@ require("source/animations")
 require("source/input")
 require("source/windowrules")
 require("source/keybinds")
-
-local hostname = io.popen("hostname"):read("*a"):gsub("%s+", "")
 
 hl.monitor({
 	output = hostname == "archpad" and "eDP-1" or "HDMI-A-1",
