@@ -1,4 +1,3 @@
-@import "shared/color.rasi"
 @import "shared/defaults.rasi"
 
 configuration {

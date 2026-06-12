@@ -1,12 +1,11 @@
-@import "shared/color.rasi"
 @import "shared/defaults.rasi"
 
 configuration {
   modi: "window";
 
-  display-window:              "  Windows";
+  display-window: "  Windows";
 
-	window-format:              "{w} · {c} · {t}";
+	window-format: "{w} · {c} · {t}";
 }
 
 listview {

@@ -3,7 +3,9 @@
 configuration {
   modi: "drun,run";
 
-  display-drun: "󱓞  Apps";
+  show-icons: false;
+
+  display-run: " Run";
 
 	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 }

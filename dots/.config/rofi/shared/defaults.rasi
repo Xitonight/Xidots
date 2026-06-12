@@ -1,4 +1,4 @@
-@import "shared/color.rasi"
+@import "shared/colors.rasi"
 
 configuration {
   font: "monospace 14";
@@ -11,10 +11,18 @@ configuration {
 
   matching: "fuzzy";
   sorting-method: "fzf";
+
+  kb-row-up: "Up";
+  kb-row-down: "Down";
+
+  kb-entry-history-up: "Control+n";
+  kb-entry-history-down: "Control+p";
+
+  kb-accept-entry: "Return,KP_Enter";
 }
 
 * {
-  background-color: @background;
+  background-color: @background-transparent;
   text-color: @on-background;
   border-color: @primary;
   border-radius: 8px;
@@ -22,7 +30,7 @@ configuration {
 
 window {
   transparency: "real";
-  background-color: @background;
+  background-color: @background-transparent;
   width: 35%;
   padding: 0;
   border: 2px;
@@ -37,7 +45,7 @@ mainbox {
   padding: 16px;
   border: 0px solid;
   border-radius: 0px;
-  background-color: @background;
+  background-color: @background-transparent;
 
   children: [inputbar, listview];
 }
@@ -127,7 +135,7 @@ scrollbar {
     margin: 0px 0px 0px 4px;
     border-radius:               16px;
 
-    background-color:            @background;
+    background-color:            transparent;
 }
 
 element {
@@ -136,7 +144,11 @@ element {
 
   border-radius: 8px;
 
-  background-color: @background;
+  background-color: transparent;
+}
+
+element normal.normal {
+  background-color: transparent;
 }
 
 element normal.active {
@@ -160,7 +172,7 @@ element selected.active {
 }
 
 element alternate.normal {
-  background-color: @inherit;
+  background-color: transparent;
 }
 
 element-icon {
