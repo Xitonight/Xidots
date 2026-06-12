@@ -4,8 +4,6 @@ configuration {
   modi: "dmenu";
 
   show-icons: false;
-
-  display-dmenu: "Clipboard";
 }
 
 entry {

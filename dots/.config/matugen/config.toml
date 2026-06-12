@@ -84,7 +84,7 @@ post_hook = "killall -SIGUSR1 cava >/dev/null 2>&1"
 
 [templates.rofi]
 input_path = "~/.config/matugen/templates/colors-rofi.rasi"
-output_path = "~/.config/rofi/shared/color.rasi"
+output_path = "~/.config/rofi/shared/colors.rasi"
 
 [config.custom_colors.red]
 color = "#FF0000"
