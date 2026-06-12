@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
+selection=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) -exec basename {} \; | sort | while read -r name; do
+  printf '%s\x00icon\x1f%s\n' "$name" "$WALLPAPER_DIR/$name"
+done | rofi -dmenu -p "  Wallpapers" -config ~/.config/rofi/wallpaper.rasi)
+
+[ -z "$selection" ] && exit
+
+matugen image "$WALLPAPER_DIR/$selection" --source-color-index 0
