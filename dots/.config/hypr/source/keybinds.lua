@@ -97,22 +97,22 @@ hl.bind("ALT + Tab", function()
 end)
 
 -- Move window direction
-hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "l" }), { repeating = true })
+hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "r" }), { repeating = true })
+hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "u" }), { repeating = true })
+hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "d" }), { repeating = true })
 
 -- Resize
-hl.bind("SUPER + CTRL + l", hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
-hl.bind("SUPER + CTRL + h", hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
-hl.bind("SUPER + CTRL + j", hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
-hl.bind("SUPER + CTRL + k", hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
+hl.bind("SUPER + CTRL + l", hl.dsp.window.resize({ x = 50, y = 0, relative = true }), { repeating = true })
+hl.bind("SUPER + CTRL + h", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true })
+hl.bind("SUPER + CTRL + j", hl.dsp.window.resize({ x = 0, y = 50, relative = true }), { repeating = true })
+hl.bind("SUPER + CTRL + k", hl.dsp.window.resize({ x = 0, y = -50, relative = true }), { repeating = true })
 
 -- Move floating window
 hl.bind("SUPER + ALT + H", hl.dsp.window.move({ x = -50, y = 0 }), { release = true })
 hl.bind("SUPER + ALT + J", hl.dsp.window.move({ x = 0, y = -50 }), { release = true })
 hl.bind("SUPER + ALT + K", hl.dsp.window.move({ x = 0, y = 50 }), { release = true })
-hl.bind("SUPER + ALT + L", hl.dsp.window.move({ x = 50, y = 0 }))
+hl.bind("SUPER + ALT + L", hl.dsp.window.move({ x = 50, y = 0 }), { release = true })
 
 -- Fullscreen
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
@@ -153,10 +153,10 @@ hl.bind("XF86AudioMedia", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl stop"))
 
 -- Volume
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-"))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 
 -- Brightness
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set +5%"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.local/bin/brightness up"), { repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.local/bin/brightness down"), { repeating = true })

@@ -1,0 +1,191 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STEP=5
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/brightness"
+CACHE_FILE="$CACHE_DIR/state"
+MONITORS_FILE="$CACHE_DIR/monitors"
+mkdir -p "$CACHE_DIR"
+
+# ── monitor detection (cached for the session) ───────────────────────────
+detect_monitors() {
+    ddcutil detect --brief 2>/dev/null | awk '
+        /I2C bus:/ {
+            bus = $0; sub(/.*i2c-/, "", bus); gsub(/ /, "", bus)
+        }
+        /DRM connector:/ {
+            conn = $0; sub(/.*card[0-9]+-/, "", conn); gsub(/ /, "", conn)
+        }
+        /^$/ && bus != "" {
+            print bus " " conn
+            bus = ""; conn = ""
+        }
+        END { if (bus != "") print bus " " conn }
+    '
+}
+
+get_monitors() {
+    if [ ! -f "$MONITORS_FILE" ] || [ -z "$(cat "$MONITORS_FILE")" ]; then
+        detect_monitors > "$MONITORS_FILE"
+    fi
+    cat "$MONITORS_FILE"
+}
+
+# ── cache helpers ────────────────────────────────────────────────────────
+cache_get() {
+    local bus="$1"
+    if [ -f "$CACHE_FILE" ]; then
+        grep "^${bus}=" "$CACHE_FILE" 2>/dev/null | tail -1 | cut -d= -f2
+    fi
+}
+
+cache_set() {
+    local bus="$1" value="$2"
+    if [ -f "$CACHE_FILE" ]; then
+        sed -i "/^${bus}=/d" "$CACHE_FILE" 2>/dev/null || true
+    fi
+    echo "${bus}=${value}" >> "$CACHE_FILE"
+}
+
+# ── DDC helpers (set only, no read) ─────────────────────────────────────
+set_brightness() {
+    local bus="$1" value="$2"
+    value=$(printf '%.0f' "$value")
+    [ "$value" -lt 1 ] && value=1
+    [ "$value" -gt 100 ] && value=100
+    ddcutil -b "$bus" setvcp 10 "$value" 2>/dev/null
+    cache_set "$bus" "$value"
+}
+
+get_focused_bus() {
+    local focused_name
+    focused_name=$(hyprctl monitors -j 2>/dev/null | jq -r '.[] | select(.focused == true) | .name' 2>/dev/null || true)
+    if [ -n "$focused_name" ]; then
+        while IFS=' ' read -r bus connector; do
+            [ "$connector" = "$focused_name" ] && echo "$bus" && return
+        done < <(get_monitors)
+    fi
+    get_monitors | head -1 | cut -d' ' -f1
+}
+
+# ── init: read current values into cache ─────────────────────────────────
+cmd_init() {
+    > "$CACHE_FILE"
+    while IFS=' ' read -r bus connector; do
+        local raw
+        raw=$(ddcutil -b "$bus" getvcp 10 --brief 2>/dev/null | awk '{print $4}')
+        cache_set "$bus" "${raw:-50}"
+        echo "${connector}: ${raw:-50}%"
+    done < <(get_monitors)
+}
+
+# ── commands ─────────────────────────────────────────────────────────────
+cmd_get() {
+    while IFS=' ' read -r bus connector; do
+        local cached
+        cached=$(cache_get "$bus")
+        if [ -z "$cached" ]; then
+            cached=$(ddcutil -b "$bus" getvcp 10 --brief 2>/dev/null | awk '{print $4}')
+            cache_set "$bus" "${cached:-50}"
+        fi
+        echo "${connector}: ${cached}%"
+    done < <(get_monitors)
+}
+
+cmd_set() {
+    local value="$1"
+    local target_bus="${2:-}"
+    while IFS=' ' read -r bus connector; do
+        if [ -z "$target_bus" ] || [ "$bus" = "$target_bus" ]; then
+            set_brightness "$bus" "$value"
+            echo "${connector}: ${value}%"
+        fi
+    done < <(get_monitors)
+}
+
+cmd_up() {
+    local delta="${1:-$STEP}"
+    while IFS=' ' read -r bus connector; do
+        local cached
+        cached=$(cache_get "$bus")
+        if [ -z "$cached" ]; then
+            cached=$(ddcutil -b "$bus" getvcp 10 --brief 2>/dev/null | awk '{print $4}')
+        fi
+        local new=$(( cached + delta ))
+        set_brightness "$bus" "$new"
+        echo "${connector}: ${new}%"
+    done < <(get_monitors)
+}
+
+cmd_down() {
+    local delta="${1:-$STEP}"
+    while IFS=' ' read -r bus connector; do
+        local cached
+        cached=$(cache_get "$bus")
+        if [ -z "$cached" ]; then
+            cached=$(ddcutil -b "$bus" getvcp 10 --brief 2>/dev/null | awk '{print $4}')
+        fi
+        local new=$(( cached - delta ))
+        set_brightness "$bus" "$new"
+        echo "${connector}: ${new}%"
+    done < <(get_monitors)
+}
+
+cmd_focused_up() {
+    local delta="${1:-$STEP}"
+    local bus
+    bus=$(get_focused_bus)
+    local cached
+    cached=$(cache_get "$bus")
+    if [ -z "$cached" ]; then
+        cached=$(ddcutil -b "$bus" getvcp 10 --brief 2>/dev/null | awk '{print $4}')
+    fi
+    local new=$(( cached + delta ))
+    set_brightness "$bus" "$new"
+    echo "${new}%"
+}
+
+cmd_focused_down() {
+    local delta="${1:-$STEP}"
+    local bus
+    bus=$(get_focused_bus)
+    local cached
+    cached=$(cache_get "$bus")
+    if [ -z "$cached" ]; then
+        cached=$(ddcutil -b "$bus" getvcp 10 --brief 2>/dev/null | awk '{print $4}')
+    fi
+    local new=$(( cached - delta ))
+    set_brightness "$bus" "$new"
+    echo "${new}%"
+}
+
+# ── main ─────────────────────────────────────────────────────────────────
+case "${1:-help}" in
+    init)         cmd_init ;;
+    get)          cmd_get ;;
+    set)          cmd_set "${2:-50}" "${3:-}" ;;
+    up)           cmd_up "${2:-$STEP}" ;;
+    down)         cmd_down "${2:-$STEP}" ;;
+    focused-up)   cmd_focused_up "${2:-$STEP}" ;;
+    focused-down) cmd_focused_down "${2:-$STEP}" ;;
+    redetect)     rm -f "$MONITORS_FILE"; cmd_init ;;
+    list)         get_monitors ;;
+    help|--help|-h)
+        echo "Usage: brightness <command> [args]"
+        echo ""
+        echo "Commands:"
+        echo "  init             Read current brightness into cache (run once at startup)"
+        echo "  get              Show brightness (from cache, reads DDC only if uncached)"
+        echo "  set <value> [bus]    Set brightness (1-100) on all or specific bus"
+        echo "  up [step]        Increase all monitors by step (default: $STEP)"
+        echo "  down [step]      Decrease all monitors by step (default: $STEP)"
+        echo "  focused-up [step]   Increase focused monitor by step"
+        echo "  focused-down [step] Decrease focused monitor by step"
+        echo "  redetect         Re-detect monitors and re-read brightness"
+        echo "  list             List detected monitors (bus connector)"
+        ;;
+    *)
+        echo "Unknown command: $1" >&2
+        exit 1
+        ;;
+esac
