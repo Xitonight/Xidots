@@ -28,7 +28,7 @@ pulsemixer
 # --------------------------------------------- WM
 hyprland
 hyprpicker
-awww-git
+awww
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 
@@ -39,7 +39,6 @@ otf-font-awesome
 ttf-all-the-icons
 ttf-cascadia-code-nerd
 ttf-font-awesome
-ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
 ttf-poppins
@@ -68,6 +67,9 @@ nm-connection-editor
 obsidian
 obs-studio
 opencode
+rofi
+rofi-emoji
+rofi-rbw
 scrcpy
 tailscale
 telegram-desktop
@@ -82,7 +84,6 @@ bat
 btop
 cava
 cowsay
-croc
 eza
 fastfetch
 fd
@@ -111,7 +112,6 @@ inetutils
 jdk17-openjdk
 libinput-gestures
 oh-my-posh
-python-watchdog
 resvg
 systemd-resolvconf
 udiskie
