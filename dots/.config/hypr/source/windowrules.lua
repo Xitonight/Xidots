@@ -1,10 +1,9 @@
 -- Float
-hl.window_rule({ match = { class = "org.gnome.Calculator" }, float = true })
 hl.window_rule({ match = { class = "Bitwarden" }, float = true })
 
 -- Opacity
 hl.window_rule({ match = { fullscreen = false }, opacity = 0.95 })
-hl.window_rule({ match = { class = "imv|swappy" }, opaque = true })
+hl.window_rule({ match = { class = "mpv" }, opaque = true })
 hl.window_rule({
 	match = { class = "kitty" },
 	opaque = false,
@@ -59,8 +58,10 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = "one.alynx.showmethekey" },
 	float = true,
+	move = { "monitor_w - monitor_w * 0.3 - monitor_w * 0.02", "monitor_h - monitor_h * 0.1 - monitor_h * 0.02" },
 	size = { "monitor_w*0.3", "monitor_h*0.1" },
-	center = true,
+	border_size = 0,
+	pin = true,
 })
 
 -- Workspace rules
