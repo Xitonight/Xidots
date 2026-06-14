@@ -1,5 +1,9 @@
 @import "shared/defaults.rasi"
 
+window {
+  width: 55%;
+}
+
 configuration {
   modi: "dmenu";
 
@@ -11,20 +15,36 @@ entry {
 }
 
 listview {
-  columns: 3;
+  columns: 4;
   lines: 3;
   fixed-height: true;
   scrollbar: true;
 }
 
 element-icon {
-  size: 8em;
+  size: 10em;
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }
 
 element {
   orientation: vertical;
-  border-radius: 8px;
+
   padding: 4px;
+
+  border-radius: 8px;
+}
+
+element selected.normal {
+  background-color: @surface-transparent-50;
+  border: 0px;
+  border-color: @primary;
+  text-color: @on-background;
+}
+
+element selected.active {
+  background-color: @surface-transparent;
+  border: 0px 0px 0px 2px;
+  border-color: @tertiary;
+  text-color: @tertiary;
 }

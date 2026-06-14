@@ -9,6 +9,8 @@ configuration {
   disable-history: false;
   sidebar-mode: false;
 
+  scroll-method: 1;
+
   matching: "fuzzy";
   sorting-method: "fzf";
 
@@ -22,7 +24,7 @@ configuration {
 }
 
 * {
-  background-color: @background-transparent;
+  background-color: @background-transparent-50;
   text-color: @on-background;
   border-color: @primary;
   border-radius: 8px;
@@ -30,11 +32,11 @@ configuration {
 
 window {
   transparency: "real";
-  background-color: @background-transparent;
-  width: 35%;
+  background-color: @background-transparent-50;
+  width: 40%;
   padding: 0;
   border: 2px;
-  border-color: @surface;
+  border-color: @primary-transparent-50;
   border-radius: 16px;
 }
 
@@ -45,7 +47,7 @@ mainbox {
   padding: 16px;
   border: 0px solid;
   border-radius: 0px;
-  background-color: @background-transparent;
+  background-color: @background-transparent-50;
 
   children: [inputbar, listview];
 }
@@ -117,7 +119,7 @@ listview {
   reverse: false;
 
   fixed-height: true;
-  fixed-columns: false;
+  fixed-columns: true;
 
   spacing: 4px;
 
@@ -129,7 +131,7 @@ listview {
 
 scrollbar {
     handle-width:                8px;
-    handle-color:                @primary-transparent;
+    handle-color:                @primary-transparent-50;
     handle-rounded-corners:      true;
 
     margin: 0px 0px 0px 4px;
@@ -152,20 +154,20 @@ element normal.normal {
 }
 
 element normal.active {
-  background-color: @surface-transparent;
-  border-color: @primary-transparent;
+  background-color: @surface-transparent-50;
+  border-color: @primary-transparent-50;
   text-color: @tertiary;
 }
 
 element selected.normal {
-  background-color: @surface-transparent;
+  background-color: @surface-transparent-50;
   border: 0px 0px 0px 2px;
   border-color: @primary;
   text-color: @primary;
 }
 
 element selected.active {
-  background-color: @surface-transparent;
+  background-color: @surface-transparent-50;
   border: 0px 0px 0px 2px;
   border-color: @tertiary;
   text-color: @tertiary;
