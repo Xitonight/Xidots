@@ -45,8 +45,6 @@ require("luasnip").config.set_config {
   store_selection_keys = "<Tab>",
 }
 
-os.execute "python ~/.config/nvim/pywal/chadwal.py &> /dev/null &"
-
 local autocmd = vim.api.nvim_create_autocmd
 
 -- Reset kitty font size on leave
@@ -76,13 +74,6 @@ autocmd("VimLeave", {
 autocmd("VimLeave", {
   pattern = "*",
   command = "silent !tmux set status 2",
-})
-
-autocmd("Signal", {
-  pattern = "SIGUSR1",
-  callback = function()
-    require("nvchad.utils").reload()
-  end,
 })
 
 autocmd("BufReadPost", {
