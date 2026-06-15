@@ -161,9 +161,9 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 
 -- Screenshots
-hl.bind("SUPER + P", hl.dsp.exec_cmd("grimblast copy output"))
-hl.bind("SUPER + ALT + P", hl.dsp.exec_cmd("grimblast copy area"))
-hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("grimblast copy active"))
+hl.bind("SUPER + P", hl.dsp.exec_cmd("hyprshot -m output -m active --clipboard-only"))
+hl.bind("SUPER + ALT + P", hl.dsp.exec_cmd("hyprshot -m window -m active --clipboard-only"))
+hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 -- Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.local/bin/brightness up"), { repeating = true })
