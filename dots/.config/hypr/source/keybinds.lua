@@ -127,7 +127,7 @@ hl.bind("SUPER + SHIFT + ALT + T", hl.dsp.window.move({ workspace = "special" })
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + ALT + Return", hl.dsp.exec_cmd("kitty --class kitty-floating -1"))
 hl.bind("SUPER + ALT + Escape", hl.dsp.exec_cmd("kitty --class kitty-btop btop"))
-hl.bind("SUPER + ALT + V", hl.dsp.exec_cmd("kitty --class kitty-pulsemixer pulsemixer"))
+hl.bind("SUPER + ALT + V", hl.dsp.exec_cmd("kitty --class kitty-wiremix wiremix"))
 hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd("kitty --class kitty-nmtui --override window_padding_width=0 nmtui"))
 hl.bind("SUPER + ALT + K", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 

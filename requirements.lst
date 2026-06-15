@@ -24,7 +24,7 @@ bluez-utils
 alsa-utils
 pipewire-alsa
 pipewire-pulse
-pulsemixer
+wiremix
 
 # --------------------------------------------- WM
 hyprland

@@ -27,7 +27,7 @@ hl.window_rule({
 	center = true,
 })
 hl.window_rule({
-	match = { class = "kitty-pulsemixer" },
+	match = { class = "kitty-wiremix" },
 	float = true,
 	size = { "monitor_w*0.5", "monitor_h*0.6" },
 	center = true,
