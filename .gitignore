@@ -23,6 +23,7 @@ dots/.config/qt6ct/colors/matugen.conf
 dots/.config/qt6ct/colors/ambxst.colors
 dots/.config/zathura/
 dots/.config/rofi/shared/colors.rasi
+dots/.config/swaync/styles/colors.css
 
 # QT
 dots/.config/qt5ct/qss

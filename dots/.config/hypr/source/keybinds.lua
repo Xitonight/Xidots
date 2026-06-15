@@ -140,6 +140,7 @@ hl.bind("SUPER + Comma", hl.dsp.exec_cmd("pkill rofi || ~/.local/bin/rofi-wallpa
 hl.bind("SUPER + V", hl.dsp.exec_cmd("pkill rofi || ~/.local/bin/rofi-clipboard"))
 
 -- System
+hl.bind("SUPER + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind("SUPER + SHIFT + CTRL + ALT + Escape", hl.dsp.exit())
 
 -- Lid switch

@@ -86,6 +86,11 @@ post_hook = "killall -SIGUSR1 cava >/dev/null 2>&1"
 input_path = "~/.config/matugen/templates/colors-rofi.rasi"
 output_path = "~/.config/rofi/shared/colors.rasi"
 
+[templates.swaync]
+input_path = "~/.config/matugen/templates/colors-swaync.css"
+output_path = "~/.config/swaync/styles/colors.css"
+post_hook = "swaync-client -rs >/dev/null 2>&1"
+
 [config.custom_colors.red]
 color = "#FF0000"
 blend = true

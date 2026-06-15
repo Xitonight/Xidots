@@ -11,6 +11,7 @@ polkit-gnome
 reflector
 rsync
 stow
+swaync
 wget
 zsh
 

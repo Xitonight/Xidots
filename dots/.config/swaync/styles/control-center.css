@@ -1,0 +1,215 @@
+@import "colors.css";
+
+/* Avoid 'annoying' background */
+.blank-window {
+  background: transparent;
+}
+
+.control-center {
+  margin: 18px;
+  padding: 32px;
+
+  background-color: alpha(@bg, 0.6);
+  border: 1px solid @border;
+  border-radius: 24px;
+
+  box-shadow: 0 0 10px 0 @shadow;
+}
+
+.control-center .notification-row .notification-background,
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  background-color: @bg-alt;
+  border-radius: 16px;
+  box-shadow: 0 0 2px 0 @shadow;
+  margin: 4px 0px;
+  padding: 4px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  color: @error;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  margin: 6px;
+  padding: 8px 6px 2px 2px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 3.4em;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background: @hover;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @selected;
+}
+
+/* Buttons */
+
+.control-center .notification-row .notification-background .close-button {
+  background: transparent;
+  border-radius: 6px;
+  color: @fg;
+  margin: 0px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: @hover;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @selected;
+}
+
+progress,
+trough {
+  border-radius: 12px;
+}
+
+trough {
+  background-color: @bg-alt;
+}
+
+progressbar > progress {
+  background-color: @accent;
+}
+
+.notification-group {
+  margin: 2px 8px 2px 8px;
+}
+
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: @fg;
+  letter-spacing: 2px;
+}
+
+.notification-group-icon {
+  color: @fg;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: transparent;
+  color: @fg;
+  margin: 4px;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @hover;
+}
+
+/* Notification clear button */
+.widget-title {
+  font-size: 1.2em;
+  margin: 6px;
+  color: @fg;
+  font-weight: bold;
+}
+
+.widget-title button {
+  background: @bg-alt;
+  border-radius: 6px;
+  padding: 4px 16px;
+}
+
+.widget-title button:hover {
+  background-color: @hover;
+}
+
+.widget-title button:active {
+  background-color: @selected;
+}
+
+/* Do not disturb */
+.widget-dnd {
+  margin: 6px;
+  font-size: 1.2rem;
+  color: @fg-muted;
+}
+
+.widget-dnd > switch {
+  background: @bg-alt;
+  font-size: initial;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 2px;
+}
+
+.widget-dnd > switch:hover {
+  background: @hover;
+}
+
+.widget-dnd > switch:checked {
+  background: @selected;
+}
+
+.widget-dnd > switch:checked:hover {
+  background: @hover;
+}
+
+.widget-dnd > switch slider {
+  background: @fg-muted;
+  border-radius: 6px;
+}
+
+/* Control center list */
+.control-center .title {
+  color: @fg;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.control-center-list {
+  margin-top: 8px;
+}
