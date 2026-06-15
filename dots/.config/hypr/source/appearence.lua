@@ -14,30 +14,36 @@ hl.config({
 	},
 	general = {
 		col = {
-			active_border = "#" .. c.primary,
-			inactive_border = "#" .. c.surface,
+			active_border = c.surface,
+			inactive_border = c.background,
 		},
 		border_size = 2,
 		layout = "dwindle",
-		gaps_in = 2,
-		gaps_out = 8,
+		gaps_in = 4,
+		gaps_out = 16,
 	},
 	decoration = {
-		dim_special = 0.6,
+		active_opacity = 0.85,
+		inactive_opacity = 0.85,
+
+		dim_strength = 0.05,
+		dim_inactive = true,
+		dim_special = 0.3,
+
 		blur = {
 			enabled = true,
-			size = 3,
+			size = 6,
 			passes = 3,
 			new_optimizations = true,
 			contrast = 1,
 			brightness = 1,
 		},
-		rounding = 16,
+		rounding = 20,
 		shadow = {
 			enabled = true,
-			range = 8,
+			range = 16,
 			render_power = 2,
-			color = "rgba(0, 0, 0, 0.25)",
+			color = "rgba(0, 0, 0, 1)",
 		},
 	},
 })
