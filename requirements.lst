@@ -1,10 +1,10 @@
 # --------------------------------------------- SYSTEM
 brightnessctl
 inotify-tools
+iwd
 man-db
 man-pages
 mpv
-networkmanager
 openssh
 playerctl
 polkit-gnome
@@ -94,6 +94,7 @@ fzf
 git
 git-delta
 github-cli
+impala
 just
 lazygit
 lolcat
