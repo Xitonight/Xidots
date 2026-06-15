@@ -239,37 +239,6 @@ setup_silent_boot() {
   fi
 }
 
-setup_telegram_material_theme() {
-  print_header "
-__        __    _
-\\ \\      / /_ _| | ___   __ _ _ __ __ _ _ __ ___
- \\ \\ /\\ / / _\` | |/ _ \\ / _\` | '__/ _\` | '_ \` _ \\
-  \\ V  V / (_| | | (_) | (_| | | | (_| | | | | | |
-   \\_/\\_/ \\__,_|_|\\___/ \\__, |_|  \\__,_|_| |_| |_|
-                        |___/
-" "Setting up Telegram theme..."
-  walogram_dir="/usr/share/walogram"
-  walogram_file="$walogram_dir/constants.tdesktop-theme"
-  walogram_dot="$XIDOTS_DIR/telegram/constants.tdesktop-theme"
-
-  if [ ! -d "$walogram_dir" ]; then
-    sudo mkdir -p "$walogram_dir"
-  fi
-  if [ -e "$walogram_file" ]; then
-    if [ -L "$walogram_file" ] && [ "$(readlink -f "$walogram_file")" == "$walogram_dot" ]; then
-      echo "constants.tdesktop-theme is already correctly stowed, skipping backup."
-    else
-      backup="$BACKUP_DIR/telegram"
-      create_backup "$walogram_file" "$backup" "constants.tdesktop-theme" "sudo"
-    fi
-    sudo rm -rf "$walogram_file"
-  fi
-  if ! sudo stow --target="$walogram_dir" --dir="$XIDOTS_DIR" telegram; then
-    echo "Failed to stow telegram theme files." >&2
-    exit 1
-  fi
-}
-
 setup_kanata() {
   print_header "
  _  __                 _

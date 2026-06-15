@@ -67,7 +67,6 @@ post_hook = "pywalfox update &"
 [templates.pywalsh]
 input_path = "~/.config/matugen/templates/colors.sh"
 output_path = "~/.cache/wal/colors.sh"
-post_hook = "walogram -Bc >/dev/null 2>&1 && pkill Telegram; hyprctl eval 'hl.exec_cmd(\"[workspace special silent] Telegram\")'"
 
 [templates.pywalwalfile]
 input_path = "~/.config/matugen/templates/wal"
@@ -90,6 +89,11 @@ output_path = "~/.config/rofi/shared/colors.rasi"
 input_path = "~/.config/matugen/templates/colors-swaync.css"
 output_path = "~/.config/swaync/styles/colors.css"
 post_hook = "swaync-client -rs >/dev/null 2>&1"
+
+[templates.telegram]
+input_path = "~/.config/matugen/templates/colors-telegram.tdesktop-theme"
+output_path = "/usr/share/walogram/constants.tdesktop-theme"
+post_hook = "walogram -Bc >/dev/null 2>&1 && pkill Telegram; hyprctl eval 'hl.exec_cmd(\"[workspace special silent] Telegram\")'"
 
 [config.custom_colors.red]
 color = "#FF0000"
