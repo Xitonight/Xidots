@@ -134,6 +134,7 @@ hl.bind("SUPER + ALT + K", hl.dsp.exec_cmd("hyprctl switchxkblayout current next
 -- Rofi
 hl.bind("SUPER + A", hl.dsp.exec_cmd("pkill rofi || rofi -show drun"))
 hl.bind("SUPER + R", hl.dsp.exec_cmd("pkill rofi || rofi -show run -config ~/.config/rofi/run.rasi"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("pkill rofi || rofi-rbw -a copy"))
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("pkill rofi || rofi -show window -config ~/.config/rofi/window.rasi"))
 hl.bind("SUPER + Period", hl.dsp.exec_cmd("pkill rofi || rofi -show emoji -config ~/.config/rofi/emoji.rasi"))
 hl.bind("SUPER + Comma", hl.dsp.exec_cmd("pkill rofi || ~/.local/bin/rofi-wallpaper"))
