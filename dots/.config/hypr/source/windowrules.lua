@@ -45,12 +45,6 @@ hl.window_rule({
 	center = true,
 })
 hl.window_rule({
-	match = { class = "org.pulseaudio.pavucontrol" },
-	float = true,
-	size = { "monitor_w*0.5", "monitor_h*0.6" },
-	center = true,
-})
-hl.window_rule({
 	match = { class = "one.alynx.showmethekey" },
 	float = true,
 	move = { "monitor_w - monitor_w * 0.3 - monitor_w * 0.02", "monitor_h - monitor_h * 0.1 - monitor_h * 0.02" },
