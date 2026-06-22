@@ -1,7 +1,7 @@
 @import "shared/colors.rasi"
 
 configuration {
-  font: "monospace 14";
+  font: "sans 14";
   icon-theme: "Papirus";
 
   show-icons: true;
@@ -24,40 +24,40 @@ configuration {
 }
 
 * {
-  background-color: @background-transparent-50;
+  background-color: @surface;
   text-color: @on-background;
   border-color: @primary;
   border-radius: 8px;
 }
 
 window {
-  transparency: "real";
-  background-color: @background-transparent-50;
+  background-color: @background;
   width: 40%;
   padding: 0;
-  border: 2px;
-  border-color: @primary-transparent-50;
-  border-radius: 16px;
+  border: 0px;
+  border-radius: 44px;
 }
 
 mainbox {
   enabled: true;
-  spacing: 8px;
+  spacing: 12px;
   margin: 0px;
-  padding: 16px;
+  padding: 24px;
   border: 0px solid;
   border-radius: 0px;
-  background-color: @background-transparent-50;
+  background-color: @surface;
 
   children: [inputbar, listview];
 }
 
 inputbar {
   spacing: 8px;
-  padding: 8px;
+  padding: 12px 20px;
   margin: 0px;
 
-  background-color: transparent;
+  border: 2px solid;
+
+  border-radius: 20px;
 
   children: [prompt, entry];
 }
@@ -66,14 +66,10 @@ prompt {
   margin: 0px;
 
   text-color: @primary;
-
-  background-color: transparent;
 }
 
 entry {
   placeholder: "Search...";
-
-  background-color: transparent;
 }
 
 num-filtered-rows {
@@ -109,7 +105,7 @@ listview {
   enabled: true;
 
   lines: 5;
-  columns: 2;
+  columns: 1;
 
   cycle: true;
   dynamic: true;
@@ -154,20 +150,20 @@ element normal.normal {
 }
 
 element normal.active {
-  background-color: @surface-transparent-50;
+  background-color: @surface;
   border-color: @primary-transparent-50;
   text-color: @tertiary;
 }
 
 element selected.normal {
-  background-color: @surface-transparent-50;
-  border: 0px 0px 0px 2px;
+  background-color: @surface-bright;
+  // border: 0px 0px 0px 2px;
   border-color: @primary;
-  text-color: @primary;
+  text-color: @on-background;
 }
 
 element selected.active {
-  background-color: @surface-transparent-50;
+  background-color: @surface;
   border: 0px 0px 0px 2px;
   border-color: @tertiary;
   text-color: @tertiary;
