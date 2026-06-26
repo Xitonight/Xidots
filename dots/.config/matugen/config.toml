@@ -58,7 +58,7 @@ output_path = "~/.config/zathura/zathurarc"
 [templates.cava]
 input_path = "~/.config/matugen/templates/colors-cava"
 output_path = "~/.config/cava/config"
-post_hook = "killall -SIGUSR1 cava >/dev/null 2>&1"
+post_hook = "pkill -SIGUSR1 cava -q"
 
 [templates.rofi]
 input_path = "~/.config/matugen/templates/colors-rofi.rasi"
