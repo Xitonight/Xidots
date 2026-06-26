@@ -156,7 +156,7 @@ alias mux='tmuxinator'
 alias -g NE='2>/dev/null'
 alias -g NS='>/dev/null'
 alias -g NO='>/dev/null 2>&1'
-alias -g C='| wl-copy'
+alias -g C='| wl-copy -n'
 
 p() {
   local dir
