@@ -84,9 +84,9 @@ post_hook = "swaync-client -rs >/dev/null 2>&1"
 
 [templates.telegram]
 input_path = "~/.config/matugen/templates/colors-telegram.tdesktop-theme"
-output_path = "/usr/share/walogram/constants.tdesktop-theme"
-pre_hook = "sudo chown $USER /usr/share/walogram -R"
-post_hook = "walogram -Bc >/dev/null 2>&1 && pkill Telegram; hyprctl eval 'hl.exec_cmd(\"[workspace special silent] Telegram\")'"
+output_path = "~/.cache/telegram/colors.tdesktop-theme"
+pre_hook = "mkdir -p ~/.cache/telegram"
+post_hook = "tgtheme -i '{{image}}' -Bq; pkill Telegram; hyprctl eval 'hl.exec_cmd(\"[workspace special silent] Telegram\")'"
 
 [config.custom_colors.red]
 color = "#FF0000"
