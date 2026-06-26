@@ -94,3 +94,10 @@ autocmd("BufReadPost", {
 vim.filetype.add {
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 }
+
+autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*/swaync/*.css",
+  callback = function(ev)
+    vim.diagnostic.enable(false, { bufnr = ev.buf })
+  end,
+})
