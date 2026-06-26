@@ -156,10 +156,9 @@ element normal.active {
 }
 
 element selected.normal {
-  background-color: @surface-bright;
-  // border: 0px 0px 0px 2px;
-  border-color: @primary;
-  text-color: @on-background;
+  background-color: @primary;
+  border-color: @on-primary;
+  text-color: @on-primary;
 }
 
 element selected.active {

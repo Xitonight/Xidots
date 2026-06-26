@@ -8,9 +8,13 @@ configuration {
 	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 }
 
+window {
+  width: 30%;
+}
+
 listview {
   lines: 5;
-  columns: 2;
+  columns: 1;
 
   scrollbar: true;
 }
