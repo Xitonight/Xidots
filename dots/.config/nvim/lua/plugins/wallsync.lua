@@ -1,6 +1,6 @@
 return {
   {
-    "Axenide/WallSync",
+    "NvChad/WallSync",
     lazy = false,
     main = "wallsync",
     opts = {},
