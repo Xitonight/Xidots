@@ -210,7 +210,6 @@ function sesh-sessions() {
 # Shell integrations
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(mise activate zsh)"
 eval "$(pay-respects zsh)"
 export _PR_AI_DISABLE
 
