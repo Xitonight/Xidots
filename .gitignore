@@ -54,3 +54,5 @@ dots/.zen/xitonight/chrome/zen-themes.css
 
 # Opencode
 dots/.config/opencode/package-lock.json
+
+dots/.config/hypr/source/monitors.lua
