@@ -25,20 +25,27 @@ fi
 
 # Enables (or installs if not installed yet) the Zinit plugin manager for zsh
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [ ! -d "$ZINIT_HOME" ]; then
-  mkdir -p "$(dirname "$ZINIT_HOME")"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
+[ ! -d "$ZINIT_HOME/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Enable zinit plugins
 zinit light zsh-users/zsh-completions
-fpath=(~/.zsh/completions $fpath)
-autoload -U compinit && compinit
+autoload -Uz compinit
+
+# Reuse cached completions if dump is < 24h old; rebuild otherwise
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
+  compinit -C
+else
+  compinit
+fi
+
+# Turbo mode: defer these UI plugins until after the first prompt renders
+zinit ice wait lucid
 zinit light Aloxaf/fzf-tab
-zinit light zsh-users/zsh-autosuggestions
+zinit ice wait lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
 
 function zvm_config() {
   # Use system clipboard (wl-copy)
